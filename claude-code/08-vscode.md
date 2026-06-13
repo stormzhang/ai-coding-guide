@@ -51,9 +51,11 @@
 
 在 VS Code 里按 `Cmd+Shift+X`（Mac）或 `Ctrl+Shift+X`（Windows/Linux）打开扩展视图，搜索 `Claude Code`，点**安装**。
 
-![VS Code 扩展市场搜索 Claude Code，认准 Anthropic 官方扩展](assets/08-vscode/extension-search@2x.png)
+![VS Code 扩展市场搜索 Claude Code，认准 Anthropic 官方扩展](assets/08-vscode/placeholder-extension-search.png)
 
-上图是扩展视图里搜 `Claude Code` 的样子：高亮那条发布者是 Anthropic 的才是官方，下面名字相似、发布者是 third-party / unknown 的都是仿冒，别点错。
+> 📷 **占位图**：暂用菜鸟教程的真机截图占位（来源 runoob.com），**发布前务必替换为我们自己的真机截图**。
+
+上图是扩展视图里搜 `Claude Code` 的样子：红框那条「Claude Code for VS Code」、发布者带蓝色认证勾的 **Anthropic** 才是官方，认准它点进去装。
 
 这里有个**小白最容易踩的坑**：搜 `Claude Code` 会跳出一堆名字相似的扩展，认准发布者是 **Anthropic** 的那个，别装成第三方仿冒的。
 
@@ -98,13 +100,15 @@
 
 ## 03 内联 diff：改动当面对质，看清了再点头
 
-这是很多人最早被扩展圈粉的功能。终端版改文件时 diff 是文本符号画的，文件一大、改动一多就看着吃力。**扩展把这事搬进了 VS Code 原生的并排对比视图**——左边原始、右边建议改动，红绿高亮，跟你平时看 Git diff 一个观感。
+这是很多人最早被扩展圈粉的功能。终端版改文件时 diff 是文本符号画的，文件一大、改动一多就看着吃力。**扩展把这事搬进了 VS Code 原生的 diff 视图**——红绿高亮标增删，跟你平时看 Git diff 一个观感。
 
 **类比：合同签字前的「修订模式」对照。** 对方把改好的合同发回来，左边原稿、右边改动版，每处增删都标得清清楚楚——你不是闭眼签字，是**逐条看过才落笔**。Claude 改代码也一样，把改动摆出来请求许可，你有三个选择：**接受、拒绝、或直接告诉它改成别的样子**。
 
-![VS Code 并排 diff 视图，左原始右建议，下方接受/拒绝提示](assets/08-vscode/inline-diff@2x.png)
+![VS Code 里 Claude Code 改文件：绿底内联高亮新增内容，底部弹出 Make this edit 批准框](assets/08-vscode/placeholder-inline-diff.png)
 
-上图是并排 diff 的样子：左边原始代码（红底标删）、右边 Claude 的建议改动（绿底标增），看清每处增删后，再点下方的「接受 / 拒绝」，或直接告诉它改成别的样子。
+> 📷 **占位图**：暂用菜鸟教程的真机截图占位（来源 runoob.com），**发布前务必替换为我们自己的真机截图**。
+
+上图是扩展里改文件的样子：Claude 要新增的 docstring 以**绿底内联高亮**加在原代码上方（行号带 `+`），右侧面板是它的改动说明，底部直接弹出「Make this edit to utils.py?」让你选 **Yes（接受）／ Yes, and don't ask again（接受且不再问）／ No（拒绝）**，或在最下方一行直接告诉它改成别的样子。
 
 还有个容易被忽略、用了一阵子才会注意到的细节：**接受之前可以直接在 diff 视图里手动改 Claude 的建议**，改完它会知道「你动过了」，不再按旧版往下走。比如让它重构一个 200 多行的函数，它一口气改了七八处，要是在 diff 里一眼扫到一处把边界判断写反了，**当场在右侧改对再接受**，就省了一轮来回。
 
