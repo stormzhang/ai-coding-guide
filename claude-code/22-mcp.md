@@ -70,7 +70,7 @@ MCP server 不止一种。理解它们的区别，你才知道抄来的命令该
 claude mcp add playwright -- npx -y @playwright/mcp@latest
 ```
 
-`--` 后面的 `npx -y @playwright/mcp@latest` 就是启动命令，`-y` 是告诉 `npx` 别弹确认、直接装。**stdio server 等于「Claude 帮你在后台拉起一个小程序」**，所以它能跑的前提是你机器上有对应环境（这个 Playwright 就需要 Node.js 18 以上）。
+`--` 后面的 `npx -y @playwright/mcp@latest` 就是启动命令，`-y` 是告诉 `npx` 别弹确认、直接装。**stdio server 等于「Claude 帮你在后台拉起一个小程序」**，所以它能跑的前提是你机器上有对应环境（这个 Playwright 就需要较新的 Node 环境，具体版本以其文档为准）。
 
 **HTTP 是连云服务的首选。** 官方原话：
 
@@ -196,8 +196,7 @@ claude mcp list
 |------|------|
 | `✓ Connected` | 连上了，能用 |
 | `! Needs authentication` | 通了但要登录（OAuth 或带令牌），去 `/mcp` 里认证 |
-| `✗ Failed to connect` | server 没响应（没有回应），检查命令 / 网址 |
-| `✗ Connection error` | 连接时抛出错误（命令本身就跑失败了），检查命令 / 网址 |
+| `✗ Failed to connect` / `Connection error` | 连不上（server 没响应，或命令本身跑失败），检查命令 / 网址 |
 | `⏸ Pending approval` | 来自 `.mcp.json` 的项目 server，还没经你批准 |
 
 那个 `⏸ Pending approval` 就是**第一处「要不要你批准」**。官方设计得很谨慎：
