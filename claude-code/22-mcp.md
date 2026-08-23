@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code MCP 教程：连接外部工具与服务"
+description: "MCP 的工作原理、服务器类型、添加与管理命令、作用域和安全边界，并用实际流程说明如何让 Claude 访问外部数据与工具，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/mcp
+related:
+  - ./28-skill-creator.md
+  - ./24-plugins.md
+relatedPages:
+  - title: "Claude Code skill-creator 教程：创建自定义 Skill"
+    link: ./28-skill-creator.md
+  - title: "Claude Code 插件指南：安装、组合与分发能力"
+    link: ./24-plugins.md
+---
 # 22 · MCP：给 Claude 接上外部世界
 
 > 📚 **系列导航**：上一篇 [21 安全与风险边界](21-security.md) 帮你想清楚「什么时候该信任 AI 碰你的代码和系统」。这一篇换个方向——**给 Claude 接上外部世界**。它默认只能摸你本地的文件和命令行，碰不到你的数据库、Jira、Figma。MCP，就是那个让它一次接上一堆外部服务的统一对接口。

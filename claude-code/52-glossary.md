@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 术语表：小白也能看懂的概念解释"
+description: "解释 Agent、Context、Token、MCP、Hook、Skill、Subagent、Checkpoint 等高频术语，并给出它们在 Claude Code 中的实际作用"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/glossary
+related:
+  - ./53-remotion-video.md
+  - ./50-anti-patterns.md
+relatedPages:
+  - title: "Claude Code 制作 Remotion 视频实战"
+    link: ./53-remotion-video.md
+  - title: "Claude Code 反模式：常见错误用法与修正"
+    link: ./50-anti-patterns.md
+---
 # 52 · 术语表（小白友好）：把这一路的「黑话」一次性翻译成人话
 
 > 📚 **系列导航**：上一篇 [51 常见问题排查（FAQ / Troubleshooting）](51-troubleshooting.md) 把你最容易卡住的报错和怪现象挨个排雷。这一篇做一件更基础、也更该早做的事——**把全教程冒出来过的术语，一个一个翻成人话**。代理循环、上下文窗口、MCP、subagent、skill、hook、checkpoint、权限模式、headless、transport……五十多篇下来名词攒了一大堆，这一篇当你的随身速查卡，**哪个词糊了，回来一翻就清楚**。

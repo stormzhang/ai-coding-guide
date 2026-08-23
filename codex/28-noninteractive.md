@@ -1,3 +1,20 @@
+---
+seoTitle: "codex exec 非交互模式：脚本与 CI 用法"
+description: "codex exec 的输入输出、常用参数、结构化结果、恢复会话和退出码，说明如何把 Codex 稳定接入脚本和 CI，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/noninteractive
+related:
+  - ./29-integrations.md
+  - ./26-git-github.md
+relatedPages:
+  - title: "Codex Slack、Linear 与 SDK 集成指南"
+    link: ./29-integrations.md
+  - title: "Codex Git 与 GitHub 集成：提交和 PR 审查"
+    link: ./26-git-github.md
+---
 # 28 · 非交互模式 codex exec：把它塞进脚本和 CI 里跑
 
 > 📚 **系列导航**：上一篇〔[27 自动化与 CI/CD](27-automation.md) 〕讲了「让 Codex 在流水线里自动干活」这件事的全貌——什么活该自动化、CI 里怎么摆。这一篇把镜头推到那条最核心的命令上：`codex exec`，也就是不开图形界面、一句话丢进去跑完就退的「非交互模式」。下一篇〔[29 Slack / Linear 与 SDK 集成](29-integrations.md) 〕再把它接到 IM 和工单系统里去。

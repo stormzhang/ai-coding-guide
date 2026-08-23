@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code Hooks 教程：事件、配置与自动化"
+description: "Hook 的生命周期事件、匹配器、命令配置、输入输出和错误处理，帮助你在固定节点自动执行格式化、检查与安全卡点，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/hooks-guide
+related:
+  - ./34-cli-reference.md
+  - ./37-checkpoints.md
+relatedPages:
+  - title: "Claude Code CLI 命令与参数完整参考"
+    link: ./34-cli-reference.md
+  - title: "Claude Code Checkpoints 检查点与回滚指南"
+    link: ./37-checkpoints.md
+---
 # 33 · 钩子（Hooks）：在固定时机自动扣扳机
 
 > 📚 **系列导航**：上一篇 [32 输出样式（Output Styles）](./32-output-styles.md) 教你怎么换一套「人格」让 Claude 用你想要的口吻干活。这一篇聊的是另一种「自动化」——不是改它怎么说话，而是**在某个事件一发生的那一刻，雷打不动替你跑一段动作**：改完文件自动格式化、危险命令直接拦死、它干完活给你发条通知。这就是钩子（Hooks）。

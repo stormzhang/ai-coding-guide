@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 操作 Chrome 浏览器指南"
+description: "Claude Code 连接并操作 Chrome 的安装条件、页面交互、权限确认、调试场景和安全边界，说明浏览器能力适合解决哪些任务，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/computer-use
+related:
+  - ./48-capstone-project.md
+  - ./43-git-workflow.md
+relatedPages:
+  - title: "Claude Code 综合实战：从零开发到上线"
+    link: ./48-capstone-project.md
+  - title: "Claude Code Git 工作流：提交、分支与代码审查"
+    link: ./43-git-workflow.md
+---
 # 40 · Chrome：让它操作浏览器
 
 > 📚 **系列导航**：上一篇 [39 实战入门](./39-getting-started-practice.md) 把前面学的零件第一次拼成一条完整流程跑了一遍。这一篇给 Claude Code 再开一扇门——**让它直接操作你的 Chrome 浏览器**：开网页、读控制台报错、填表单、从页面里扒数据，全程不用你离开终端去手点。

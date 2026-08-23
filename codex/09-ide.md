@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex IDE 扩展指南：VS Code 与兼容编辑器"
+description: "Codex IDE 扩展的安装、登录、上下文引用、编辑模式、差异查看和常用命令，说明编辑器与 CLI 如何协同使用，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/ide
+related:
+  - ./10-cloud.md
+  - ./07-desktop-app.md
+relatedPages:
+  - title: "Codex Cloud 云端任务使用指南"
+    link: ./10-cloud.md
+  - title: "Codex 桌面 App 完整使用指南"
+    link: ./07-desktop-app.md
+---
 # 09 · IDE 扩展（VS Code 等）
 
 > 📚 **系列导航**：上一篇 [08 命令行 CLI 上手](08-cli.md) 带你在终端里把 `codex` 敲熟了。这一篇把 Codex 搬进 VS Code——同一个代理、同一份配置，换成有图形界面、能并排看 diff 的玩法。下一篇 [10 云端 Codex Cloud](10-cloud.md) 再把活儿外包到云上跑。

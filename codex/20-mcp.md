@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex MCP 教程：连接外部工具与数据"
+description: "Codex 配置 MCP 服务器的文件格式、命令、认证、作用域与安全边界，并用实际流程说明如何接入外部服务，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/mcp
+related:
+  - ./19-memory.md
+  - ./23-plugins.md
+relatedPages:
+  - title: "Codex Memories 与 Chronicle 记忆系统"
+    link: ./19-memory.md
+  - title: "Codex 插件指南：安装一整套能力"
+    link: ./23-plugins.md
+---
 # 20 · 用 MCP 接外部工具：给 Codex 装上「外接口」
 
 > 📚 **系列导航**：上一篇〔[19 记忆系统 Chronicle](19-memory.md) 〕讲的是让 Codex「记住跨会话的东西」——那是往里灌记忆。这一篇换个方向往外接：**Codex 默认只能摸你本地的文件和命令行，碰不到你的数据库、Figma、第三方文档。MCP，就是让它一次接上一堆外部工具和数据源的那个统一对接口。** 下一篇〔[21 子代理（Subagents）](21-subagents.md) 〕再讲怎么把活拆给一队带独立上下文的小弟去并行干。

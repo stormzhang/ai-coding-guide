@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 斜杠命令与快捷键完整指南"
+description: "Codex CLI 的内置斜杠命令、键盘快捷键、Shell 模式和使用时机，覆盖会话、模型、权限、上下文与诊断操作，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/cli/slash-commands
+related:
+  - ./14-workflows.md
+  - ./17-computer-use.md
+relatedPages:
+  - title: "Codex 常见工作流：探索、修 Bug、重构与测试"
+    link: ./14-workflows.md
+  - title: "Codex Computer Use：电脑与浏览器操作指南"
+    link: ./17-computer-use.md
+---
 # 12 · 斜杠命令与快捷键：会话里的「快捷操作面板」
 
 > 📚 **系列导航**：上一篇〔[11 项目说明书 AGENTS.md](11-agents-md.md) 〕教你把规矩写进文件、让 Codex 每轮开工都先读一遍。那是「事先立规矩」；这一篇讲「**当场拨开关**」——进了会话之后，一个 `/` 能让你切模型、清上下文、看状态、审改动，再配上一把顺手的快捷键，操作效率直接翻倍。下一篇〔[13 提示词（Prompt）写法](13-prompting.md) 〕再回到「怎么把需求说清楚」。

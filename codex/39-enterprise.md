@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 企业管理与治理完整指南"
+description: "企业部署 Codex 时的管理员设置、身份、权限、托管配置、数据治理和审计要求，说明个人使用与组织治理的关键差异，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/enterprise/governance
+related:
+  - ./37-faq.md
+  - ./35-cheatsheet.md
+relatedPages:
+  - title: "Codex 常见问题排查：安装、登录与权限"
+    link: ./37-faq.md
+  - title: "Codex 命令与 config.toml 配置速查表"
+    link: ./35-cheatsheet.md
+---
 # 39 · 企业管理与治理：一个人玩和一家公司用，是两件事
 
 > 📚 **系列导航**：上一篇〔[38 术语表（小白友好）](38-glossary.md) 〕把整个 Codex 篇出现过的黑话攒成了一份随查随翻的词典——那是给你「读懂别人」用的。这一篇是 **Codex 篇的最后一篇，也是一篇选读**：面向**团队管理员 / 技术负责人**，讲一家公司怎么把 Codex 安全、可控、可审计地铺给一整支团队。**如果你是个人用户，这篇可以直接跳过**，前面 38 篇你已经够用了；但如果你哪天要负责给团队开通，再回来看这篇也不迟。这是终点，文末我给整个 Codex 篇做个收尾。

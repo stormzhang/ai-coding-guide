@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 工作原理：代理循环与内置工具"
+description: "Claude Code 的代理循环、上下文窗口、内置工具和权限确认机制，解释它如何从理解任务走到修改文件与验证结果，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/how-claude-code-works
+related:
+  - ./04-api-config.md
+  - ./01-what-is-claude-code.md
+relatedPages:
+  - title: "Claude Code API 配置：订阅登录与 API Key 怎么选"
+    link: ./04-api-config.md
+  - title: "Claude Code 是什么？功能、原理与适用场景"
+    link: ./01-what-is-claude-code.md
+---
 # 03 · Claude Code 如何工作
 
 > 📚 **系列导航**：上一篇 [02 · 安装与使用](02-install.md) 带你把 Claude Code 装好、跑起来。这一篇拆开盖子，看清它到底怎么干活——为什么它能自己读代码、改文件、跑命令，而不只是聊天。

@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 反模式：常见错误用法与修正"
+description: "模糊指令、无限上下文、过度授权、跳过验证和错误配置等常见反模式，解释问题为什么发生以及应该如何修正，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/best-practices
+related:
+  - ./51-troubleshooting.md
+  - ./53-remotion-video.md
+relatedPages:
+  - title: "Claude Code 常见问题排查完整指南"
+    link: ./51-troubleshooting.md
+  - title: "Claude Code 制作 Remotion 视频实战"
+    link: ./53-remotion-video.md
+---
 # 50 · 反模式：常见的错误用法
 
 > 📚 **系列导航**：上一篇 [49 最佳实践](49-best-practices.md) 把「该这么用」的正面打法摊开讲了一遍。这一篇翻到背面——**专挑「不该这么用」的坑**。同一个工具，有人用得飞起，有人用成累赘，差别往往不在「会不会高级功能」，而在**有没有踩进那几个最常见的反模式**。这一篇我把它们一个个拎出来示众，每个都配一句「正确该怎么做」。下一篇 [51 FAQ 排查](51-troubleshooting.md)。

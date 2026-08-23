@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 接入 DeepSeek 等第三方模型"
+description: "通过 OpenAI 兼容接口为 Codex CLI 配置第三方模型的基本方法、配置字段、验证步骤和能力差异，避免误解官方支持范围，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/config-advanced
+related:
+  - ./01-what-is-codex.md
+  - ./03-install.md
+relatedPages:
+  - title: "Codex 是什么？四种入口与使用场景"
+    link: ./01-what-is-codex.md
+  - title: "Codex 安装与登录：Mac、Windows、Linux"
+    link: ./03-install.md
+---
 # 05 · 接入 DeepSeek 等国产模型
 
 > 📚 **系列导航**：上一篇 [04 · 订阅与计费](04-pricing.md) 把 Codex 的账算明白了——订阅划算还是按量付费划算。这一篇接着「省钱」往下走，聊一个更野的路子：**把 Codex 背后的大脑，换成 DeepSeek 这类国产模型**。

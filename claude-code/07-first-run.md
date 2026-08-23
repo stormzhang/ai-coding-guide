@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 第一次使用：从启动到完成任务"
+description: "首次进入项目、授权信任、发送任务、检查修改和验证结果的完整流程，用一个最小示例带你跑通 Claude Code 的第一次代理任务，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/quickstart
+related:
+  - ./13-project-structure.md
+  - ./10-desktop.md
+relatedPages:
+  - title: "Claude Code 项目目录与配置文件详解"
+    link: ./13-project-structure.md
+  - title: "Claude Code Desktop 桌面应用完整指南"
+    link: ./10-desktop.md
+---
 # 07 · 第一次使用：跑通第一个例子
 
 > 📚 **系列导航**：上一篇 [06 Coding Plan：订阅套餐与计费](06-coding-plan.md) 帮你把钱的事算明白了。这一篇该真刀真枪上手了——从打开终端到跑通第一个任务，让你第一次「成功」。

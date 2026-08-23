@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex Slack、Linear 与 SDK 集成指南"
+description: "在 Slack 和 Linear 中委派 Codex 任务，以及通过 SDK 把本地代理嵌入产品的入口、流程、认证与适用场景，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/sdk
+related:
+  - ./25-worktrees.md
+  - ./27-automation.md
+relatedPages:
+  - title: "Codex Worktrees 并行隔离指南"
+    link: ./25-worktrees.md
+  - title: "Codex 自动化与 CI/CD 完整指南"
+    link: ./27-automation.md
+---
 # 29 · Slack / Linear 与 SDK 集成：在别处召唤 Codex，把它嵌进你自己的产品
 
 > 📚 **系列导航**：上一篇〔[28 非交互模式 codex exec](28-noninteractive.md) 〕讲的是「一句话丢进去、跑完吐结果就退」的无人值守跑法——那是把 Codex 接进脚本和 CI 的第一块拼图。这一篇再往外走两步：**一是不打开终端，在 Slack、Linear 里直接喊一声就让 Codex 干活；二是用官方 SDK / App Server，把 Codex 当成一个零件嵌进你自己写的程序和产品里。** 下一篇〔[30 怎么选模型](30-models.md) 〕回到本地，专门讲「同样一句话，到底该派哪个模型去跑」。

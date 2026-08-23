@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code API 配置：订阅登录与 API Key 怎么选"
+description: "Claude 订阅登录、Anthropic API Key 与云厂商认证的差异、费用归属和切换方式，帮助你选对最合适的接入路径，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/authentication
+related:
+  - ./05-third-party-models.md
+  - ./02-install.md
+relatedPages:
+  - title: "Claude Code 接入 DeepSeek 等第三方模型"
+    link: ./05-third-party-models.md
+  - title: "Claude Code 安装教程：Mac、Windows 与 Linux"
+    link: ./02-install.md
+---
 # 04 · API 配置：订阅登录还是 API key，怎么选、怎么切
 
 > 📚 **系列导航**：上一篇 [03 · 它是怎么工作的](03-how-it-works.md) 拆了代理循环——Claude Code 怎么「想 → 做 → 看」。这一篇解决它跑起来的前提：**用什么身份连上模型**。下一篇讲接第三方 / 国产模型。

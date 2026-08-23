@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 控制模式：权限、模型与会话选项"
+description: "启动和会话中的权限模式、模型、思考强度、自动模式与控制选项，帮助你根据任务风险和复杂度调好执行方式，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/permission-modes
+related:
+  - ./36-slash-commands.md
+  - ./32-output-styles.md
+relatedPages:
+  - title: "Claude Code 斜杠命令完整指南"
+    link: ./36-slash-commands.md
+  - title: "Claude Code Output Styles 输出样式指南"
+    link: ./32-output-styles.md
+---
 # 35 · 控制与模式：开会话时手里那块「调音台」
 
 > 📚 **系列导航**：上一篇 [34 CLI 参考手册：命令与全部标志](34-cli-reference.md) 帮你把「启动 Claude 之前」能拨的开关查全了。这一篇换到「会话已经开起来」之后——你跟 Claude 一来一回的过程里，手里其实攥着一整块「控制台」：怎么按一下就让它换工作模式、怎么让它先出方案别急着动手、怎么花钱换更快的响应、怎么用 Vim 手势编辑你的输入。**[第 20 篇](20-permissions.md)讲过权限那根缰绳，这一篇讲你手上的全套操纵杆。**

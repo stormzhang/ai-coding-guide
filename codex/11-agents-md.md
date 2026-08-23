@@ -1,3 +1,20 @@
+---
+seoTitle: "AGENTS.md 完整指南：给 Codex 写项目规则"
+description: "AGENTS.md 的发现范围、层级覆盖、推荐内容、反模式和维护方法，帮助 Codex 在每次任务开始前读懂项目规范，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/guides/agents-md
+related:
+  - ./06-first-task.md
+  - ./09-ide.md
+relatedPages:
+  - title: "Codex 第一个任务：从启动到检查修改"
+    link: ./06-first-task.md
+  - title: "Codex IDE 扩展指南：VS Code 与兼容编辑器"
+    link: ./09-ide.md
+---
 # 11 · 项目说明书 AGENTS.md：把规矩焊进 Codex 的开工流程
 
 > 📚 **系列导航**：上一篇 [10 · 云端 Codex Cloud](10-cloud.md) 把「让 Codex 在远端跑、回头收 PR」这条线讲透了。这一篇拉回本地，聊一份**每个项目都该有、但九成新手写废了**的文件——`AGENTS.md`，Codex 每次开工前都要先读一遍的项目说明书。

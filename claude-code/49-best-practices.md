@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 最佳实践：稳定交付的工作方法"
+description: "任务拆分、上下文控制、先计划后修改、验证闭环、权限边界和规则维护等最佳实践，帮助你减少返工并提升代理结果质量，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/best-practices
+related:
+  - ./50-anti-patterns.md
+  - ./52-glossary.md
+relatedPages:
+  - title: "Claude Code 反模式：常见错误用法与修正"
+    link: ./50-anti-patterns.md
+  - title: "Claude Code 术语表：小白也能看懂的概念解释"
+    link: ./52-glossary.md
+---
 # 49 · 最佳实践：把零散的好习惯，攒成一套能照着做的心法
 
 > 📚 **系列导航**：上一篇 [48 综合实战：从零到上线串起所学](48-capstone-project.md) 带你把前面所有功能拧成一条完整的开发流。这一篇换个高度——**不教新功能，教「怎么用得好」**。同样的 Claude Code，有人用得顺风顺水，有人天天跟它较劲，差的就是这套官方和老用户磨出来的最佳实践。我把它们汇成几条能照着做的法则，外加一摞「好做法 vs 坏做法」对照表。

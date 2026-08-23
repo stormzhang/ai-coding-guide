@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code settings.json 配置详解"
+description: "用户级、项目级和本地 settings.json 的路径、优先级与常用字段，说明权限、环境变量、Hook 和插件配置如何安全落盘，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/settings
+related:
+  - ./32-output-styles.md
+  - ./35-modes-and-control.md
+relatedPages:
+  - title: "Claude Code Output Styles 输出样式指南"
+    link: ./32-output-styles.md
+  - title: "Claude Code 控制模式：权限、模型与会话选项"
+    link: ./35-modes-and-control.md
+---
 # 31 · settings.json：用户级 / 项目级配置
 
 > 📚 **系列导航**：上一篇 [30 功能怎么选：CLAUDE.md vs Skill vs Hook vs MCP vs Subagent](30-choosing-features.md) 教你「需求来了该挂哪个扩展点」。这一篇往下挖一层——这些扩展点背后的开关，**到底写进哪个文件、用户级和项目级谁压谁**。`settings.json` 就是 Claude Code 那块总配电盘，今天把它的接线规则一次理清。

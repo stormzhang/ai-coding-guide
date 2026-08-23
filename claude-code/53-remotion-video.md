@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 制作 Remotion 视频实战"
+description: "使用 Claude Code 和 Remotion 从脚本、组件、动画、素材到渲染输出制作程序化视频，说明适用场景、开发流程与验收方法，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://www.remotion.dev/docs/
+related:
+  - ./49-best-practices.md
+  - ./51-troubleshooting.md
+relatedPages:
+  - title: "Claude Code 最佳实践：稳定交付的工作方法"
+    link: ./49-best-practices.md
+  - title: "Claude Code 常见问题排查完整指南"
+    link: ./51-troubleshooting.md
+---
 # 53 · 制作视频（Remotion）〔选读〕
 
 > 📚 **系列导航**：上一篇 [52 术语表（小白友好）](52-glossary.md) 把全教程出现过的名词收进了一张「随手能查」的表里。这一篇是整套教程的**最后一站**，也是个〔选读〕的边缘玩法——**让 Claude Code 帮你用代码做视频**。靠的是 Remotion（一个用 React 写视频的框架）：你用大白话描述要什么动画，它写「画每一帧」的代码，最后渲染成 mp4。读完你会知道这事儿到底香在哪、对谁有用、对谁是浪费时间。

@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 权限配置：模式、规则与审批"
+description: "Claude Code 的权限模式、allow 与 deny 规则、工具审批和作用域配置，帮助你在效率与安全之间选择合适的开放程度，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/permissions
+related:
+  - ./19-context-management.md
+  - ./16-common-workflows.md
+relatedPages:
+  - title: "Claude Code 上下文管理：压缩、清理与 Token 控制"
+    link: ./19-context-management.md
+  - title: "Claude Code 常见工作流：探索、修 Bug、重构与测试"
+    link: ./16-common-workflows.md
+---
 # 20 · 权限配置：放多松、收多紧，你说了算
 
 📚 **系列导航**：上一篇 [19 上下文管理](./19-context-management.md) 教你怎么管好 Claude 的「工作台」、别让它把记忆塞爆。这一篇换个维度——管的不是「它记得多少」，而是「它敢动多少」：从一行命令都要问你，到全自动放飞，权限这根缰绳到底攥多紧，你说了算。

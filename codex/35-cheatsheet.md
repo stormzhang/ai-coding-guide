@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 命令与 config.toml 配置速查表"
+description: "汇总 Codex CLI 参数、斜杠命令、权限模式、config.toml 字段和常用文件路径，适合日常使用时快速定位准确写法，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/cli/reference
+related:
+  - ./38-glossary.md
+  - ./36-best-practices.md
+relatedPages:
+  - title: "Codex 术语表：Agent、沙箱、Skill 与 MCP"
+    link: ./38-glossary.md
+  - title: "Codex 最佳实践：稳定交付的工作方法"
+    link: ./36-best-practices.md
+---
 # 35 · 命令与配置速查表
 
 > 📚 **系列导航**：上一篇〔[34 综合实战](34-capstone.md) 〕带你把前面所有零件串成一个完整项目跑了一遍，那是「合」。这一篇反过来——把散落在三十多篇里的命令、标志、配置键全部抽出来，压成一张你能贴在显示器边上的速查表。下一篇〔[36 最佳实践](36-best-practices.md) 〕再从「怎么用得对」收尾整个 Codex 篇。

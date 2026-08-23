@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 常见问题排查完整指南"
+description: "安装、登录、网络、权限、MCP、IDE、模型和性能等常见故障的定位顺序与解决方法，适合遇到问题时按现象快速查找，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/troubleshooting
+related:
+  - ./52-glossary.md
+  - ./49-best-practices.md
+relatedPages:
+  - title: "Claude Code 术语表：小白也能看懂的概念解释"
+    link: ./52-glossary.md
+  - title: "Claude Code 最佳实践：稳定交付的工作方法"
+    link: ./49-best-practices.md
+---
 # 51 · 常见问题排查（FAQ / Troubleshooting）
 
 > 📚 **系列导航**：上一篇 [50 反模式：常见的错误用法](50-anti-patterns.md) 把那些「看着没错、其实在挖坑」的用法挨个点名。这一篇接着聊排查——**当 Claude Code 真出毛病的时候，怎么按图索骥、一步步排查到根**。装不上、登不进、权限拦你、MCP 不连、跑得卡、蹦个红字报错……这篇给你一套「症状 → 该翻哪、该敲啥」的查问题地图。

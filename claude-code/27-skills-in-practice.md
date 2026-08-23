@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code Skills 实战：安装、调用与验证"
+description: "从发现一个 Skill、安装到正确目录、触发执行到检查结果的完整流程，并说明常见路径错误、触发失败和安全检查方法，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/skills
+related:
+  - ./24-plugins.md
+  - ./29-agent-teams.md
+relatedPages:
+  - title: "Claude Code 插件指南：安装、组合与分发能力"
+    link: ./24-plugins.md
+  - title: "Claude Code Agent Teams 教程：多会话团队协作"
+    link: ./29-agent-teams.md
+---
 # 27 · Skills 使用实例：装一个、喊一声、看它干活
 
 > 📚 **系列导航**：上一篇 [26 Skill 是什么](26-agent-skills.md) 把原理讲透了——`SKILL.md` 是什么、`description` 凭啥决定 Claude 用不用它。这一篇不讲道理，真刀真枪：**带你查一遍手里有哪些 skill、用一句话喊起一个、盯着它把活干完**，把「会用别人的 skill」落到地上。

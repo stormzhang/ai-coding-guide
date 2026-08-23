@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code skill-creator 教程：创建自定义 Skill"
+description: "使用 skill-creator 从需求定义、指令编写、资源组织到测试迭代创建一个自定义 Skill，帮助你把重复工作沉淀为稳定能力，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/skills
+related:
+  - ./25-memory.md
+  - ./30-choosing-features.md
+relatedPages:
+  - title: "Claude Code 记忆系统：跨会话保留项目经验"
+    link: ./25-memory.md
+  - title: "CLAUDE.md、Skill、Hook、MCP 与 Subagent 怎么选"
+    link: ./30-choosing-features.md
+---
 # 28 · skill-creator 使用：用一个 skill 造你自己的 skill
 
 > 📚 **系列导航**：上一篇 [27 Skills 使用实例](27-skills-in-practice.md) 教你怎么用好别人造的 skill——装进来、让它自动触发、用得顺手。这一篇反过来：教你造自己的。而且不靠手搓，靠官方那个专门用来造 skill 的 skill——`skill-creator`。

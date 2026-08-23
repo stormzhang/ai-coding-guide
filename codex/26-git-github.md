@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex Git 与 GitHub 集成：提交和 PR 审查"
+description: "Codex 参与本地 Git 差异审查、提交准备和 GitHub PR Review 的工作流，说明本地检查与远端协作记录的区别，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/integrations/github
+related:
+  - ./27-automation.md
+  - ./29-integrations.md
+relatedPages:
+  - title: "Codex 自动化与 CI/CD 完整指南"
+    link: ./27-automation.md
+  - title: "Codex Slack、Linear 与 SDK 集成指南"
+    link: ./29-integrations.md
+---
 # 26 · Git 与 GitHub 集成：让 Codex 在你的 PR 里当审查员
 
 > 📚 **系列导航**：上一篇 [25 · Worktrees 并行隔离](25-worktrees.md) 教你用 git worktree 给 Codex 开几条互不打架的「平行车道」，多个任务同时跑还不串味。这一篇把战场从你本地终端搬到 **GitHub 仓库**：怎么让 Codex 钻进你的 Pull Request，**自动 review 代码、按你定的规矩挑刺、改完直接推回分支**。下一篇 [27 · 自动化与 CI/CD](27-automation.md) 再把这套搬进 CI 流水线，做成「无人值守」。

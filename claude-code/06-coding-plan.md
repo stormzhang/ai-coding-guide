@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 订阅套餐与计费完整说明"
+description: "Claude 各订阅套餐、API 计费与 Claude Code 使用额度的关系，并说明不同使用强度下怎么选方案、怎么看成本和避免意外消耗，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/costs
+related:
+  - ./12-project-init.md
+  - ./09-jetbrains.md
+relatedPages:
+  - title: "Claude Code /init 教程：生成与维护 CLAUDE.md"
+    link: ./12-project-init.md
+  - title: "Claude Code JetBrains 集成与使用指南"
+    link: ./09-jetbrains.md
+---
 # 06 · Coding Plan：订阅套餐与计费
 
 > 📚 **系列导航**：上一篇 [05 接入第三方 / 国产模型](05-third-party-models.md) 教你把 DeepSeek、Kimi、GLM 接进 Claude Code。这一篇把账算清楚——**到底该订哪个套餐、钱怎么花的、怎么查用量、怎么省**。

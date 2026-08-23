@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 项目目录与配置文件详解"
+description: "项目中的 .claude 目录、CLAUDE.md、settings、commands、agents、skills 和 hooks 分别放什么，帮助你看懂配置层级与作用范围"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/claude-directory
+related:
+  - ./11-web-and-cloud.md
+  - ./08-vscode.md
+relatedPages:
+  - title: "Claude Code 网页版与云端使用指南"
+    link: ./11-web-and-cloud.md
+  - title: "Claude Code VS Code 集成与使用指南"
+    link: ./08-vscode.md
+---
 # 13 · 项目结构：Claude Code 在你项目里都放了什么
 
 > 📚 **系列导航**：上一篇 [12 项目初始化](12-project-init.md) 带你跑了 `/init`，给项目生成了第一个 `CLAUDE.md`。这一篇接着往下看——`/init` 之后，你项目里悄悄多出来的那个 `.claude/` 文件夹，到底装了什么、归谁管、要不要进 git。

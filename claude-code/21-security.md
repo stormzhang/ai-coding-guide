@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 安全指南：风险边界与防护清单"
+description: "提示词注入、恶意仓库、命令执行、敏感信息和供应链风险，并给出审查权限、隔离环境与检查输出的实用防护原则，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/security
+related:
+  - ./20-permissions.md
+  - ./17-images-multimodal.md
+relatedPages:
+  - title: "Claude Code 权限配置：模式、规则与审批"
+    link: ./20-permissions.md
+  - title: "Claude Code 图片与多模态使用指南"
+    link: ./17-images-multimodal.md
+---
 # 21 · 安全与风险边界：到底该不该信任 AI 碰你的代码
 
 > 📚 **系列导航**：上一篇 [20 权限配置](20-permissions.md) 教你怎么写 `allow` / `ask` / `deny`、怎么用 `Shift+Tab` 切模式——那是「缰绳怎么攥」。这一篇往上一层：缰绳攥在手里了，可**到底该不该放手让 AI 碰你的代码和系统？真正的高危区在哪？提示注入（prompt injection）、敏感数据泄露这些坑长什么样、怎么防？** 讲的是「判断力」，不是「配置项」。

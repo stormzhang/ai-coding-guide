@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 并行任务：子代理、Worktree 与团队"
+description: "多会话、子代理、Agent Teams 和 Git Worktree 的并行方式、隔离程度与成本差异，帮助你选择不会互相覆盖的协作方案，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/agents
+related:
+  - ./38-plugins-reference.md
+  - ./44-github-actions.md
+relatedPages:
+  - title: "Claude Code 插件参考：目录、清单与发布"
+    link: ./38-plugins-reference.md
+  - title: "Claude Code GitHub Actions 集成教程"
+    link: ./44-github-actions.md
+---
 # 41 · 并行任务：让几个 Claude 同时开工，而不是排队
 
 > 📚 **系列导航**：上一篇 [40 Chrome：让它操作浏览器](40-chrome.md) 教你把 Claude 的手伸进浏览器，自动点页面、填表单。这一篇换个维度——**不是让一个 Claude 多干一件事，而是让好几个任务同时开工**。git worktree 隔离、后台多会话、headless 批量跑，三套手段一次说清，外加最关键的那条：**什么时候并行真省事，什么时候纯添乱**。

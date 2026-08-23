@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 安装教程：Mac、Windows 与 Linux"
+description: "Mac、Windows、Linux 和 WSL 的安装步骤、登录方法、网络要求与常见报错处理，让第一次使用命令行的读者也能完成安装，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/setup
+related:
+  - ./03-how-it-works.md
+  - ./05-third-party-models.md
+relatedPages:
+  - title: "Claude Code 工作原理：代理循环与内置工具"
+    link: ./03-how-it-works.md
+  - title: "Claude Code 接入 DeepSeek 等第三方模型"
+    link: ./05-third-party-models.md
+---
 # 02 · 安装与使用
 
 > 📚 **系列导航**：上一篇 [01 · Claude Code 简介](01-what-is-claude-code.md) 讲清了它是什么、能干啥。这一篇带你真正把它装到自己电脑上，登录、跑起来，顺带把升级、卸载、踩坑排查一次说透。下一篇 [03 · Claude Code 如何工作](03-how-it-works.md) 掀开盖子看代理循环。

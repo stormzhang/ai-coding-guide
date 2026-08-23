@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 斜杠命令完整指南"
+description: "内置斜杠命令的分类、常用参数和使用时机，覆盖会话管理、上下文、配置、诊断与扩展命令的快速调用方式，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/interactive-mode
+related:
+  - ./37-checkpoints.md
+  - ./33-hooks.md
+relatedPages:
+  - title: "Claude Code Checkpoints 检查点与回滚指南"
+    link: ./37-checkpoints.md
+  - title: "Claude Code Hooks 教程：事件、配置与自动化"
+    link: ./33-hooks.md
+---
 # 36 · 斜杠命令（Slash Commands）：一个 `/` 调出 Claude 的所有快捷动作
 
 > 📚 **系列导航**：上一篇 [35 控制与模式](35-modes-and-control.md) 教你怎么在会话里给 Claude 收紧或放开缰绳（权限模式、`/model`、`/effort` 这些开关）。这一篇把视角拉回到那个你每天都在敲、却未必真摸透的入口——**斜杠命令**。打一个 `/`，从切模型、清上下文到你自己刻的一键流程，全在这一个菜单里。我带你把内置的那批认全，再教你刻几个自己的。

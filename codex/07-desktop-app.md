@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 桌面 App 完整使用指南"
+description: "Codex 桌面 App 的项目管理、线程、Worktree、Review、自动化和本地环境能力，并说明它与 CLI、IDE 的选择差异，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/app
+related:
+  - ./08-cli.md
+  - ./11-agents-md.md
+relatedPages:
+  - title: "Codex CLI 入门：安装、会话与常用操作"
+    link: ./08-cli.md
+  - title: "AGENTS.md 完整指南：给 Codex 写项目规则"
+    link: ./11-agents-md.md
+---
 # 07 · 桌面 App 全景
 
 > 📚 **系列导航**：上一篇 [06 跑通第一个任务](06-first-task.md) 让你发出了第一条指令、看着 Codex 真把活干完。这一篇正式进它官方**最主推的入口**——桌面 App，把界面分区、能干的事、关键设置和快捷键一次性铺平。下一篇 [08 命令行 CLI 上手](08-cli.md) 再回终端，把另一条线补齐。

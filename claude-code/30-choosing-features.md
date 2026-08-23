@@ -1,3 +1,20 @@
+---
+seoTitle: "CLAUDE.md、Skill、Hook、MCP 与 Subagent 怎么选"
+description: "对比 CLAUDE.md、Skill、Hook、MCP、Subagent 的触发方式、职责、上下文成本和使用场景，提供一张可直接套用的功能选择表"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/features-overview
+related:
+  - ./27-skills-in-practice.md
+  - ./23-subagents.md
+relatedPages:
+  - title: "Claude Code Skills 实战：安装、调用与验证"
+    link: ./27-skills-in-practice.md
+  - title: "Claude Code 子代理教程：创建、选择与并行协作"
+    link: ./23-subagents.md
+---
 # 30 · 功能怎么选：CLAUDE.md vs Skill vs Hook vs MCP vs Subagent
 
 > 📚 **系列导航**：上一篇 [29 Agent teams 智能体团队](29-agent-teams.md) 教你用 Agent teams 开多智能体并行协作。这一篇给整个第四组收口——CLAUDE.md、Skill、Hook、MCP、Subagent 一路学下来，全堆在脑子里反而容易选错。我给你一张决策表加一棵决策树，**对着「需求」直接查「该用哪个」，再不纠结**。

@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 权限、沙箱与审批配置指南"
+description: "Codex 文件系统和网络沙箱、审批策略、权限模式与命令规则，帮助你根据任务风险选择正确的执行边界，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/agent-approvals-security
+related:
+  - ./17-computer-use.md
+  - ./14-workflows.md
+relatedPages:
+  - title: "Codex Computer Use：电脑与浏览器操作指南"
+    link: ./17-computer-use.md
+  - title: "Codex 常见工作流：探索、修 Bug、重构与测试"
+    link: ./14-workflows.md
+---
 # 15 · 权限、沙箱与审批：放多松、收多紧，自己拧
 
 > 📚 **系列导航**：上一篇 [14 · 常见工作流](14-workflows.md) 把 Codex 揉进了你的日常开发节奏。这一篇换个维度——管的不是「它怎么干活」，而是「它敢动多大」：从一行命令都要问你，到全自动放飞，**沙箱和审批这两个旋钮到底怎么拧、什么场景拧到哪一档，这一篇给你拧明白**。

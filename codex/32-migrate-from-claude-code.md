@@ -1,3 +1,20 @@
+---
+seoTitle: "从 Claude Code 迁移到 Codex 完整指南"
+description: "把 CLAUDE.md、Skill、MCP、Hook、权限和日常工作流迁移到 Codex 的对应方式，指出可以复用与必须重写的部分，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/migrate
+related:
+  - ./34-capstone.md
+  - ./31-speed.md
+relatedPages:
+  - title: "Codex 综合实战：从需求到 Git 提交"
+    link: ./34-capstone.md
+  - title: "Codex 提速指南：上下文、模型与并行策略"
+    link: ./31-speed.md
+---
 # 32 · 从 Claude Code 迁移：旧地图换个工具，照样能找到家
 
 > 📚 **系列导航**：上一篇〔[31 进阶技巧与提速](31-speed.md) 〕讲怎么把整条工作流跑得更快、更省、更少返工。这一篇换个角度——专门写给**从 Claude Code 转过来的你**：你脑子里那套用了大半年的心智模型，哪些能直接搬、哪些得改个名、哪些是 Codex 独有的新东西。下一篇〔[33 Windows 使用要点](33-windows.md) 〕再聊 Windows 上那些专属的坑。

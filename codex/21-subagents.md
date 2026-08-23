@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 子代理教程：配置与并行协作"
+description: "Codex 子代理的创建、角色说明、模型和工具配置、调用方式与上下文隔离，帮助你把复杂任务拆成专项工作，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/subagents
+related:
+  - ./20-mcp.md
+  - ./24-hooks.md
+relatedPages:
+  - title: "Codex MCP 教程：连接外部工具与数据"
+    link: ./20-mcp.md
+  - title: "Codex Rules 与 Hooks：命令规则和生命周期自动化"
+    link: ./24-hooks.md
+---
 # 21 · 子代理（Subagents）：把活儿拆出去并行跑，但只有「你开口」它才拆
 
 > 📚 **系列导航**：上一篇 [20 · 用 MCP 接外部工具](20-mcp.md) 教你给 Codex 接上外部工具，让它能查文档、连服务。这一篇换个思路——不是给它「加工具」，而是教你把活儿**拆出去并行跑**：子代理（Subagent），一批带独立模型、独立指令、独立权限的专项助手，几个同时干，干完把结论汇总成一份交回来。

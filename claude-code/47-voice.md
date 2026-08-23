@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code Voice 语音听写使用指南"
+description: "Voice 语音听写的启用方式、快捷键、语言识别、编辑流程和适用场景，说明它与真正的语音对话模式有什么区别，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/voice-dictation
+related:
+  - ./44-github-actions.md
+  - ./39-getting-started-practice.md
+relatedPages:
+  - title: "Claude Code GitHub Actions 集成教程"
+    link: ./44-github-actions.md
+  - title: "Claude Code 实战入门：从需求到交付完整流程"
+    link: ./39-getting-started-practice.md
+---
 # 47 · Voice 语音模式：把提示词说出来，而不是打出来
 
 > 📚 **系列导航**：上一篇 [46 开发配置](46-dev-config.md) 把 Claude Code 当成「被开发的对象」那一套环境怎么搭讲清了。这一篇回到最日常的一个动作——**怎么把提示词说出来，让它实时转成文字**。`/voice` 一开，你按住空格说话，话就落进输入框；还能跟手打混着来。听着挺玄，其实开起来就一行命令，**但有几条「能不能用」的硬门槛，不先看清你大概率会卡在第一步**。

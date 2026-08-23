@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 最佳实践：稳定交付的工作方法"
+description: "任务拆分、上下文控制、项目规则、计划确认、最小修改和验证闭环等最佳实践，帮助你减少误改与无效等待，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/learn/best-practices
+related:
+  - ./39-enterprise.md
+  - ./37-faq.md
+relatedPages:
+  - title: "Codex 企业管理与治理完整指南"
+    link: ./39-enterprise.md
+  - title: "Codex 常见问题排查：安装、登录与权限"
+    link: ./37-faq.md
+---
 # 36 · 最佳实践：那些「正确的废话」之外，真正能落地的几条
 
 > 📚 **系列导航**：上一篇 [35 命令与配置速查表](35-cheatsheet.md) 把命令、配置键、快捷键摊成一张能贴墙上的速查表。这一篇换个层次——不讲「有哪些功能」，讲「这些功能该怎么组合着用，才能让 Codex 真的省你的事」。下一篇 [37 常见问题排查](37-faq.md) 再讲「出岔子了怎么办」。

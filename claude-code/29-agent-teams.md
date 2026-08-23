@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code Agent Teams 教程：多会话团队协作"
+description: "Agent Teams 的负责人、队友、共享任务和消息机制，覆盖启用方式、任务拆分、成本风险和适合并行协作的真实场景，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/agent-teams
+related:
+  - ./26-agent-skills.md
+  - ./22-mcp.md
+relatedPages:
+  - title: "Claude Code Agent Skills 教程：结构、触发与边界"
+    link: ./26-agent-skills.md
+  - title: "Claude Code MCP 教程：连接外部工具与服务"
+    link: ./22-mcp.md
+---
 # 29 · Agent teams 智能体团队：多会话协作
 
 > 📚 **系列导航**：上一篇 [28 skill-creator 使用](28-skill-creator.md) 教你造一个能被准确触发的 skill。这一篇上「多智能体协作」——把好几个 Claude Code 会话编成一个团队，**你当工头分活、它们各包一段并行干**，干完你统一验收。

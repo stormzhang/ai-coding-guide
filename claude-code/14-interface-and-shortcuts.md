@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 交互界面与快捷键速查"
+description: "交互界面的状态区、输入模式、历史记录、快捷键和 Shell 模式，帮助你减少鼠标操作并准确判断当前会话处于什么状态，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/interactive-mode
+related:
+  - ./21-security.md
+  - ./18-claude-md-guide.md
+relatedPages:
+  - title: "Claude Code 安全指南：风险边界与防护清单"
+    link: ./21-security.md
+  - title: "CLAUDE.md 完整指南：层级、写法与最佳实践"
+    link: ./18-claude-md-guide.md
+---
 # 14 · 交互界面与快捷键：把手放对地方
 
 > 📚 **系列导航**：上一篇 [13 项目结构](13-project-structure.md) 带你看清 Claude Code 在你项目里都摆了哪些文件。这一篇换个视角——回到那个终端窗口本身，搞懂界面每一块是干嘛的，再把几个能让你「快一倍」的键盘动作焊进肌肉记忆。

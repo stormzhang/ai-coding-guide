@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 插件参考：目录、清单与发布"
+description: "插件目录结构、manifest、组件路径、版本与 marketplace 分发方式，适合需要制作、检查或发布 Claude Code 插件的读者"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/plugins-reference
+related:
+  - ./46-dev-config.md
+  - ./41-parallel-tasks.md
+relatedPages:
+  - title: "Claude Code 开发环境配置指南"
+    link: ./46-dev-config.md
+  - title: "Claude Code 并行任务：子代理、Worktree 与团队"
+    link: ./41-parallel-tasks.md
+---
 # 38 · 插件参考手册：把自己那套配置，打成一个能发出去的包
 
 > 📚 **系列导航**：上一篇 [37 检查点（Checkpoints）](37-checkpoints.md) 教你怎么给会话「存档读档」，改坏了一键回到上一个安全点。这一篇换个层面——**第 24 篇教你「用别人的插件」，这一篇教你「造自己的插件」**：插件的目录到底怎么摆、`plugin.json` 每个字段管什么、能打包哪些组件、依赖怎么写、怎么建市场把它发给团队。这是插件的「参考手册」深度版。

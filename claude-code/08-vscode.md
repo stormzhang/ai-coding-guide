@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code VS Code 集成与使用指南"
+description: "Claude Code 在 VS Code 中的安装、启动、选区引用、差异查看与终端协作方式，帮助你把编辑器操作和代理任务连成一套工作流，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/vs-code
+related:
+  - ./06-coding-plan.md
+  - ./11-web-and-cloud.md
+relatedPages:
+  - title: "Claude Code 订阅套餐与计费完整说明"
+    link: ./06-coding-plan.md
+  - title: "Claude Code 网页版与云端使用指南"
+    link: ./11-web-and-cloud.md
+---
 # 08 · VS Code 集成
 
 > 📚 **系列导航**：上一篇 [07 第一次使用](./07-first-run.md) 带你在终端跑通了第一个例子。这一篇把 Claude Code 搬进 VS Code——同样的能力，换成有图形界面的玩法。

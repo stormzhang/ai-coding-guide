@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code /init 教程：生成与维护 CLAUDE.md"
+description: "使用 /init 扫描项目并生成 CLAUDE.md 的流程、生成结果的检查方法和后续维护原则，让 Claude 快速理解项目结构与规则，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/memory
+related:
+  - ./10-desktop.md
+  - ./07-first-run.md
+relatedPages:
+  - title: "Claude Code Desktop 桌面应用完整指南"
+    link: ./10-desktop.md
+  - title: "Claude Code 第一次使用：从启动到完成任务"
+    link: ./07-first-run.md
+---
 # 12 · 项目初始化：用 /init 一键生成 CLAUDE.md
 
 > 📚 **系列导航**：上一篇 [11 网页版与云端](./11-web-and-cloud.md) 带你跳出终端，在浏览器和云端环境里用上了 Claude Code。这一篇回到本地、回到一个最该养成的习惯——进新项目第一件事，敲 `/init`，让 Claude 自己扫一遍代码库、把项目说明书写出来。下一篇：[13 项目结构](./13-project-structure.md) 。

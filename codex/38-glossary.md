@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 术语表：Agent、沙箱、Skill 与 MCP"
+description: "解释 Agent、Thread、Context、Sandbox、Approval、MCP、Skill、Subagent、Worktree 等高频术语及其实际作用"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/glossary
+related:
+  - ./36-best-practices.md
+  - ./39-enterprise.md
+relatedPages:
+  - title: "Codex 最佳实践：稳定交付的工作方法"
+    link: ./36-best-practices.md
+  - title: "Codex 企业管理与治理完整指南"
+    link: ./39-enterprise.md
+---
 # 38 · 术语表
 
 > 📚 **系列导航**：上一篇〔[37 常见问题排查](37-faq.md) 〕帮你把跑 Codex 时最容易撞上的报错、卡壳、奇怪行为一个个排掉了。这一篇换个用法——它不是拿来从头读的，是拿来**随时翻**的：把全书出现过的术语收成一本随身词典，哪个词当时没记牢，回头查一下就行。下一篇〔[39 企业管理与治理](39-enterprise.md) 〕再讲团队和公司层面怎么把 Codex 管起来。

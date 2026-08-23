@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex Worktrees 并行隔离指南"
+description: "Git Worktree 在 Codex 桌面 App 与 CLI 并行任务中的作用、创建和合并流程，以及避免文件覆盖与分支混乱的方法，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/app/worktrees
+related:
+  - ./26-git-github.md
+  - ./28-noninteractive.md
+relatedPages:
+  - title: "Codex Git 与 GitHub 集成：提交和 PR 审查"
+    link: ./26-git-github.md
+  - title: "codex exec 非交互模式：脚本与 CI 用法"
+    link: ./28-noninteractive.md
+---
 # 25 · Worktrees 并行隔离：让几个 Codex 各干各的，互不打架
 
 > 📚 **系列导航**：上一篇〔[24 规则与钩子（Hooks）](24-hooks.md)〕给 Codex 装上了「闸门」和「扳机」，让重复的破事自动化。这一篇换个维度——**不是让一个 Codex 多干一件事，而是让好几个任务真正同时开工、还互不踩脚**。Worktree（工作树）就是 Codex 用来做这件事的核心隔离手段：怎么建、怎么用、为什么同一个分支不能同时在两处检出、Handoff（交接）又是怎么把活儿在前台后台之间搬来搬去。下一篇〔[26 Git 与 GitHub 集成](26-git-github.md)〕再讲改完之后怎么提交、推送、开 PR。

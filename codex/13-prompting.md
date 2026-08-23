@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 提示词写法：目标、上下文与验收"
+description: "如何向 Codex 说明目标、提供必要上下文、限定修改范围和写清验收标准，并用可复用结构减少猜测与返工，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/prompting
+related:
+  - ./15-permissions.md
+  - ./12-slash-commands.md
+relatedPages:
+  - title: "Codex 权限、沙箱与审批配置指南"
+    link: ./15-permissions.md
+  - title: "Codex 斜杠命令与快捷键完整指南"
+    link: ./12-slash-commands.md
+---
 # 13 · 提示词（Prompt）写法：把话说到 Codex 心坎里
 
 > 📚 **系列导航**：上一篇 [12 · 斜杠命令与快捷键](12-slash-commands.md) 教你在会话里把手指放对地方——`/` 切模式、清上下文、看状态，键位都熟了。这一篇换个层面：手知道往哪按了，**嘴还得知道怎么说**。同一个需求，话说得到不到位，Codex 干出来的活儿天差地别。

@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex Rules 与 Hooks：命令规则和生命周期自动化"
+description: "Rules 如何控制沙箱外命令，Hooks 如何在生命周期节点运行确定性脚本，并说明两者的配置、边界和组合方式，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/hooks
+related:
+  - ./23-plugins.md
+  - ./20-mcp.md
+relatedPages:
+  - title: "Codex 插件指南：安装一整套能力"
+    link: ./23-plugins.md
+  - title: "Codex MCP 教程：连接外部工具与数据"
+    link: ./20-mcp.md
+---
 # 24 · 规则与钩子（Rules & Hooks）：给 Codex 装上「卡点」和「扳机」
 
 > 📚 **系列导航**：上一篇〔[23 插件（Plugins）](23-plugins.md)〕教你把别人打包好的能力一键装进 Codex。这一篇聊两件更底层、也更「你说了算」的事——**规则（Rules）管「哪些命令能在沙箱外跑」，钩子（Hooks）管「在干活流程的某个固定点自动替你跑一段脚本」**。一个是闸门，一个是扳机，配好了，很多「每次都得盯着、每次都得手敲」的破事就再也不用你操心了。下一篇〔[25 Worktrees 并行隔离](25-worktrees.md)〕再讲怎么让多个 Codex 各干各的、互不打架。

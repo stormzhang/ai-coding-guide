@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 提速指南：上下文、模型与并行策略"
+description: "通过减少无关上下文、改善任务拆分、选择模型、复用规则和并行隔离来提升 Codex 速度，同时保持结果可验证，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/speed
+related:
+  - ./33-windows.md
+  - ./30-models.md
+relatedPages:
+  - title: "Codex Windows 使用指南：原生环境与 WSL"
+    link: ./33-windows.md
+  - title: "Codex 模型怎么选：能力、速度与推理强度"
+    link: ./30-models.md
+---
 # 31 · 进阶技巧与提速：拖慢你的不是模型，是你给的烂上下文
 
 > 📚 **系列导航**：上一篇「[30 怎么选模型](30-models.md)」讲的是「同一句话该派哪个模型、配多大推理强度去跑」。这一篇接着往下走——光选对模型还不够，**真正决定你一天能干多少活的，是你怎么喂上下文、怎么管会话、怎么让多条线同时跑**。下一篇「[32 从 Claude Code 迁移](32-migrate-from-claude-code.md)」再聊老用户怎么平滑搬家。

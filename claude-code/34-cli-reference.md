@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code CLI 命令与参数完整参考"
+description: "Claude Code 命令行入口、常用参数、会话恢复、模型选择、权限设置和非交互用法，适合需要快速查询准确命令的读者，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/cli-reference
+related:
+  - ./35-modes-and-control.md
+  - ./31-settings-json.md
+relatedPages:
+  - title: "Claude Code 控制模式：权限、模型与会话选项"
+    link: ./35-modes-and-control.md
+  - title: "Claude Code settings.json 配置详解"
+    link: ./31-settings-json.md
+---
 # 34 · CLI 参考手册：命令与全部标志
 
 > 📚 **系列导航**：上一篇 [33 钩子（Hooks）](33-hooks.md) 教你在固定事件上自动扣扳机、给 Claude 装上护栏。这一篇回到最朴素的地方——**你在终端敲的那一行 `claude`，到底能跟多少花样**。命令、标志、管道、退出码，一篇查完，配一张随时能翻的对照表。

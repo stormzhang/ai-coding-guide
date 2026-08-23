@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 安装与登录：Mac、Windows、Linux"
+description: "Codex CLI 在 Mac、Windows、Linux 和 WSL 上的安装、升级、登录与验证步骤，并整理网络和权限相关的常见问题，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/quickstart
+related:
+  - ./04-pricing.md
+  - ./01-what-is-codex.md
+relatedPages:
+  - title: "Codex 订阅与计费：套餐、额度和 API 成本"
+    link: ./04-pricing.md
+  - title: "Codex 是什么？四种入口与使用场景"
+    link: ./01-what-is-codex.md
+---
 # 03 · 安装与登录（Mac / Windows / Linux）
 
 > 📚 **系列导航**：上一篇 [02 · 核心概念速览](02-core-concepts.md) 把 Codex 的几个关键词（代理、沙箱、审批、本地 / 云端）讲明白了。这一篇带你真正把它装到自己电脑上——**桌面 App 和 CLI 两条线都覆盖**，登录授权、三平台差异、常见装机故障一次说透。下一篇 [04 · 订阅与计费](04-pricing.md) 再聊钱的事。

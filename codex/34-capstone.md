@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 综合实战：从需求到 Git 提交"
+description: "用一个 TODO 工具功能需求串起项目规则、计划、编码、测试、差异审查和 Git 提交，展示完整且可复用的交付流程，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/workflows
+related:
+  - ./31-speed.md
+  - ./33-windows.md
+relatedPages:
+  - title: "Codex 提速指南：上下文、模型与并行策略"
+    link: ./31-speed.md
+  - title: "Codex Windows 使用指南：原生环境与 WSL"
+    link: ./33-windows.md
+---
 # 34 · 综合实战：从零给一个 TODO 小工具加功能、提交一次
 
 > 📚 **系列导航**：上一篇〔[33 Windows 使用要点](33-windows.md) 〕把 Windows 上那些容易卡住人的坑——路径、换行符、终端、沙箱差异——一条条理顺了。这一篇咱们不讲新功能，干一件更过瘾的事：**把前面三十几篇学的零件，亲手装成一台能跑的整机**。下一篇〔[35 命令与配置速查表](35-cheatsheet.md) 〕再把全篇用到的命令、配置键一张表收口，当工具书随时翻。

@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code Git 工作流：提交、分支与代码审查"
+description: "让 Claude Code 安全参与查看差异、创建分支、准备提交、处理冲突和审查变更的流程，强调每一步的人类验收边界，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/common-workflows
+related:
+  - ./40-chrome.md
+  - ./46-dev-config.md
+relatedPages:
+  - title: "Claude Code 操作 Chrome 浏览器指南"
+    link: ./40-chrome.md
+  - title: "Claude Code 开发环境配置指南"
+    link: ./46-dev-config.md
+---
 # 43 · Git 工作流：让 Claude 当你的 git 副手
 
 > 📚 **系列导航**：上一篇 [42 环境变量](42-env-vars.md) 把那一堆 `ANTHROPIC_*`、`MCP_*` 开关的作用和优先级理清了。这一篇换个更日常的场景——**怎么让 Claude Code 接手你天天在干的 git 杂活**：看 diff、写 commit、开 PR、解冲突，外加跟 `gh` CLI 打配合。重点不是「它能不能干」，而是**哪些放心交给它、哪一步钥匙必须攥在你自己手里**。

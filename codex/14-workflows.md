@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 常见工作流：探索、修 Bug、重构与测试"
+description: "探索代码库、定位并修复 Bug、控制重构和补写测试四类高频任务的标准步骤、提示方式与结果验收方法，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/workflows
+related:
+  - ./16-security.md
+  - ./13-prompting.md
+relatedPages:
+  - title: "Codex 安全指南：提示词注入与权限边界"
+    link: ./16-security.md
+  - title: "Codex 提示词写法：目标、上下文与验收"
+    link: ./13-prompting.md
+---
 # 14 · 四类日常工作流：探索、修 bug、重构、写测试
 
 > 📚 **系列导航**：上一篇 [13 · 提示词（Prompt）写法](13-prompting.md) 教你「话该怎么说」——把模糊需求拆成 Codex 听得懂的精确指令。这一篇换个角度落地：日常 80% 的活儿就那四类，**每一类我给你一套能直接照抄的流程**，套进去填空就能用。下一篇 [15 · 权限、沙箱与审批](15-permissions.md)。

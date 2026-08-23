@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code Agent Skills 教程：结构、触发与边界"
+description: "Agent Skills 的目录结构、SKILL.md 写法、自动触发与手动调用方式，解释它和命令、子代理、Hook、MCP 的职责差异，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/skills
+related:
+  - ./23-subagents.md
+  - ./28-skill-creator.md
+relatedPages:
+  - title: "Claude Code 子代理教程：创建、选择与并行协作"
+    link: ./23-subagents.md
+  - title: "Claude Code skill-creator 教程：创建自定义 Skill"
+    link: ./28-skill-creator.md
+---
 # 26 · Agent Skills：给 Claude 装一身随叫随到的专项本事
 
 > 📚 **系列导航**：上一篇 [25 记忆系统](25-memory.md) 讲的是「被动记住事实」——把项目的偏好、约定写进 `CLAUDE.md`，让 Claude 别每次都问一遍。这一篇换个方向，聊「主动封装能力」：把一整套操作步骤打包成 Agent Skills，让 Claude 在该用的时候，自己调出对应的那身本事。

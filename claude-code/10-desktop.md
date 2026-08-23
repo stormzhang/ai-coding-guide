@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code Desktop 桌面应用完整指南"
+description: "Claude Code 桌面应用的安装、项目管理、会话操作和适用场景，并比较 Desktop、终端与网页版入口的能力边界和选择方式，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/desktop
+related:
+  - ./08-vscode.md
+  - ./13-project-structure.md
+relatedPages:
+  - title: "Claude Code VS Code 集成与使用指南"
+    link: ./08-vscode.md
+  - title: "Claude Code 项目目录与配置文件详解"
+    link: ./13-project-structure.md
+---
 # 10 · 桌面 app（Desktop）
 
 > 📚 **系列导航**：上一篇 [09 JetBrains 集成](./09-jetbrains.md) 把 Claude Code 装进了 IntelliJ 全家桶。这一篇聊一个很多人忽略的入口——**官方桌面 app**，一个没有终端、没有 IDE，也能跑 Claude Code 的独立窗口。

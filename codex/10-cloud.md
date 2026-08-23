@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex Cloud 云端任务使用指南"
+description: "Codex Cloud 的仓库连接、云端环境、任务委派、结果审查和网络访问配置，帮助你判断哪些工作适合放到云端执行，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/cloud
+related:
+  - ./11-agents-md.md
+  - ./08-cli.md
+relatedPages:
+  - title: "AGENTS.md 完整指南：给 Codex 写项目规则"
+    link: ./11-agents-md.md
+  - title: "Codex CLI 入门：安装、会话与常用操作"
+    link: ./08-cli.md
+---
 # 10 · 云端 Codex Cloud：把活丢上云，喝着咖啡等结果
 
 > 📚 **系列导航**：上一篇 [09 · IDE 扩展（VS Code 等）](09-ide.md) 把 Codex 塞进了你的编辑器侧边栏——人在哪写代码，它就在哪待命。这一篇换个完全不同的玩法：**你电脑可以关，活照样在云上跑**。下一篇 [11 · 项目说明书 AGENTS.md](11-agents-md.md) 再回头讲怎么把这台「云端机器」调教得听话。

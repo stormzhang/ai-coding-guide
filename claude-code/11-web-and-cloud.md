@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 网页版与云端使用指南"
+description: "Claude Code Web 的仓库连接、云端任务、手机访问和 Deep Link 等能力，说明哪些工作适合放到云端、哪些仍应留在本地完成"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/web-quickstart
+related:
+  - ./09-jetbrains.md
+  - ./06-coding-plan.md
+relatedPages:
+  - title: "Claude Code JetBrains 集成与使用指南"
+    link: ./09-jetbrains.md
+  - title: "Claude Code 订阅套餐与计费完整说明"
+    link: ./06-coding-plan.md
+---
 # 11 · 网页版与云端：把 Claude Code 装进浏览器和手机
 
 📚 **系列导航**：上一篇 [10 桌面 app（Desktop）](./10-desktop.md) 帮你把 Claude Code 装成了 Mac / Windows 上的原生应用，跑在你自己机器上。这一篇换个方向——**连装都不用装，浏览器打开就能用**，外加用手机接管你电脑上正在跑的会话。

@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 是什么？四种入口与使用场景"
+description: "Codex 桌面 App、CLI、IDE 扩展和云端 Web 四种入口的运行位置、能力差异与适用场景，帮助新手判断从哪里开始，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/overview
+related:
+  - ./02-core-concepts.md
+  - ./04-pricing.md
+relatedPages:
+  - title: "Codex 核心概念：代理循环、沙箱与审批"
+    link: ./02-core-concepts.md
+  - title: "Codex 订阅与计费：套餐、额度和 API 成本"
+    link: ./04-pricing.md
+---
 # 01 · 认识 Codex 与四种入口
 
 > 📚 **系列导航**：这是「Codex 小白教程」的**开篇第一篇**。不用任何基础，咱们从「Codex 到底是个啥」讲起。下一篇〈02 核心概念速览〉，咱们把术语一次性捋顺。

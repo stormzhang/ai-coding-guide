@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 是什么？功能、原理与适用场景"
+description: "Claude Code 的产品定位、代理式工作方式、能做与不能做的事情，以及它和 ChatGPT、Copilot、Cursor 的核心区别，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/overview
+related:
+  - ./02-install.md
+  - ./04-api-config.md
+relatedPages:
+  - title: "Claude Code 安装教程：Mac、Windows 与 Linux"
+    link: ./02-install.md
+  - title: "Claude Code API 配置：订阅登录与 API Key 怎么选"
+    link: ./04-api-config.md
+---
 # 01 · Claude Code 简介
 
 *是什么、能做什么、和 ChatGPT / Copilot / Cursor 到底差在哪*

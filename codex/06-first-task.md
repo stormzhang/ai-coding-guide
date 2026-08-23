@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 第一个任务：从启动到检查修改"
+description: "进入项目、授权工作区、描述任务、审查差异和运行验证的完整流程，用最小案例帮助新手完成第一次 Codex 代理任务，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/quickstart
+related:
+  - ./07-desktop-app.md
+  - ./10-cloud.md
+relatedPages:
+  - title: "Codex 桌面 App 完整使用指南"
+    link: ./07-desktop-app.md
+  - title: "Codex Cloud 云端任务使用指南"
+    link: ./10-cloud.md
+---
 # 06 · 跑通第一个任务
 
 > 📚 **系列导航**：上一篇 [05 · 接入 DeepSeek 等国产模型](05-third-party-models.md) 把「换大脑」那条野路子讲透了。配置篇到此为止——这一篇正式上手干活，**让 Codex 实打实改一次你的代码，跑通从提需求到看 diff 验收的完整闭环**。下一篇 [07 · 桌面 App 全景](07-desktop-app.md) 再把桌面端那张脸看个遍。

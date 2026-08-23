@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 提示词写法：任务、上下文与验收标准"
+description: "如何向 Claude Code 说明目标、提供上下文、约束改动范围和定义验收标准，并用可复用的提示词结构减少返工与误改，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/best-practices
+related:
+  - ./14-interface-and-shortcuts.md
+  - ./19-context-management.md
+relatedPages:
+  - title: "Claude Code 交互界面与快捷键速查"
+    link: ./14-interface-and-shortcuts.md
+  - title: "Claude Code 上下文管理：压缩、清理与 Token 控制"
+    link: ./19-context-management.md
+---
 # 15 · 怎么提问和给指令：把话说到 Claude 心坎里
 
 > 📚 **系列导航**：上一篇 [14 交互界面与快捷键](14-interface-and-shortcuts.md) 教你把手指放对地方——光标、回车、Esc、斜杠命令都熟了。这一篇换个层面：手知道往哪按了，**嘴还得知道怎么说**。同样一个需求，话说得好不好，Claude 干出来的活儿天差地别。

@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 图片与多模态使用指南"
+description: "向 Claude Code 提供截图、设计稿和错误界面的方式，以及图片上下文适合解决的问题、提示词写法与视觉还原时的验收要点，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/common-workflows
+related:
+  - ./16-common-workflows.md
+  - ./21-security.md
+relatedPages:
+  - title: "Claude Code 常见工作流：探索、修 Bug、重构与测试"
+    link: ./16-common-workflows.md
+  - title: "Claude Code 安全指南：风险边界与防护清单"
+    link: ./21-security.md
+---
 # 17 · 图片与多模态：贴张截图，它就懂了
 
 > 📚 **系列导航**：上一篇 [16 常见工作流](16-common-workflows.md) 把读代码、修 bug、写测试这些日常套路过了一遍。这一篇加一个新维度——**不光能跟它打字，还能直接给它看图**：报错截图、设计稿、架构图，丢进去它就懂。

@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 安全指南：提示词注入与权限边界"
+description: "提示词注入、恶意仓库、命令执行、网络访问、敏感信息和供应链风险，并给出隔离、审查与最小授权原则，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/concepts/cyber-safety
+related:
+  - ./12-slash-commands.md
+  - ./15-permissions.md
+relatedPages:
+  - title: "Codex 斜杠命令与快捷键完整指南"
+    link: ./12-slash-commands.md
+  - title: "Codex 权限、沙箱与审批配置指南"
+    link: ./15-permissions.md
+---
 # 16 · 安全与风险边界：到底该不该放手让它碰你的代码
 
 > 📚 **系列导航**：上一篇〔[15 权限、沙箱与审批](15-permissions.md)〕教你怎么用 `--sandbox`、`--ask-for-approval`、`/permissions` 把缰绳攥在手里——那是「开关怎么拧」。这一篇往上一层：开关拧明白了，可**到底该不该放手让 Codex 跑你不认识的代码？真正的高危区在哪？提示注入、密钥泄露这些坑长什么样、怎么防？Codex Security 又能帮你干啥？** 讲的是「判断力」，不是「配置项」。下一篇〔[17 电脑操控与浏览器（Computer Use）](17-computer-use.md)〕再聊它伸手去点你浏览器那档实验性能力。

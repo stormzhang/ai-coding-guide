@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex Memories 与 Chronicle 记忆系统"
+description: "Memories 和 Chronicle 如何从会话与屏幕上下文形成长期记忆、如何查看管理，以及隐私边界和适合保留的信息类型，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/memories
+related:
+  - ./18-config.md
+  - ./22-skills.md
+relatedPages:
+  - title: "Codex config.toml 配置详解"
+    link: ./18-config.md
+  - title: "Codex Agent Skills 教程：安装、触发与创建"
+    link: ./22-skills.md
+---
 # 19 · 记忆系统（Memories 与 Chronicle）：让 Codex 跨会话记住你
 
 > 📚 **系列导航**：上一篇〔[18 config.toml 配置详解](18-config.md)〕把那一摞行为旋钮一次拧明白了——模型、沙箱、审批全在一个文件里。这一篇聊一件更底层的事：**怎么让 Codex 跨会话记住你**。不光是你手写进 `AGENTS.md` 的规矩，还有它干活时自己攒下的那本「私人笔记」——你纠正它一次、它在后台悄悄记下来，下回开工自动想起。再往后还有个 Codex 独有、用**屏幕内容**喂记忆的实验性玩意儿 Chronicle，一并讲透。

@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 记忆系统：跨会话保留项目经验"
+description: "Claude Code 自动记忆与 CLAUDE.md 的区别、记忆内容的查看和管理方式，以及什么信息适合长期保留、什么不应该写入，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/memory
+related:
+  - ./22-mcp.md
+  - ./27-skills-in-practice.md
+relatedPages:
+  - title: "Claude Code MCP 教程：连接外部工具与服务"
+    link: ./22-mcp.md
+  - title: "Claude Code Skills 实战：安装、调用与验证"
+    link: ./27-skills-in-practice.md
+---
 # 25 · 记忆系统（memory）：让它跨会话记住你
 
 > 📚 **系列导航**：上一篇 [24 插件（Plugins）](24-plugins.md) 教你把一堆零碎配置打包成一键装、一键停的插件。这一篇聊一件更底层的事——**怎么让 Claude 跨会话记住你**。不只是你手写的 CLAUDE.md，还有它工作时自己攒下的那本「私人笔记」，你纠正它一句，它就悄悄记下来，下次开工自动想起。

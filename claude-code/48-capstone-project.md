@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 综合实战：从零开发到上线"
+description: "从需求拆解、项目初始化、功能开发、测试、Git 提交到上线检查的完整案例，把前面学到的 Claude Code 能力串成可复用流程，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/common-workflows
+related:
+  - ./45-agent-sdk.md
+  - ./40-chrome.md
+relatedPages:
+  - title: "Claude Agent SDK 教程：把代理能力接入程序"
+    link: ./45-agent-sdk.md
+  - title: "Claude Code 操作 Chrome 浏览器指南"
+    link: ./40-chrome.md
+---
 # 48 · 综合实战：从零到上线，把所学串成一条线
 
 > 📚 **系列导航**：上一篇 [47 Voice 语音模式](47-voice.md) 让你把「打字下指令」换成「张嘴说需求」，解放了双手。这一篇是整套教程的**毕业设计**——不教任何新功能，而是拿一个**比第 39 篇大一圈、要跨好几个会话**的真实项目，把 CLAUDE.md、权限、MCP、subagent、检查点、git 这些零件**一次性全调动起来**，走一趟从开工到交付的完整工程流。

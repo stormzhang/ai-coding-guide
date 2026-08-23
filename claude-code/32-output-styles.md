@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code Output Styles 输出样式指南"
+description: "输出样式的作用、内置样式、自定义文件结构、切换方式和适用场景，解释它如何改变回答形式而不替换系统核心能力，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/output-styles
+related:
+  - ./33-hooks.md
+  - ./36-slash-commands.md
+relatedPages:
+  - title: "Claude Code Hooks 教程：事件、配置与自动化"
+    link: ./33-hooks.md
+  - title: "Claude Code 斜杠命令完整指南"
+    link: ./36-slash-commands.md
+---
 # 32 · 输出样式（Output Styles）：换一档「节目」，不换主持人
 
 > 📚 **系列导航**：上一篇 [31 settings.json：用户级 / 项目级配置](31-settings-json.md) 把「配置写哪个文件、谁压谁」捋清楚了。这一篇接着讲一个就住在那套配置里的开关——**输出样式（output styles）**。它管的不是「Claude 知道什么」，而是「Claude 怎么回应你」。一行设置，就能让它从默认的「闷头干活的工程师」，切成边讲解边干、甚至根本不写代码的另一副样子。

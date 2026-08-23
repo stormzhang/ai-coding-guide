@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 核心概念：代理循环、沙箱与审批"
+description: "代理循环、上下文、工具、沙箱、审批和 Git 工作区等核心概念，建立理解 Codex 后续功能所需的完整基础模型，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/overview
+related:
+  - ./03-install.md
+  - ./05-third-party-models.md
+relatedPages:
+  - title: "Codex 安装与登录：Mac、Windows、Linux"
+    link: ./03-install.md
+  - title: "Codex 接入 DeepSeek 等第三方模型"
+    link: ./05-third-party-models.md
+---
 # 02 · Codex 核心概念速览
 
 > 📚 **系列导航**：上一篇 [01 · 认识 Codex 与四种入口](01-what-is-codex.md) 带你认全了 Codex 的四张脸——桌面 App、命令行、IDE 扩展、云端。这一篇往里走一层，把后面所有章节都要反复用到的几个核心概念，一次性讲透。下一篇 [03 · 安装与登录](03-install.md) 再正式动手装。

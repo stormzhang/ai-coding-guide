@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex config.toml 配置详解"
+description: "config.toml 的文件位置、优先级、模型、推理、沙箱、审批、MCP 和界面等常用字段，并提供可复制的配置思路，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/config-reference
+related:
+  - ./24-hooks.md
+  - ./21-subagents.md
+relatedPages:
+  - title: "Codex Rules 与 Hooks：命令规则和生命周期自动化"
+    link: ./24-hooks.md
+  - title: "Codex 子代理教程：配置与并行协作"
+    link: ./21-subagents.md
+---
 # 18 · config.toml 配置详解：一个文件管住所有旋钮
 
 > 📚 **系列导航**：上一篇 [17 · 电脑操控与浏览器（Computer Use）](17-computer-use.md) 让 Codex 长出了手——能看屏幕、点桌面、开浏览器。这一篇从图形界面收回到一个朴素的文本文件——`config.toml` 。前面十几篇里你零零散散见过它好几回（写沙箱、开 Memory、配模型），这篇把它系统讲清：**这文件放哪、长什么样、哪个键管什么、几个文件叠起来时谁说了算**。

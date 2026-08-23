@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 上下文管理：压缩、清理与 Token 控制"
+description: "上下文窗口如何消耗、何时使用 compact 或 clear、怎样减少无关材料和会话漂移，让长任务保持准确并控制 Token 成本，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/context-window
+related:
+  - ./18-claude-md-guide.md
+  - ./15-prompting.md
+relatedPages:
+  - title: "CLAUDE.md 完整指南：层级、写法与最佳实践"
+    link: ./18-claude-md-guide.md
+  - title: "Claude Code 提示词写法：任务、上下文与验收标准"
+    link: ./15-prompting.md
+---
 # 19 · 上下文管理：别让它「失忆」也别烧爆 token
 
 > 📚 **系列导航**：上一篇 [18 · CLAUDE.md 使用指南](18-claude-md-guide.md) 教你把项目规范写进那份「入职手册」。这一篇往上一层聊——**这份手册连同你的对话、读过的文件，全都挤在一块叫「上下文窗口」的工作台上**，工作台怎么管好、怎么别把它塞爆，就是今天的事。

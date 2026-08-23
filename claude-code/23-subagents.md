@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 子代理教程：创建、选择与并行协作"
+description: "子代理的隔离上下文、配置文件、工具权限、自动选择和适用任务，帮助你把专项工作拆出去而不污染主会话，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/sub-agents
+related:
+  - ./29-agent-teams.md
+  - ./25-memory.md
+relatedPages:
+  - title: "Claude Code Agent Teams 教程：多会话团队协作"
+    link: ./29-agent-teams.md
+  - title: "Claude Code 记忆系统：跨会话保留项目经验"
+    link: ./25-memory.md
+---
 # 23 · 子代理（Subagents）：把活儿外包出去，别什么都自己扛
 
 > 📚 **系列导航**：上一篇 [22 MCP](22-mcp.md) 教你给 Claude 接上外部工具，让它能查数据库、连 GitHub。这一篇换个思路——不是给它「加工具」，而是教你把活儿**外包出去**：子代理（Subagent），一个带独立上下文、独立权限、独立人设的专项助手，干完只把结论交回来。

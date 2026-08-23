@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code Checkpoints 检查点与回滚指南"
+description: "检查点如何保存文件修改、查看历史和恢复到安全状态，说明它能回滚什么、不能替代什么，以及和 Git 的正确配合方式，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/checkpointing
+related:
+  - ./31-settings-json.md
+  - ./34-cli-reference.md
+relatedPages:
+  - title: "Claude Code settings.json 配置详解"
+    link: ./31-settings-json.md
+  - title: "Claude Code CLI 命令与参数完整参考"
+    link: ./34-cli-reference.md
+---
 # 37 · 检查点（Checkpoints）：随时能倒带的安全网
 
 > 📚 **系列导航**：上一篇 [36 斜杠 / 命令](36-slash-commands.md) 把 `/` 开头那一长串命令理顺了，`/rewind` 也在里头露过脸。这一篇专门把它拆开讲——**检查点（Checkpoint）是 Claude Code 自动给你存的「编辑前快照」，让你随时倒带回某个状态**。它怎么自动记、怎么回退、能回滚什么不能回滚什么、跟 git 到底怎么分工，一篇说透。

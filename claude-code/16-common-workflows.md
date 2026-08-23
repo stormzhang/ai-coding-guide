@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 常见工作流：探索、修 Bug、重构与测试"
+description: "探索代码库、定位并修复 Bug、控制重构范围和补写测试四类高频任务的标准步骤、提示方式与验收方法，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/common-workflows
+related:
+  - ./15-prompting.md
+  - ./20-permissions.md
+relatedPages:
+  - title: "Claude Code 提示词写法：任务、上下文与验收标准"
+    link: ./15-prompting.md
+  - title: "Claude Code 权限配置：模式、规则与审批"
+    link: ./20-permissions.md
+---
 # 16 · 四个最常用的活儿：探索代码库、修 bug、重构、写测试
 
 > 📚 **系列导航**：上一篇 [15 怎么提问和给指令](15-prompting.md) 教你「话怎么说」——把模糊需求拆成精确指令。这一篇换个角度：日常 80% 的活儿就那四类，**每一类我给你一个能直接抄的指令模板**，照着填空就能用。

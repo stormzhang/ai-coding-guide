@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code GitHub Actions 集成教程"
+description: "在 GitHub Actions 和 PR 中调用 Claude Code 的安装、认证、工作流配置、触发方式与安全注意事项，适合仓库自动化场景"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/github-actions
+related:
+  - ./41-parallel-tasks.md
+  - ./47-voice.md
+relatedPages:
+  - title: "Claude Code 并行任务：子代理、Worktree 与团队"
+    link: ./41-parallel-tasks.md
+  - title: "Claude Code Voice 语音听写使用指南"
+    link: ./47-voice.md
+---
 # 44 · GitHub Actions：在 PR 里 @ 一下，让 Claude 自己干活
 
 > 📚 **系列导航**：上一篇 [43 Git 工作流](43-git-workflow.md) 教你怎么让 Claude 在本地帮你管分支、写提交、开 PR——那都是**你坐在电脑前、它在你身边干**。这一篇把它送上云端：**配好之后，你在 GitHub 的 issue 或 PR 里打一句 `@claude`，它就自己跑起来分析代码、改东西、开 PR，全程不用你开电脑**。这就是 Claude Code GitHub Actions（GitHub 自动化工作流平台）。

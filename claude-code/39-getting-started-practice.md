@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 实战入门：从需求到交付完整流程"
+description: "用一个真实需求串起项目阅读、计划确认、代码修改、测试验证和结果汇报，展示 Claude Code 任务从开工到交付的标准流程，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/common-workflows
+related:
+  - ./47-voice.md
+  - ./42-env-vars.md
+relatedPages:
+  - title: "Claude Code Voice 语音听写使用指南"
+    link: ./47-voice.md
+  - title: "Claude Code 环境变量完整参考"
+    link: ./42-env-vars.md
+---
 # 39 · 实战入门：拿一个真需求，从开工到交付走一整趟
 
 > 📚 **系列导航**：上一篇 [38 插件参考手册](38-plugins-reference.md) 教你把自己那套配置打成一个能发出去的包。这一篇彻底换挡——**前面三十八篇全在「一件件拆功能」，这一篇第一次把它们串成一条完整的实战路径**：拿一个真实的小需求，从打开项目、写 CLAUDE.md、提问、审查改动到验证交付，一口气走完。学过的招，这回拧成一股绳用。

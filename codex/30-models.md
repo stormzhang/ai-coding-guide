@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 模型怎么选：能力、速度与推理强度"
+description: "Codex 可用模型、推理强度、速度和任务复杂度之间的关系，帮助你为探索、编码、审查和轻量任务选择合适档位，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/models
+related:
+  - ./32-migrate-from-claude-code.md
+  - ./34-capstone.md
+relatedPages:
+  - title: "从 Claude Code 迁移到 Codex 完整指南"
+    link: ./32-migrate-from-claude-code.md
+  - title: "Codex 综合实战：从需求到 Git 提交"
+    link: ./34-capstone.md
+---
 # 30 · 怎么选模型：同一句话，到底该派哪个模型去跑
 
 > 📚 **系列导航**：上一篇〔[29 Slack / Linear 与 SDK 集成](29-integrations.md)〕讲的是「在别处召唤 Codex、把它嵌进自己产品」的进阶玩法。这一篇把镜头拉回本地最日常的一个决定——**你敲下回车那一刻，背后到底是哪个模型、用多大力气在帮你干活**。下一篇〔[31 进阶技巧与提速](31-speed.md)〕再讲怎么让整条流程更快更省。

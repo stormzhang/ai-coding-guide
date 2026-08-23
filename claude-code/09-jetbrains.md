@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code JetBrains 集成与使用指南"
+description: "Claude Code 在 IntelliJ IDEA、PyCharm 等 JetBrains IDE 中的安装、上下文共享、差异查看和常用操作，说明插件与终端入口如何配合"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/jetbrains
+related:
+  - ./07-first-run.md
+  - ./12-project-init.md
+relatedPages:
+  - title: "Claude Code 第一次使用：从启动到完成任务"
+    link: ./07-first-run.md
+  - title: "Claude Code /init 教程：生成与维护 CLAUDE.md"
+    link: ./12-project-init.md
+---
 # 09 · JetBrains 集成
 
 > 📚 **系列导航**：上一篇 [08 VS Code 集成](./08-vscode.md) 把 Claude Code 搬进了 VS Code。这一篇换个阵营——如果你的主力是 IntelliJ IDEA、PyCharm、WebStorm 这类 JetBrains 全家桶，同样有原生插件，玩法既像又不像。下一篇 [10 桌面 app](./10-desktop.md)。

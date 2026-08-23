@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex Windows 使用指南：原生环境与 WSL"
+description: "Codex 在 Windows 原生沙箱、PowerShell 和 WSL 中的安装、路径、权限与常见错误，帮助你选择更稳定的运行方式，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/windows
+related:
+  - ./30-models.md
+  - ./32-migrate-from-claude-code.md
+relatedPages:
+  - title: "Codex 模型怎么选：能力、速度与推理强度"
+    link: ./30-models.md
+  - title: "从 Claude Code 迁移到 Codex 完整指南"
+    link: ./32-migrate-from-claude-code.md
+---
 # 33 · Windows 使用要点：原生还是 WSL，到底怎么跑才省心
 
 > 📚 **系列导航**：上一篇〔[32 从 Claude Code 迁移](32-migrate-from-claude-code.md) 〕讲的是「用熟了 Claude Code，怎么平滑切到 Codex」。这一篇专门给 Windows 用户开小灶——前面三十多篇默认你在 Mac 或 Linux 上敲命令，可咱们国内一大半人手里是 Windows，路径、换行、沙箱全是另一套规矩。下一篇〔[34 综合实战](34-capstone.md) 〕把整个 Codex 篇学到的东西串成一个完整项目跑一遍。

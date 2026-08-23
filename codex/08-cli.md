@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex CLI 入门：安装、会话与常用操作"
+description: "Codex CLI 的启动方式、交互界面、模型和权限选择、文件引用、差异审查与会话恢复，带你跑通终端主流程，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/cli
+related:
+  - ./09-ide.md
+  - ./06-first-task.md
+relatedPages:
+  - title: "Codex IDE 扩展指南：VS Code 与兼容编辑器"
+    link: ./09-ide.md
+  - title: "Codex 第一个任务：从启动到检查修改"
+    link: ./06-first-task.md
+---
 # 08 · 命令行 CLI 上手
 
 > 📚 **系列导航**：上一篇 [07 桌面 App 全景](07-desktop-app.md) 带你把图形界面那套点法摸熟了——看 diff、并排跑任务、可视化审批。这一篇调头钻进终端，搞懂 `codex` 这条命令到底怎么用：命令结构怎么拆、交互界面长啥样、常用选项和斜杠命令各管什么。下一篇 [09 IDE 扩展（VS Code 等）](09-ide.md) 再把它塞进编辑器里。

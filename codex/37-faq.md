@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 常见问题排查：安装、登录与权限"
+description: "Codex 安装失败、无法登录、不修改文件、沙箱报错、网络和配置异常的定位顺序与解决方法，按现象快速排查，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/app/troubleshooting
+related:
+  - ./35-cheatsheet.md
+  - ./38-glossary.md
+relatedPages:
+  - title: "Codex 命令与 config.toml 配置速查表"
+    link: ./35-cheatsheet.md
+  - title: "Codex 术语表：Agent、沙箱、Skill 与 MCP"
+    link: ./38-glossary.md
+---
 # 37 · 常见问题排查：装不上、登不了、不肯改文件，挨个拆
 
 > 📚 **系列导航**：上一篇〔[36 最佳实践](36-best-practices.md) 〕讲的是「怎么用对、怎么用顺」，把好习惯沉淀成肌肉记忆。这一篇反过来——**专治各种用不顺**：装不上、登不进、它死活不肯改你文件、聊着聊着变笨……把高频坑挨个拆给你看。下一篇〔[38 术语表](38-glossary.md) 〕是整个 Codex 篇的收尾词典，遇到生词回去查。

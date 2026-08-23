@@ -1,3 +1,20 @@
+---
+seoTitle: "CLAUDE.md 完整指南：层级、写法与最佳实践"
+description: "CLAUDE.md 的发现范围、层级优先级、推荐内容、反模式和维护方法，帮助你把稳定的项目规则写成 Claude 可执行的说明书，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/memory
+related:
+  - ./17-images-multimodal.md
+  - ./14-interface-and-shortcuts.md
+relatedPages:
+  - title: "Claude Code 图片与多模态使用指南"
+    link: ./17-images-multimodal.md
+  - title: "Claude Code 交互界面与快捷键速查"
+    link: ./14-interface-and-shortcuts.md
+---
 # 18 · CLAUDE.md 使用指南：把项目规矩写进它的记忆
 
 > 📚 **系列导航**：上一篇 [17 图片与多模态](17-images-multimodal.md) 让你学会把截图、报错图直接喂给 Claude。这一篇换个方向——把项目的「规矩」一次性写进它的记忆，让它每次开工都自动遵守，不用你天天复读。

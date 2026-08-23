@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 插件指南：安装一整套能力"
+description: "Codex 插件如何打包 Skill、MCP、应用连接和工作流，覆盖安装、启用、权限、目录结构与适用场景，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/plugins
+related:
+  - ./22-skills.md
+  - ./19-memory.md
+relatedPages:
+  - title: "Codex Agent Skills 教程：安装、触发与创建"
+    link: ./22-skills.md
+  - title: "Codex Memories 与 Chronicle 记忆系统"
+    link: ./19-memory.md
+---
 # 23 · 插件（Plugins）：一键装一整套能力，别再一个个手配
 
 > 📚 **系列导航**：上一篇〔[22 Agent Skills 技能](22-skills.md)〕教你给 Codex 写「专项操作手册」——一个 skill 教它「这类活按这套步骤干」。但你写着写着会发现一个尴尬：skill、MCP 配置、app 集成这些好东西，全是「一件一件单独配」的散件。这一篇教你把它们打成**插件（plugin）**：一个包整体装、整体停、整体分享。下一篇〔[24 规则与钩子（Hooks）](24-hooks.md)〕再聊怎么给 Codex 装「自动触发的卡点」。

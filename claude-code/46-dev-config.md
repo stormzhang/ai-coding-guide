@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 开发环境配置指南"
+description: "终端、Shell、开发容器、网络代理和项目初始化等环境配置，帮助你减少命令执行差异并让 Claude 在稳定环境里工作，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/devcontainer
+related:
+  - ./43-git-workflow.md
+  - ./38-plugins-reference.md
+relatedPages:
+  - title: "Claude Code Git 工作流：提交、分支与代码审查"
+    link: ./43-git-workflow.md
+  - title: "Claude Code 插件参考：目录、清单与发布"
+    link: ./38-plugins-reference.md
+---
 # 46 · 开发配置：把 Claude 干活的「工作环境」调顺
 
 > 📚 **系列导航**：上一篇 [45 Agent SDK](45-agent-sdk.md) 教你把 Claude Code 的本事拆出来、塞进自己写的程序里。这一篇收回到你每天敲命令的那个终端——**Claude 跑在哪、能碰到哪、走不走代理、长什么样、用哪个模型**，这五件「工作环境」的事，是时候按自己的需要调一遍了。这一篇就把开发配置里最常用的几块讲透。

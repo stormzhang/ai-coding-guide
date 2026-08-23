@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Agent SDK 教程：把代理能力接入程序"
+description: "Claude Agent SDK 的核心概念、安装、调用、工具、会话与权限控制，帮助开发者把 Claude Code 的代理循环嵌入自己的应用"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/agent-sdk/overview
+related:
+  - ./42-env-vars.md
+  - ./48-capstone-project.md
+relatedPages:
+  - title: "Claude Code 环境变量完整参考"
+    link: ./42-env-vars.md
+  - title: "Claude Code 综合实战：从零开发到上线"
+    link: ./48-capstone-project.md
+---
 # 45 · Agent SDK：把 Claude Code 的能力搬进你自己的程序
 
 > 📚 **系列导航**：上一篇 [44 GitHub Actions](44-github-actions.md) 教你把 Claude 接进 CI，让它在 PR 和流水线里自动干活。这一篇再进一步——**不止接进流水线，而是把 Claude Code 整套能力当成一个库，嵌进你自己写的程序和服务里**。Agent SDK，就是那条让你「用代码调起一个 Claude 代理」的官方通道。

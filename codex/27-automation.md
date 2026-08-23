@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex 自动化与 CI/CD 完整指南"
+description: "Codex GitHub Action、云端自动化和脚本任务的配置、认证、触发与审查流程，帮助你安全地把代理接入持续集成，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/github-action
+related:
+  - ./28-noninteractive.md
+  - ./25-worktrees.md
+relatedPages:
+  - title: "codex exec 非交互模式：脚本与 CI 用法"
+    link: ./28-noninteractive.md
+  - title: "Codex Worktrees 并行隔离指南"
+    link: ./25-worktrees.md
+---
 # 27 · 自动化与 CI/CD：让 Codex 在你不在的时候自己干活
 
 > 📚 **系列导航**：上一篇〔[26 Git 与 GitHub 集成](26-git-github.md) 〕教你怎么让 Codex 在本地帮你管分支、写提交、开 PR——那都是**你坐在电脑前、它在你身边干**。这一篇把它送上「无人值守」：**配好之后，PR 一开 Codex 自动审一遍、CI 一挂它自动提个修复补丁、每天定点给你产一份昨日提交简报，全程不用你盯着**。下一篇〔[28 非交互模式 codex exec](28-noninteractive.md) 〕再把驱动这一切的那条核心命令单独讲透。

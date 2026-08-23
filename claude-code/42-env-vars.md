@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 环境变量完整参考"
+description: "Claude Code 常用环境变量的作用、配置位置、优先级与排错方式，覆盖认证、模型、网络、日志和运行行为等关键开关，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/env-vars
+related:
+  - ./39-getting-started-practice.md
+  - ./45-agent-sdk.md
+relatedPages:
+  - title: "Claude Code 实战入门：从需求到交付完整流程"
+    link: ./39-getting-started-practice.md
+  - title: "Claude Agent SDK 教程：把代理能力接入程序"
+    link: ./45-agent-sdk.md
+---
 # 42 · 环境变量：藏在背后那排「总开关」
 
 > 📚 **系列导航**：上一篇 [41 并行任务](41-parallel-tasks.md) 教你怎么把活儿拆开、让多个 Claude 同时开跑。这一篇钻到水面下——**那些控制 Claude Code 怎么连模型、超时多久、要不要上报数据的「总开关」，全靠环境变量拨**。它不在哪个菜单里，藏在你的 shell 和 `settings.json` 里，今天把这排开关认全、拨明白。

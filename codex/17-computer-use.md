@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex Computer Use：电脑与浏览器操作指南"
+description: "Computer Use 的工作方式、启用条件、可操作对象、网站审批和隐私风险，说明什么时候该用、什么时候不该交给代理，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/app/computer-use
+related:
+  - ./13-prompting.md
+  - ./16-security.md
+relatedPages:
+  - title: "Codex 提示词写法：目标、上下文与验收"
+    link: ./13-prompting.md
+  - title: "Codex 安全指南：提示词注入与权限边界"
+    link: ./16-security.md
+---
 # 17 · 电脑操控与浏览器（Computer Use）：让 Codex 长出手
 
 > 📚 **系列导航**：上一篇 [16 · 安全与风险边界](16-security.md) 把「Codex 能闯多大祸、边界在哪」这条线画清楚了。这一篇给它再开一扇门——**让 Codex 直接看你的屏幕、点你的桌面应用、开你的浏览器**：测一个原生 App、复现一个只在界面上才出现的 bug、在你登录好的网站里替你点几下。前面所有篇章里 Codex 干的活都在「文件 + 命令行」那一亩三分地，这篇是它头一回伸手碰图形界面。下一篇 [18 · config.toml 配置详解](18-config.md) 再回到配置文件，把那一摞旋钮一次拧明白。

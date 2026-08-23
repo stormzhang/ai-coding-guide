@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 接入 DeepSeek 等第三方模型"
+description: "通过兼容网关或第三方服务为 Claude Code 配置模型的基本原理、环境变量、验证方法和风险边界，避免把兼容接口当成官方能力，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/llm-gateway
+related:
+  - ./01-what-is-claude-code.md
+  - ./03-how-it-works.md
+relatedPages:
+  - title: "Claude Code 是什么？功能、原理与适用场景"
+    link: ./01-what-is-claude-code.md
+  - title: "Claude Code 工作原理：代理循环与内置工具"
+    link: ./03-how-it-works.md
+---
 # 05 · 接入第三方 / 国产模型
 
 > 用 DeepSeek 等国产 / 第三方模型驱动 Claude Code，把账单砍下来

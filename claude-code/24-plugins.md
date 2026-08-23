@@ -1,3 +1,20 @@
+---
+seoTitle: "Claude Code 插件指南：安装、组合与分发能力"
+description: "Claude Code 插件如何组合命令、Agent、Skill、Hook 和 MCP，覆盖插件安装、启用、目录结构与团队分发的基本流程，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://code.claude.com/docs/zh-CN/plugins
+related:
+  - ./30-choosing-features.md
+  - ./26-agent-skills.md
+relatedPages:
+  - title: "CLAUDE.md、Skill、Hook、MCP 与 Subagent 怎么选"
+    link: ./30-choosing-features.md
+  - title: "Claude Code Agent Skills 教程：结构、触发与边界"
+    link: ./26-agent-skills.md
+---
 # 24 · 插件（Plugins）：把一堆零碎配置一键打包
 
 > 📚 **系列导航**：上一篇 [23 子代理（Subagents）](23-subagents.md) 教你亲手造了一个专项小助手。但你有没有发现一个问题——subagent、命令、skill、hook 这些好东西，全是「一个个单独配」的散件。这一篇教你把它们打包成**插件（plugin）**：一键装、一键停，还能直接从「插件市场」拿别人造好的现成全家桶。

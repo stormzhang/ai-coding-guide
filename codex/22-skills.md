@@ -1,3 +1,20 @@
+---
+seoTitle: "Codex Agent Skills 教程：安装、触发与创建"
+description: "Agent Skills 的目录结构、SKILL.md、安装位置、自动触发与手动调用，说明如何把重复流程沉淀为可复用能力，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
+published: "2026-06-12"
+lastVerified: "2026-06-20"
+author: stormzhang
+officialSources:
+  - https://developers.openai.com/codex/skills
+related:
+  - ./21-subagents.md
+  - ./18-config.md
+relatedPages:
+  - title: "Codex 子代理教程：配置与并行协作"
+    link: ./21-subagents.md
+  - title: "Codex config.toml 配置详解"
+    link: ./18-config.md
+---
 # 22 · Agent Skills 技能：把一套活儿打包，教会 Codex 自己接
 
 > 📚 **系列导航**：上一篇〔[21 子代理（Subagents）](21-subagents.md)〕讲的是「把一个重活拆出去、丢给一个独立上下文的小助手干完再收结果」。这一篇换个角度：不拆任务，而是**封装能力**——把一套你反复交代的固定流程打包成 Agent Skills，让 Codex 在该用的时候自己调出来。下一篇〔[23 插件（Plugins）](23-plugins.md)〕再讲怎么把这身本事打包、分发给别人装。
