@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./12-slash-commands.md
   - ./15-permissions.md
-relatedPages:
-  - title: "Codex 斜杠命令与快捷键完整指南"
-    link: ./12-slash-commands.md
-  - title: "Codex 权限、沙箱与审批配置指南"
-    link: ./15-permissions.md
 ---
 # 16 · 安全与风险边界：到底该不该放手让它碰你的代码
 

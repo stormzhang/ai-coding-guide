@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./11-web-and-cloud.md
   - ./08-vscode.md
-relatedPages:
-  - title: "Claude Code 网页版与云端使用指南"
-    link: ./11-web-and-cloud.md
-  - title: "Claude Code VS Code 集成与使用指南"
-    link: ./08-vscode.md
 ---
 # 13 · 项目结构：Claude Code 在你项目里都放了什么
 

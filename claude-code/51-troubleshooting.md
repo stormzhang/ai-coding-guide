@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./52-glossary.md
   - ./49-best-practices.md
-relatedPages:
-  - title: "Claude Code 术语表：小白也能看懂的概念解释"
-    link: ./52-glossary.md
-  - title: "Claude Code 最佳实践：稳定交付的工作方法"
-    link: ./49-best-practices.md
 ---
 # 51 · 常见问题排查（FAQ / Troubleshooting）
 

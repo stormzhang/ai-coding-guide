@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./03-install.md
   - ./05-third-party-models.md
-relatedPages:
-  - title: "Codex 安装与登录：Mac、Windows、Linux"
-    link: ./03-install.md
-  - title: "Codex 接入 DeepSeek 等第三方模型"
-    link: ./05-third-party-models.md
 ---
 # 02 · Codex 核心概念速览
 

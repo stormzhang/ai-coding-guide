@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./38-glossary.md
   - ./36-best-practices.md
-relatedPages:
-  - title: "Codex 术语表：Agent、沙箱、Skill 与 MCP"
-    link: ./38-glossary.md
-  - title: "Codex 最佳实践：稳定交付的工作方法"
-    link: ./36-best-practices.md
 ---
 # 35 · 命令与配置速查表
 

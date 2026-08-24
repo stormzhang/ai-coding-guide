@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./21-security.md
   - ./18-claude-md-guide.md
-relatedPages:
-  - title: "Claude Code 安全指南：风险边界与防护清单"
-    link: ./21-security.md
-  - title: "CLAUDE.md 完整指南：层级、写法与最佳实践"
-    link: ./18-claude-md-guide.md
 ---
 # 14 · 交互界面与快捷键：把手放对地方
 

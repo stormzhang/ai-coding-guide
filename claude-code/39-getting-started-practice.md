@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./47-voice.md
   - ./42-env-vars.md
-relatedPages:
-  - title: "Claude Code Voice 语音听写使用指南"
-    link: ./47-voice.md
-  - title: "Claude Code 环境变量完整参考"
-    link: ./42-env-vars.md
 ---
 # 39 · 实战入门：拿一个真需求，从开工到交付走一整趟
 

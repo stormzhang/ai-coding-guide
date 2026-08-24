@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./49-best-practices.md
   - ./51-troubleshooting.md
-relatedPages:
-  - title: "Claude Code 最佳实践：稳定交付的工作方法"
-    link: ./49-best-practices.md
-  - title: "Claude Code 常见问题排查完整指南"
-    link: ./51-troubleshooting.md
 ---
 # 53 · 制作视频（Remotion）〔选读〕
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./08-cli.md
   - ./11-agents-md.md
-relatedPages:
-  - title: "Codex CLI 入门：安装、会话与常用操作"
-    link: ./08-cli.md
-  - title: "AGENTS.md 完整指南：给 Codex 写项目规则"
-    link: ./11-agents-md.md
 ---
 # 07 · 桌面 App 全景
 

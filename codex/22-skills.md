@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./21-subagents.md
   - ./18-config.md
-relatedPages:
-  - title: "Codex 子代理教程：配置与并行协作"
-    link: ./21-subagents.md
-  - title: "Codex config.toml 配置详解"
-    link: ./18-config.md
 ---
 # 22 · Agent Skills 技能：把一套活儿打包，教会 Codex 自己接
 

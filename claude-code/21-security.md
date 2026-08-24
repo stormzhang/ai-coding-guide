@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./20-permissions.md
   - ./17-images-multimodal.md
-relatedPages:
-  - title: "Claude Code 权限配置：模式、规则与审批"
-    link: ./20-permissions.md
-  - title: "Claude Code 图片与多模态使用指南"
-    link: ./17-images-multimodal.md
 ---
 # 21 · 安全与风险边界：到底该不该信任 AI 碰你的代码
 

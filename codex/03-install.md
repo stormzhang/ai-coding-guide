@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./04-pricing.md
   - ./01-what-is-codex.md
-relatedPages:
-  - title: "Codex 订阅与计费：套餐、额度和 API 成本"
-    link: ./04-pricing.md
-  - title: "Codex 是什么？四种入口与使用场景"
-    link: ./01-what-is-codex.md
 ---
 # 03 · 安装与登录（Mac / Windows / Linux）
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./09-jetbrains.md
   - ./06-coding-plan.md
-relatedPages:
-  - title: "Claude Code JetBrains 集成与使用指南"
-    link: ./09-jetbrains.md
-  - title: "Claude Code 订阅套餐与计费完整说明"
-    link: ./06-coding-plan.md
 ---
 # 11 · 网页版与云端：把 Claude Code 装进浏览器和手机
 

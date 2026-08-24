@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./02-core-concepts.md
   - ./04-pricing.md
-relatedPages:
-  - title: "Codex 核心概念：代理循环、沙箱与审批"
-    link: ./02-core-concepts.md
-  - title: "Codex 订阅与计费：套餐、额度和 API 成本"
-    link: ./04-pricing.md
 ---
 # 01 · 认识 Codex 与四种入口
 

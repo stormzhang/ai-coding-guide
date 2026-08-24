@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./02-install.md
   - ./04-api-config.md
-relatedPages:
-  - title: "Claude Code 安装教程：Mac、Windows 与 Linux"
-    link: ./02-install.md
-  - title: "Claude Code API 配置：订阅登录与 API Key 怎么选"
-    link: ./04-api-config.md
 ---
 # 01 · Claude Code 简介
 

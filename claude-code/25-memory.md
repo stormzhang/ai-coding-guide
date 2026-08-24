@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./22-mcp.md
   - ./27-skills-in-practice.md
-relatedPages:
-  - title: "Claude Code MCP 教程：连接外部工具与服务"
-    link: ./22-mcp.md
-  - title: "Claude Code Skills 实战：安装、调用与验证"
-    link: ./27-skills-in-practice.md
 ---
 # 25 · 记忆系统（memory）：让它跨会话记住你
 

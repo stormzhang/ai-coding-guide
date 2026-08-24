@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./26-agent-skills.md
   - ./22-mcp.md
-relatedPages:
-  - title: "Claude Code Agent Skills 教程：结构、触发与边界"
-    link: ./26-agent-skills.md
-  - title: "Claude Code MCP 教程：连接外部工具与服务"
-    link: ./22-mcp.md
 ---
 # 29 · Agent teams 智能体团队：多会话协作
 

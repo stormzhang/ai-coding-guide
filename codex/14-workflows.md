@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./16-security.md
   - ./13-prompting.md
-relatedPages:
-  - title: "Codex 安全指南：提示词注入与权限边界"
-    link: ./16-security.md
-  - title: "Codex 提示词写法：目标、上下文与验收"
-    link: ./13-prompting.md
 ---
 # 14 · 四类日常工作流：探索、修 bug、重构、写测试
 

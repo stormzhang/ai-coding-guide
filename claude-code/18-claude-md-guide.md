@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./17-images-multimodal.md
   - ./14-interface-and-shortcuts.md
-relatedPages:
-  - title: "Claude Code 图片与多模态使用指南"
-    link: ./17-images-multimodal.md
-  - title: "Claude Code 交互界面与快捷键速查"
-    link: ./14-interface-and-shortcuts.md
 ---
 # 18 · CLAUDE.md 使用指南：把项目规矩写进它的记忆
 

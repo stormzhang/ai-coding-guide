@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./29-integrations.md
   - ./26-git-github.md
-relatedPages:
-  - title: "Codex Slack、Linear 与 SDK 集成指南"
-    link: ./29-integrations.md
-  - title: "Codex Git 与 GitHub 集成：提交和 PR 审查"
-    link: ./26-git-github.md
 ---
 # 28 · 非交互模式 codex exec：把它塞进脚本和 CI 里跑
 

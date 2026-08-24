@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./19-context-management.md
   - ./16-common-workflows.md
-relatedPages:
-  - title: "Claude Code 上下文管理：压缩、清理与 Token 控制"
-    link: ./19-context-management.md
-  - title: "Claude Code 常见工作流：探索、修 Bug、重构与测试"
-    link: ./16-common-workflows.md
 ---
 # 20 · 权限配置：放多松、收多紧，你说了算
 

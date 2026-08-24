@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./30-choosing-features.md
   - ./26-agent-skills.md
-relatedPages:
-  - title: "CLAUDE.md、Skill、Hook、MCP 与 Subagent 怎么选"
-    link: ./30-choosing-features.md
-  - title: "Claude Code Agent Skills 教程：结构、触发与边界"
-    link: ./26-agent-skills.md
 ---
 # 24 · 插件（Plugins）：把一堆零碎配置一键打包
 

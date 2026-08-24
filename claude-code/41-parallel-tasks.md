@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./38-plugins-reference.md
   - ./44-github-actions.md
-relatedPages:
-  - title: "Claude Code 插件参考：目录、清单与发布"
-    link: ./38-plugins-reference.md
-  - title: "Claude Code GitHub Actions 集成教程"
-    link: ./44-github-actions.md
 ---
 # 41 · 并行任务：让几个 Claude 同时开工，而不是排队
 

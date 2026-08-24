@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./18-claude-md-guide.md
   - ./15-prompting.md
-relatedPages:
-  - title: "CLAUDE.md 完整指南：层级、写法与最佳实践"
-    link: ./18-claude-md-guide.md
-  - title: "Claude Code 提示词写法：任务、上下文与验收标准"
-    link: ./15-prompting.md
 ---
 # 19 · 上下文管理：别让它「失忆」也别烧爆 token
 

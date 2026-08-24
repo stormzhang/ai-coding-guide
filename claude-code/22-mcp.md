@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./28-skill-creator.md
   - ./24-plugins.md
-relatedPages:
-  - title: "Claude Code skill-creator 教程：创建自定义 Skill"
-    link: ./28-skill-creator.md
-  - title: "Claude Code 插件指南：安装、组合与分发能力"
-    link: ./24-plugins.md
 ---
 # 22 · MCP：给 Claude 接上外部世界
 

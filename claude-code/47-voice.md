@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./44-github-actions.md
   - ./39-getting-started-practice.md
-relatedPages:
-  - title: "Claude Code GitHub Actions 集成教程"
-    link: ./44-github-actions.md
-  - title: "Claude Code 实战入门：从需求到交付完整流程"
-    link: ./39-getting-started-practice.md
 ---
 # 47 · Voice 语音模式：把提示词说出来，而不是打出来
 

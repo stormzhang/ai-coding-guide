@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./19-memory.md
   - ./23-plugins.md
-relatedPages:
-  - title: "Codex Memories 与 Chronicle 记忆系统"
-    link: ./19-memory.md
-  - title: "Codex 插件指南：安装一整套能力"
-    link: ./23-plugins.md
 ---
 # 20 · 用 MCP 接外部工具：给 Codex 装上「外接口」
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./23-subagents.md
   - ./28-skill-creator.md
-relatedPages:
-  - title: "Claude Code 子代理教程：创建、选择与并行协作"
-    link: ./23-subagents.md
-  - title: "Claude Code skill-creator 教程：创建自定义 Skill"
-    link: ./28-skill-creator.md
 ---
 # 26 · Agent Skills：给 Claude 装一身随叫随到的专项本事
 

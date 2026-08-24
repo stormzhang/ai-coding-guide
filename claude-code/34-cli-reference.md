@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./35-modes-and-control.md
   - ./31-settings-json.md
-relatedPages:
-  - title: "Claude Code 控制模式：权限、模型与会话选项"
-    link: ./35-modes-and-control.md
-  - title: "Claude Code settings.json 配置详解"
-    link: ./31-settings-json.md
 ---
 # 34 · CLI 参考手册：命令与全部标志
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./27-skills-in-practice.md
   - ./23-subagents.md
-relatedPages:
-  - title: "Claude Code Skills 实战：安装、调用与验证"
-    link: ./27-skills-in-practice.md
-  - title: "Claude Code 子代理教程：创建、选择与并行协作"
-    link: ./23-subagents.md
 ---
 # 30 · 功能怎么选：CLAUDE.md vs Skill vs Hook vs MCP vs Subagent
 

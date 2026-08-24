@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./01-what-is-claude-code.md
   - ./03-how-it-works.md
-relatedPages:
-  - title: "Claude Code 是什么？功能、原理与适用场景"
-    link: ./01-what-is-claude-code.md
-  - title: "Claude Code 工作原理：代理循环与内置工具"
-    link: ./03-how-it-works.md
 ---
 # 05 · 接入第三方 / 国产模型
 

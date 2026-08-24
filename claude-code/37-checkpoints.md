@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./31-settings-json.md
   - ./34-cli-reference.md
-relatedPages:
-  - title: "Claude Code settings.json 配置详解"
-    link: ./31-settings-json.md
-  - title: "Claude Code CLI 命令与参数完整参考"
-    link: ./34-cli-reference.md
 ---
 # 37 · 检查点（Checkpoints）：随时能倒带的安全网
 

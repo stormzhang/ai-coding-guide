@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./07-desktop-app.md
   - ./10-cloud.md
-relatedPages:
-  - title: "Codex 桌面 App 完整使用指南"
-    link: ./07-desktop-app.md
-  - title: "Codex Cloud 云端任务使用指南"
-    link: ./10-cloud.md
 ---
 # 06 · 跑通第一个任务
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./25-memory.md
   - ./30-choosing-features.md
-relatedPages:
-  - title: "Claude Code 记忆系统：跨会话保留项目经验"
-    link: ./25-memory.md
-  - title: "CLAUDE.md、Skill、Hook、MCP 与 Subagent 怎么选"
-    link: ./30-choosing-features.md
 ---
 # 28 · skill-creator 使用：用一个 skill 造你自己的 skill
 

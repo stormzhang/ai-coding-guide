@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./45-agent-sdk.md
   - ./40-chrome.md
-relatedPages:
-  - title: "Claude Agent SDK 教程：把代理能力接入程序"
-    link: ./45-agent-sdk.md
-  - title: "Claude Code 操作 Chrome 浏览器指南"
-    link: ./40-chrome.md
 ---
 # 48 · 综合实战：从零到上线，把所学串成一条线
 

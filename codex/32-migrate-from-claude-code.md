@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./34-capstone.md
   - ./31-speed.md
-relatedPages:
-  - title: "Codex 综合实战：从需求到 Git 提交"
-    link: ./34-capstone.md
-  - title: "Codex 提速指南：上下文、模型与并行策略"
-    link: ./31-speed.md
 ---
 # 32 · 从 Claude Code 迁移：旧地图换个工具，照样能找到家
 

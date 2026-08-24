@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./28-noninteractive.md
   - ./25-worktrees.md
-relatedPages:
-  - title: "codex exec 非交互模式：脚本与 CI 用法"
-    link: ./28-noninteractive.md
-  - title: "Codex Worktrees 并行隔离指南"
-    link: ./25-worktrees.md
 ---
 # 27 · 自动化与 CI/CD：让 Codex 在你不在的时候自己干活
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./12-project-init.md
   - ./09-jetbrains.md
-relatedPages:
-  - title: "Claude Code /init 教程：生成与维护 CLAUDE.md"
-    link: ./12-project-init.md
-  - title: "Claude Code JetBrains 集成与使用指南"
-    link: ./09-jetbrains.md
 ---
 # 06 · Coding Plan：订阅套餐与计费
 

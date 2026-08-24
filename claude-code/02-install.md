@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./03-how-it-works.md
   - ./05-third-party-models.md
-relatedPages:
-  - title: "Claude Code 工作原理：代理循环与内置工具"
-    link: ./03-how-it-works.md
-  - title: "Claude Code 接入 DeepSeek 等第三方模型"
-    link: ./05-third-party-models.md
 ---
 # 02 · 安装与使用
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./24-hooks.md
   - ./21-subagents.md
-relatedPages:
-  - title: "Codex Rules 与 Hooks：命令规则和生命周期自动化"
-    link: ./24-hooks.md
-  - title: "Codex 子代理教程：配置与并行协作"
-    link: ./21-subagents.md
 ---
 # 18 · config.toml 配置详解：一个文件管住所有旋钮
 

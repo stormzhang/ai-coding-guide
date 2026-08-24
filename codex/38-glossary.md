@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./36-best-practices.md
   - ./39-enterprise.md
-relatedPages:
-  - title: "Codex 最佳实践：稳定交付的工作方法"
-    link: ./36-best-practices.md
-  - title: "Codex 企业管理与治理完整指南"
-    link: ./39-enterprise.md
 ---
 # 38 · 术语表
 

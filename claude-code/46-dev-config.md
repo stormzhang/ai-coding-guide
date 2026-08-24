@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./43-git-workflow.md
   - ./38-plugins-reference.md
-relatedPages:
-  - title: "Claude Code Git 工作流：提交、分支与代码审查"
-    link: ./43-git-workflow.md
-  - title: "Claude Code 插件参考：目录、清单与发布"
-    link: ./38-plugins-reference.md
 ---
 # 46 · 开发配置：把 Claude 干活的「工作环境」调顺
 

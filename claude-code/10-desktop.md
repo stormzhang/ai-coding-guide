@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./08-vscode.md
   - ./13-project-structure.md
-relatedPages:
-  - title: "Claude Code VS Code 集成与使用指南"
-    link: ./08-vscode.md
-  - title: "Claude Code 项目目录与配置文件详解"
-    link: ./13-project-structure.md
 ---
 # 10 · 桌面 app（Desktop）
 

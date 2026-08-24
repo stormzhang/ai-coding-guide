@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./42-env-vars.md
   - ./48-capstone-project.md
-relatedPages:
-  - title: "Claude Code 环境变量完整参考"
-    link: ./42-env-vars.md
-  - title: "Claude Code 综合实战：从零开发到上线"
-    link: ./48-capstone-project.md
 ---
 # 45 · Agent SDK：把 Claude Code 的能力搬进你自己的程序
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./36-slash-commands.md
   - ./32-output-styles.md
-relatedPages:
-  - title: "Claude Code 斜杠命令完整指南"
-    link: ./36-slash-commands.md
-  - title: "Claude Code Output Styles 输出样式指南"
-    link: ./32-output-styles.md
 ---
 # 35 · 控制与模式：开会话时手里那块「调音台」
 

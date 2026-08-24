@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./48-capstone-project.md
   - ./43-git-workflow.md
-relatedPages:
-  - title: "Claude Code 综合实战：从零开发到上线"
-    link: ./48-capstone-project.md
-  - title: "Claude Code Git 工作流：提交、分支与代码审查"
-    link: ./43-git-workflow.md
 ---
 # 40 · Chrome：让它操作浏览器
 

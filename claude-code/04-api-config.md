@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./05-third-party-models.md
   - ./02-install.md
-relatedPages:
-  - title: "Claude Code 接入 DeepSeek 等第三方模型"
-    link: ./05-third-party-models.md
-  - title: "Claude Code 安装教程：Mac、Windows 与 Linux"
-    link: ./02-install.md
 ---
 # 04 · API 配置：订阅登录还是 API key，怎么选、怎么切
 

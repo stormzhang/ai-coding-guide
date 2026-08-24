@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./32-output-styles.md
   - ./35-modes-and-control.md
-relatedPages:
-  - title: "Claude Code Output Styles 输出样式指南"
-    link: ./32-output-styles.md
-  - title: "Claude Code 控制模式：权限、模型与会话选项"
-    link: ./35-modes-and-control.md
 ---
 # 31 · settings.json：用户级 / 项目级配置
 

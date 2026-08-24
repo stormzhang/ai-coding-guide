@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./37-checkpoints.md
   - ./33-hooks.md
-relatedPages:
-  - title: "Claude Code Checkpoints 检查点与回滚指南"
-    link: ./37-checkpoints.md
-  - title: "Claude Code Hooks 教程：事件、配置与自动化"
-    link: ./33-hooks.md
 ---
 # 36 · 斜杠命令（Slash Commands）：一个 `/` 调出 Claude 的所有快捷动作
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./06-first-task.md
   - ./09-ide.md
-relatedPages:
-  - title: "Codex 第一个任务：从启动到检查修改"
-    link: ./06-first-task.md
-  - title: "Codex IDE 扩展指南：VS Code 与兼容编辑器"
-    link: ./09-ide.md
 ---
 # 11 · 项目说明书 AGENTS.md：把规矩焊进 Codex 的开工流程
 

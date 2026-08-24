@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./33-hooks.md
   - ./36-slash-commands.md
-relatedPages:
-  - title: "Claude Code Hooks 教程：事件、配置与自动化"
-    link: ./33-hooks.md
-  - title: "Claude Code 斜杠命令完整指南"
-    link: ./36-slash-commands.md
 ---
 # 32 · 输出样式（Output Styles）：换一档「节目」，不换主持人
 

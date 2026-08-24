@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./27-automation.md
   - ./29-integrations.md
-relatedPages:
-  - title: "Codex 自动化与 CI/CD 完整指南"
-    link: ./27-automation.md
-  - title: "Codex Slack、Linear 与 SDK 集成指南"
-    link: ./29-integrations.md
 ---
 # 26 · Git 与 GitHub 集成：让 Codex 在你的 PR 里当审查员
 

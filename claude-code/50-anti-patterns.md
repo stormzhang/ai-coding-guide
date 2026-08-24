@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./51-troubleshooting.md
   - ./53-remotion-video.md
-relatedPages:
-  - title: "Claude Code 常见问题排查完整指南"
-    link: ./51-troubleshooting.md
-  - title: "Claude Code 制作 Remotion 视频实战"
-    link: ./53-remotion-video.md
 ---
 # 50 · 反模式：常见的错误用法
 

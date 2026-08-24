@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./26-git-github.md
   - ./28-noninteractive.md
-relatedPages:
-  - title: "Codex Git 与 GitHub 集成：提交和 PR 审查"
-    link: ./26-git-github.md
-  - title: "codex exec 非交互模式：脚本与 CI 用法"
-    link: ./28-noninteractive.md
 ---
 # 25 · Worktrees 并行隔离：让几个 Codex 各干各的，互不打架
 

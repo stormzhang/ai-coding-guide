@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./39-getting-started-practice.md
   - ./45-agent-sdk.md
-relatedPages:
-  - title: "Claude Code 实战入门：从需求到交付完整流程"
-    link: ./39-getting-started-practice.md
-  - title: "Claude Agent SDK 教程：把代理能力接入程序"
-    link: ./45-agent-sdk.md
 ---
 # 42 · 环境变量：藏在背后那排「总开关」
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./10-cloud.md
   - ./07-desktop-app.md
-relatedPages:
-  - title: "Codex Cloud 云端任务使用指南"
-    link: ./10-cloud.md
-  - title: "Codex 桌面 App 完整使用指南"
-    link: ./07-desktop-app.md
 ---
 # 09 · IDE 扩展（VS Code 等）
 

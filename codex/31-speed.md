@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./33-windows.md
   - ./30-models.md
-relatedPages:
-  - title: "Codex Windows 使用指南：原生环境与 WSL"
-    link: ./33-windows.md
-  - title: "Codex 模型怎么选：能力、速度与推理强度"
-    link: ./30-models.md
 ---
 # 31 · 进阶技巧与提速：拖慢你的不是模型，是你给的烂上下文
 

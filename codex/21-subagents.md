@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./20-mcp.md
   - ./24-hooks.md
-relatedPages:
-  - title: "Codex MCP 教程：连接外部工具与数据"
-    link: ./20-mcp.md
-  - title: "Codex Rules 与 Hooks：命令规则和生命周期自动化"
-    link: ./24-hooks.md
 ---
 # 21 · 子代理（Subagents）：把活儿拆出去并行跑，但只有「你开口」它才拆
 

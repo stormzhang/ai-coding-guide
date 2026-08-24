@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./34-cli-reference.md
   - ./37-checkpoints.md
-relatedPages:
-  - title: "Claude Code CLI 命令与参数完整参考"
-    link: ./34-cli-reference.md
-  - title: "Claude Code Checkpoints 检查点与回滚指南"
-    link: ./37-checkpoints.md
 ---
 # 33 · 钩子（Hooks）：在固定时机自动扣扳机
 

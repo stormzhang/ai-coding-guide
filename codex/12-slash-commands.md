@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./14-workflows.md
   - ./17-computer-use.md
-relatedPages:
-  - title: "Codex 常见工作流：探索、修 Bug、重构与测试"
-    link: ./14-workflows.md
-  - title: "Codex Computer Use：电脑与浏览器操作指南"
-    link: ./17-computer-use.md
 ---
 # 12 · 斜杠命令与快捷键：会话里的「快捷操作面板」
 

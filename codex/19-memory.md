@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./18-config.md
   - ./22-skills.md
-relatedPages:
-  - title: "Codex config.toml 配置详解"
-    link: ./18-config.md
-  - title: "Codex Agent Skills 教程：安装、触发与创建"
-    link: ./22-skills.md
 ---
 # 19 · 记忆系统（Memories 与 Chronicle）：让 Codex 跨会话记住你
 

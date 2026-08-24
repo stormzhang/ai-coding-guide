@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./50-anti-patterns.md
   - ./52-glossary.md
-relatedPages:
-  - title: "Claude Code 反模式：常见错误用法与修正"
-    link: ./50-anti-patterns.md
-  - title: "Claude Code 术语表：小白也能看懂的概念解释"
-    link: ./52-glossary.md
 ---
 # 49 · 最佳实践：把零散的好习惯，攒成一套能照着做的心法
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./29-agent-teams.md
   - ./25-memory.md
-relatedPages:
-  - title: "Claude Code Agent Teams 教程：多会话团队协作"
-    link: ./29-agent-teams.md
-  - title: "Claude Code 记忆系统：跨会话保留项目经验"
-    link: ./25-memory.md
 ---
 # 23 · 子代理（Subagents）：把活儿外包出去，别什么都自己扛
 

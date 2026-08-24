@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./25-worktrees.md
   - ./27-automation.md
-relatedPages:
-  - title: "Codex Worktrees 并行隔离指南"
-    link: ./25-worktrees.md
-  - title: "Codex 自动化与 CI/CD 完整指南"
-    link: ./27-automation.md
 ---
 # 29 · Slack / Linear 与 SDK 集成：在别处召唤 Codex，把它嵌进你自己的产品
 

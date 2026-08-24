@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./24-plugins.md
   - ./29-agent-teams.md
-relatedPages:
-  - title: "Claude Code 插件指南：安装、组合与分发能力"
-    link: ./24-plugins.md
-  - title: "Claude Code Agent Teams 教程：多会话团队协作"
-    link: ./29-agent-teams.md
 ---
 # 27 · Skills 使用实例：装一个、喊一声、看它干活
 

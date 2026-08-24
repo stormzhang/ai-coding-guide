@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./13-prompting.md
   - ./16-security.md
-relatedPages:
-  - title: "Codex 提示词写法：目标、上下文与验收"
-    link: ./13-prompting.md
-  - title: "Codex 安全指南：提示词注入与权限边界"
-    link: ./16-security.md
 ---
 # 17 · 电脑操控与浏览器（Computer Use）：让 Codex 长出手
 

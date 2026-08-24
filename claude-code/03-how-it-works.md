@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./04-api-config.md
   - ./01-what-is-claude-code.md
-relatedPages:
-  - title: "Claude Code API 配置：订阅登录与 API Key 怎么选"
-    link: ./04-api-config.md
-  - title: "Claude Code 是什么？功能、原理与适用场景"
-    link: ./01-what-is-claude-code.md
 ---
 # 03 · Claude Code 如何工作
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./32-migrate-from-claude-code.md
   - ./34-capstone.md
-relatedPages:
-  - title: "从 Claude Code 迁移到 Codex 完整指南"
-    link: ./32-migrate-from-claude-code.md
-  - title: "Codex 综合实战：从需求到 Git 提交"
-    link: ./34-capstone.md
 ---
 # 30 · 怎么选模型：同一句话，到底该派哪个模型去跑
 

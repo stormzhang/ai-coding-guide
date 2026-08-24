@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./11-agents-md.md
   - ./08-cli.md
-relatedPages:
-  - title: "AGENTS.md 完整指南：给 Codex 写项目规则"
-    link: ./11-agents-md.md
-  - title: "Codex CLI 入门：安装、会话与常用操作"
-    link: ./08-cli.md
 ---
 # 10 · 云端 Codex Cloud：把活丢上云，喝着咖啡等结果
 

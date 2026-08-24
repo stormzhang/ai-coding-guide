@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./39-enterprise.md
   - ./37-faq.md
-relatedPages:
-  - title: "Codex 企业管理与治理完整指南"
-    link: ./39-enterprise.md
-  - title: "Codex 常见问题排查：安装、登录与权限"
-    link: ./37-faq.md
 ---
 # 36 · 最佳实践：那些「正确的废话」之外，真正能落地的几条
 

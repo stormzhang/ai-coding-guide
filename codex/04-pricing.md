@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./05-third-party-models.md
   - ./02-core-concepts.md
-relatedPages:
-  - title: "Codex 接入 DeepSeek 等第三方模型"
-    link: ./05-third-party-models.md
-  - title: "Codex 核心概念：代理循环、沙箱与审批"
-    link: ./02-core-concepts.md
 ---
 # 04 · 订阅与计费
 

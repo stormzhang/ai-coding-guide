@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./01-what-is-codex.md
   - ./03-install.md
-relatedPages:
-  - title: "Codex 是什么？四种入口与使用场景"
-    link: ./01-what-is-codex.md
-  - title: "Codex 安装与登录：Mac、Windows、Linux"
-    link: ./03-install.md
 ---
 # 05 · 接入 DeepSeek 等国产模型
 

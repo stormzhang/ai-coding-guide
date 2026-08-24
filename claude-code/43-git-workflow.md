@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./40-chrome.md
   - ./46-dev-config.md
-relatedPages:
-  - title: "Claude Code 操作 Chrome 浏览器指南"
-    link: ./40-chrome.md
-  - title: "Claude Code 开发环境配置指南"
-    link: ./46-dev-config.md
 ---
 # 43 · Git 工作流：让 Claude 当你的 git 副手
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./13-project-structure.md
   - ./10-desktop.md
-relatedPages:
-  - title: "Claude Code 项目目录与配置文件详解"
-    link: ./13-project-structure.md
-  - title: "Claude Code Desktop 桌面应用完整指南"
-    link: ./10-desktop.md
 ---
 # 07 · 第一次使用：跑通第一个例子
 

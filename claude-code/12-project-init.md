@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./10-desktop.md
   - ./07-first-run.md
-relatedPages:
-  - title: "Claude Code Desktop 桌面应用完整指南"
-    link: ./10-desktop.md
-  - title: "Claude Code 第一次使用：从启动到完成任务"
-    link: ./07-first-run.md
 ---
 # 12 · 项目初始化：用 /init 一键生成 CLAUDE.md
 

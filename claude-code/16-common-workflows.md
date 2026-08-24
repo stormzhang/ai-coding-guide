@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./15-prompting.md
   - ./20-permissions.md
-relatedPages:
-  - title: "Claude Code 提示词写法：任务、上下文与验收标准"
-    link: ./15-prompting.md
-  - title: "Claude Code 权限配置：模式、规则与审批"
-    link: ./20-permissions.md
 ---
 # 16 · 四个最常用的活儿：探索代码库、修 bug、重构、写测试
 

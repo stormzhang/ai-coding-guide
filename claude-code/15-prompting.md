@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./14-interface-and-shortcuts.md
   - ./19-context-management.md
-relatedPages:
-  - title: "Claude Code 交互界面与快捷键速查"
-    link: ./14-interface-and-shortcuts.md
-  - title: "Claude Code 上下文管理：压缩、清理与 Token 控制"
-    link: ./19-context-management.md
 ---
 # 15 · 怎么提问和给指令：把话说到 Claude 心坎里
 

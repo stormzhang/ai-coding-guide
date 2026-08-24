@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./46-dev-config.md
   - ./41-parallel-tasks.md
-relatedPages:
-  - title: "Claude Code 开发环境配置指南"
-    link: ./46-dev-config.md
-  - title: "Claude Code 并行任务：子代理、Worktree 与团队"
-    link: ./41-parallel-tasks.md
 ---
 # 38 · 插件参考手册：把自己那套配置，打成一个能发出去的包
 

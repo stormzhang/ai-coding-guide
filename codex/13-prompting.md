@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./15-permissions.md
   - ./12-slash-commands.md
-relatedPages:
-  - title: "Codex 权限、沙箱与审批配置指南"
-    link: ./15-permissions.md
-  - title: "Codex 斜杠命令与快捷键完整指南"
-    link: ./12-slash-commands.md
 ---
 # 13 · 提示词（Prompt）写法：把话说到 Codex 心坎里
 

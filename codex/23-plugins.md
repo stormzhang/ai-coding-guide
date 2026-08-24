@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./22-skills.md
   - ./19-memory.md
-relatedPages:
-  - title: "Codex Agent Skills 教程：安装、触发与创建"
-    link: ./22-skills.md
-  - title: "Codex Memories 与 Chronicle 记忆系统"
-    link: ./19-memory.md
 ---
 # 23 · 插件（Plugins）：一键装一整套能力，别再一个个手配
 

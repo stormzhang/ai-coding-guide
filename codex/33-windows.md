@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./30-models.md
   - ./32-migrate-from-claude-code.md
-relatedPages:
-  - title: "Codex 模型怎么选：能力、速度与推理强度"
-    link: ./30-models.md
-  - title: "从 Claude Code 迁移到 Codex 完整指南"
-    link: ./32-migrate-from-claude-code.md
 ---
 # 33 · Windows 使用要点：原生还是 WSL，到底怎么跑才省心
 

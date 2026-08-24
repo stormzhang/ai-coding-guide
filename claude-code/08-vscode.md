@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./06-coding-plan.md
   - ./11-web-and-cloud.md
-relatedPages:
-  - title: "Claude Code 订阅套餐与计费完整说明"
-    link: ./06-coding-plan.md
-  - title: "Claude Code 网页版与云端使用指南"
-    link: ./11-web-and-cloud.md
 ---
 # 08 · VS Code 集成
 

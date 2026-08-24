@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./16-common-workflows.md
   - ./21-security.md
-relatedPages:
-  - title: "Claude Code 常见工作流：探索、修 Bug、重构与测试"
-    link: ./16-common-workflows.md
-  - title: "Claude Code 安全指南：风险边界与防护清单"
-    link: ./21-security.md
 ---
 # 17 · 图片与多模态：贴张截图，它就懂了
 

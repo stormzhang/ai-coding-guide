@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./17-computer-use.md
   - ./14-workflows.md
-relatedPages:
-  - title: "Codex Computer Use：电脑与浏览器操作指南"
-    link: ./17-computer-use.md
-  - title: "Codex 常见工作流：探索、修 Bug、重构与测试"
-    link: ./14-workflows.md
 ---
 # 15 · 权限、沙箱与审批：放多松、收多紧，自己拧
 

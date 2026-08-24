@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./41-parallel-tasks.md
   - ./47-voice.md
-relatedPages:
-  - title: "Claude Code 并行任务：子代理、Worktree 与团队"
-    link: ./41-parallel-tasks.md
-  - title: "Claude Code Voice 语音听写使用指南"
-    link: ./47-voice.md
 ---
 # 44 · GitHub Actions：在 PR 里 @ 一下，让 Claude 自己干活
 

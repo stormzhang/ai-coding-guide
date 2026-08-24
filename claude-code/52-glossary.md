@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./53-remotion-video.md
   - ./50-anti-patterns.md
-relatedPages:
-  - title: "Claude Code 制作 Remotion 视频实战"
-    link: ./53-remotion-video.md
-  - title: "Claude Code 反模式：常见错误用法与修正"
-    link: ./50-anti-patterns.md
 ---
 # 52 · 术语表（小白友好）：把这一路的「黑话」一次性翻译成人话
 

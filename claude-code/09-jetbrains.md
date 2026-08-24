@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./07-first-run.md
   - ./12-project-init.md
-relatedPages:
-  - title: "Claude Code 第一次使用：从启动到完成任务"
-    link: ./07-first-run.md
-  - title: "Claude Code /init 教程：生成与维护 CLAUDE.md"
-    link: ./12-project-init.md
 ---
 # 09 · JetBrains 集成
 

@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./23-plugins.md
   - ./20-mcp.md
-relatedPages:
-  - title: "Codex 插件指南：安装一整套能力"
-    link: ./23-plugins.md
-  - title: "Codex MCP 教程：连接外部工具与数据"
-    link: ./20-mcp.md
 ---
 # 24 · 规则与钩子（Rules & Hooks）：给 Codex 装上「卡点」和「扳机」
 

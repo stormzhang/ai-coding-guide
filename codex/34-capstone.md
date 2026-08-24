@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./31-speed.md
   - ./33-windows.md
-relatedPages:
-  - title: "Codex 提速指南：上下文、模型与并行策略"
-    link: ./31-speed.md
-  - title: "Codex Windows 使用指南：原生环境与 WSL"
-    link: ./33-windows.md
 ---
 # 34 · 综合实战：从零给一个 TODO 小工具加功能、提交一次
 

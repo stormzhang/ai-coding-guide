@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./35-cheatsheet.md
   - ./38-glossary.md
-relatedPages:
-  - title: "Codex 命令与 config.toml 配置速查表"
-    link: ./35-cheatsheet.md
-  - title: "Codex 术语表：Agent、沙箱、Skill 与 MCP"
-    link: ./38-glossary.md
 ---
 # 37 · 常见问题排查：装不上、登不了、不肯改文件，挨个拆
 

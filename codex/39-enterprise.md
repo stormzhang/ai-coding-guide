@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./37-faq.md
   - ./35-cheatsheet.md
-relatedPages:
-  - title: "Codex 常见问题排查：安装、登录与权限"
-    link: ./37-faq.md
-  - title: "Codex 命令与 config.toml 配置速查表"
-    link: ./35-cheatsheet.md
 ---
 # 39 · 企业管理与治理：一个人玩和一家公司用，是两件事
 

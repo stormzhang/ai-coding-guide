@@ -9,11 +9,6 @@ officialSources:
 related:
   - ./09-ide.md
   - ./06-first-task.md
-relatedPages:
-  - title: "Codex IDE 扩展指南：VS Code 与兼容编辑器"
-    link: ./09-ide.md
-  - title: "Codex 第一个任务：从启动到检查修改"
-    link: ./06-first-task.md
 ---
 # 08 · 命令行 CLI 上手
 
