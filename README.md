@@ -1,8 +1,8 @@
-# AI 编程（Claude Code + Codex）指南
+# Codex 中文教程与 AI 编程指南（含 Claude Code）
 
 **简体中文** | [English](./README.en.md)
 
-> 📘 **92 篇 · 约 52 万字** 精修中文教程，带你从装好到熟练 —— **Claude Code 53 篇 + Codex 39 篇**，把命令行变成你最快的那只手。
+> 📘 **92 篇 · 约 52 万字** 精修中文教程，主力推荐 **Codex 39 篇**，同时保留 **Claude Code 53 篇**。适合 0 基础学习，从安装入门一直走到工程实战。
 
 [![website](https://img.shields.io/badge/在线阅读-coding.stormzhang.ai-a6e3a1)](https://coding.stormzhang.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -10,11 +10,15 @@
 
 **📖 在线阅读（暗色终端风、体验更佳）→ <https://coding.stormzhang.ai>**
 
+**主力推荐：从 0 基础开始学习 [Codex 中文教程与中文指南](https://coding.stormzhang.ai/codex/)**
+
+同时提供：[Claude Code 中文教程](https://coding.stormzhang.ai/claude-code/)
+
 ![AI 编程指南](og.png)
 
 ## 这教程跟其他教程的差异
 
-- **以官方文档为事实来源**：所有功能 / 命令 / 默认行为对照 [Claude Code 官方](https://code.claude.com/docs/zh-CN) 和 [Codex 官方](https://developers.openai.com/codex) 核实，不抄第三方猜测、不靠传言。
+- **以官方文档为事实来源**：所有功能 / 命令 / 默认行为对照 [Codex 官方](https://developers.openai.com/codex) 和 [Claude Code 官方](https://code.claude.com/docs/zh-CN) 核实，不抄第三方猜测、不靠传言。
 - **面向小白做大量易懂化改写**：每个新概念三段式（场景引入 + 生活化类比 + 实际场景）；不熟命令行也能跟上。
 - **有真实经验印记**：每篇 3+ 处第一人称踩坑/判断（带具体细节、真实数字），不写「我觉得」式空话。
 - **可照跑、可自验**：每个动手环节给完整命令 + 预期输出，让你边读边动手即时反馈。
@@ -138,7 +142,7 @@
 
 ## 怎么读
 
-1. 挑一个工具（建议从 Claude Code 起步）。
+1. 挑一个工具（建议从 Codex 起步）。
 2. 按编号顺序往下读，每篇 3-10 分钟。
 3. **边读边动手** —— 每篇都有可照跑的命令 + 预期输出。
 4. 学完一个章节就把它集成进你每天的开发流程。
