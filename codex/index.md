@@ -1,15 +1,15 @@
 ---
-seoTitle: "Codex 中文教程：从四种入口到工程化实战"
-description: "面向中文初学者的 Codex 系统教程，覆盖桌面 App、CLI、IDE、Cloud、AGENTS.md、沙箱审批、MCP、Skills、自动化与综合实战。"
+seoTitle: "Codex 中文教程与中文指南：0 基础入门到工程实战"
+description: "面向 0 基础学习者的 Codex 中文教程与中文指南，覆盖桌面 App、CLI、IDE、Cloud、AGENTS.md、沙箱审批、MCP、Skills、自动化与综合实战。"
 published: "2026-08-23"
 lastVerified: "2026-08-23"
 author: stormzhang
 pageClass: topic-hub
 ---
 
-# Codex 中文教程
+# Codex 中文教程：0 基础学习指南
 
-这是一套面向中文初学者的 Codex 系统教程。内容覆盖桌面 App、CLI、IDE 和 Cloud 四种入口，并继续深入 AGENTS.md、沙箱审批、MCP、Skills、子代理和自动化；39 篇内容均以官方文档和真实操作为事实依据。
+这是一套面向 0 基础学习者的 Codex 中文教程与中文指南。内容覆盖桌面 App、CLI、IDE 和 Cloud 四种入口，并继续深入 AGENTS.md、沙箱审批、MCP、Skills、子代理和自动化；39 篇内容均以官方文档和真实操作为事实依据。
 
 ## 怎么选学习路线
 
