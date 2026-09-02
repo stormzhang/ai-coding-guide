@@ -2,7 +2,7 @@
 seoTitle: "Claude Code Desktop 桌面应用完整指南"
 description: "Claude Code 桌面应用的安装、项目管理、会话操作和适用场景，并比较 Desktop、终端与网页版入口的能力边界和选择方式，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/desktop
@@ -226,7 +226,7 @@ diff 查看器右上角有个 **Review code** 按钮。点它，**Claude 会在�
 
 而且**它们能同时用、甚至同一个项目同时用**——共享 CLAUDE.md、MCP server、hooks、skills、`settings.json`。一个顺手的搭配是：**日常写码在 VS Code 扩展，一旦要并行铺开三四个独立需求就切桌面 app，需要批量自动化才回终端写脚本**。
 
-⚠️ 注意：像 `/permissions`、`/config`、`/agents`、`/doctor` 这种会在终端弹交互面板的命令，**在 Code 选项卡里用不了**，会回你一句 `isn't available in this environment`。要改权限规则或配置，直接编辑 `settings.json`，或回独立 CLI 跑。
+⚠️ 注意：像 `/permissions`、`/config`、`/doctor` 这种会在终端弹交互面板的命令，**在 Code 选项卡里用不了**，会回你一句 `isn't available in this environment`。要改权限规则或配置，直接编辑 `settings.json`，或回独立 CLI 跑。
 
 > 💡 一句话总结：**CLI 管自动化、IDE 扩展管写码、桌面 app 管并行 + 可视化**——三者共享配置、各打各的主场，按当下需求切就行。
 
@@ -249,7 +249,7 @@ diff 查看器右上角有个 **Review code** 按钮。点它，**Claude 会在�
 - **环境**：选 **Local**（在你本机跑、直接读写文件）。另有 Remote（云端）和 SSH（你自己的远程机器），先用 Local 最简单。
 - **项目文件夹**：点 **Select folder**，**挑一个你熟的小项目**——别拿祖传大仓库练手。
 - **模型**：发送按钮旁的下拉菜单选，Opus / Sonnet / Haiku 都行，会话中途能换。
-- **权限模式**：保持默认的 **「询问权限」**（`default`），新手最稳。
+- **权限模式**：保持默认的 **Manual（手动模式，即「询问权限」）**，新手最稳。
 
 ### 第三步：发第一条指令
 

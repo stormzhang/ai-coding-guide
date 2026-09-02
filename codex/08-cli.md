@@ -2,7 +2,7 @@
 seoTitle: "Codex CLI 入门：安装、会话与常用操作"
 description: "Codex CLI 的启动方式、交互界面、模型和权限选择、文件引用、差异审查与会话恢复，带你跑通终端主流程，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/cli
@@ -71,10 +71,10 @@ codex "解释一下这个项目的结构"
 
 ```bash
 # 换个模型 + 指定工作目录
-codex --model gpt-5.5 --cd ~/my-project "把 README 补全"
+codex --model gpt-5.6-terra --cd ~/my-project "把 README 补全"
 ```
 
-> ⚠️ 上面 `gpt-5.5` 只是个示意。**具体有哪些模型名、哪个是当前推荐，随版本变得很快**，敲 `/model` 看你本地实际列出来的就行，别照抄写死的型号。
+> ⚠️ 上面 `gpt-5.6-terra` 只是个示意。**具体有哪些模型名、哪个是当前推荐，随版本变得很快**，敲 `/model` 看你本地实际列出来的就行，别照抄写死的型号。
 
 看出来没——**再花哨的命令，也就是这四块的排列组合**。后面所有用法，都是往这个骨架上填东西。
 
@@ -120,7 +120,7 @@ codex --model gpt-5.5 --cd ~/my-project "把 README 补全"
 
 | 选项（长 / 短） | 干啥用 | 举个例子 |
 |---|---|---|
-| `--model` / `-m` | 临时换一个模型跑这次 | `codex -m gpt-5.5 "重构这个函数"` |
+| `--model` / `-m` | 临时换一个模型跑这次 | `codex -m gpt-5.6-terra "重构这个函数"` |
 | `--sandbox` / `-s` | 选沙箱策略（`read-only` / `workspace-write` / `danger-full-access`） | `codex -s read-only "只帮我审一下别动手"` |
 | `--ask-for-approval` / `-a` | 选审批时机（`untrusted` / `on-request` / `never`） | `codex -a on-request "修一下这个 bug"` |
 | `--cd` / `-C` | 不用先 `cd`，直接指定工作目录 | `codex --cd ~/proj "讲讲这项目"` |

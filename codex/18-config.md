@@ -2,7 +2,7 @@
 seoTitle: "Codex config.toml 配置详解"
 description: "config.toml 的文件位置、优先级、模型、推理、沙箱、审批、MCP 和界面等常用字段，并提供可复制的配置思路，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/config-reference
@@ -44,7 +44,7 @@ TOML（Tom's Obvious Minimal Language，一种给人读写的配置文件格式�
 
 ```toml
 # ~/.codex/config.toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
 ```
@@ -95,7 +95,7 @@ sandbox_mode = "workspace-write"
 
 判断一条配置该放主目录还是放项目里，脑子里过一个问题就够：**「这条只跟我这个人有关，还是跟这个项目有关？」**
 
-- **「我所有项目都想要」→ 用户级**（`~/.codex/config.toml`）。比如「我习惯默认用 `gpt-5.5`」「我的 MCP 服务器」「桌面通知脚本」，配一次，开任何项目都在。
+- **「我所有项目都想要」→ 用户级**（`~/.codex/config.toml`）。比如「我习惯默认用 `gpt-5.6`」「我的 MCP 服务器」「桌面通知脚本」，配一次，开任何项目都在。
 - **「就这个项目该这么干」→ 项目级**（`<repo>/.codex/config.toml`）。比如「这个老项目得用某个特定模型」「这个项目默认收紧到只读」。它跟着仓库走，进 Git 后队友拉下来也有同一套（前提是队友也信任了这个项目）。
 
 我自己的分法很简单：**主目录那份写「我这个人的习惯」，项目里基本不写、留空**——只有极少数项目有特殊脾气（比如一个我只敢让它只读看、绝不能动手的客户代码库），我才在它的 `.codex/config.toml` 里单独写一行 `sandbox_mode = "read-only"` 兜底。这样既不用每次手动收紧，也不会把这条限制误带到别的项目上。
@@ -106,7 +106,7 @@ sandbox_mode = "workspace-write"
 
 ## 03 谁压谁：优先级，外加一条新手必栽的安全限制
 
-两处都能写同一个键。那问题来了：**用户级说用 `gpt-5.5`、项目级说用别的，到底听谁的？** 这就是「优先级（precedence）」要管的事，也是 `config.toml` 最容易绕晕人的地方。
+两处都能写同一个键。那问题来了：**用户级说用 `gpt-5.6`、项目级说用别的，到底听谁的？** 这就是「优先级（precedence）」要管的事，也是 `config.toml` 最容易绕晕人的地方。
 
 而且实际不止两层——加上命令行临时参数、`--profile` 选的预设档（profile，命名配置文件）、系统级配置，一共能叠到六层。先给官方的完整排序，从**高到低**（高的压低的）：
 
@@ -161,7 +161,7 @@ sandbox_mode = "workspace-write"
 
 | 配置键 | 干嘛的 | 默认值（以官方为准） | 常见写法 |
 |--------|--------|---------------------|---------|
-| `model` | 默认用哪个模型 | 跟随 Codex 内置默认 | `model = "gpt-5.5"` |
+| `model` | 默认用哪个模型 | 跟随 Codex 内置默认 | `model = "gpt-5.6"` |
 | `approval_policy` | 啥时候停下来问你 | `on-request` | `approval_policy = "on-request"` |
 | `sandbox_mode` | 能动多大（文件 / 网络） | `workspace-write`（git 仓库，见下注） | `sandbox_mode = "workspace-write"` |
 | `model_reasoning_effort` | 推理使多大劲 | 跟随模型 / 预设 | `model_reasoning_effort = "high"` |
@@ -211,7 +211,7 @@ Codex 输出里经常带 `某文件.py:42` 这种引用。`file_opener` 决定�
 
 | ❌ 错的（根键混在表后面） | ✅ 对的（根键全在前、表全在后） |
 |------------------------|------------------------------|
-| `[features]`<br/>`hooks = true`<br/>`model = "gpt-5.5"` ← 报错 | `model = "gpt-5.5"`<br/>`[features]`<br/>`hooks = true` |
+| `[features]`<br/>`hooks = true`<br/>`model = "gpt-5.6"` ← 报错 | `model = "gpt-5.6"`<br/>`[features]`<br/>`hooks = true` |
 
 记法：**先写所有不带 `[]` 的单行键（`model`、`approval_policy`…），再写所有 `[表]` 段。** 顺序反了，TOML 解析直接报错，而且报错信息常让新手摸不着头脑。
 
@@ -276,16 +276,16 @@ hooks = false            # 关掉生命周期 hooks
 
 ```bash
 # 优先用专属 flag（有的话）
-codex --model gpt-5.4
+codex --model gpt-5.6-terra
 
 # 没有专属 flag 的键，用 -c / --config 通用覆盖（值是 TOML 写法，不是 JSON）
-codex --config model='"gpt-5.4"'
+codex --config model='"gpt-5.6"'
 codex -c log_dir=./.codex-log
 ```
 
 **两个容易踩的点**，官方专门提醒了：
 
-- **`-c` 的值按 TOML 解析**，不是 JSON。所以字符串值要带引号（像上面 `model='"gpt-5.4"'` 外层单引号给 shell、内层双引号给 TOML），拿不准就把值整个引起来，免得 shell 按空格拆开。
+- **`-c` 的值按 TOML 解析**，不是 JSON。所以字符串值要带引号（像上面 `model='"gpt-5.6"'` 外层单引号给 shell、内层双引号给 TOML），拿不准就把值整个引起来，免得 shell 按空格拆开。
 - **嵌套键用点号**写，比如 `codex -c mcp_servers.context7.enabled=false` 。
 
 这招最适合「试一下某个值好不好使」——满意了再写进文件，不满意拍拍屁股走人，文件没动过。
@@ -296,7 +296,7 @@ codex -c log_dir=./.codex-log
 
 ```toml
 # ~/.codex/deep-review.config.toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "xhigh"
 approval_policy = "on-request"
 ```
@@ -322,7 +322,7 @@ codex exec --profile deep-review "review this change"
 
 ## 07 动手：写一份配置 → 临时覆盖 → 切 profile，全验一遍
 
-光看不练假把式。下面带你把这一篇的「写文件 → 临时覆盖 → 切 profile」整条链路跑通。全程最小示例，不依赖你已有的复杂环境。命令、参数严格按官方，**涉及具体模型名我用占位 `gpt-5.5` ，你照自己能用的型号换**。
+光看不练假把式。下面带你把这一篇的「写文件 → 临时覆盖 → 切 profile」整条链路跑通。全程最小示例，不依赖你已有的复杂环境。命令、参数严格按官方，**涉及具体模型名我用占位 `gpt-5.6` ，你照自己能用的型号换**。
 
 **第一步：看一眼你的用户级配置在哪**（在终端）
 
@@ -338,7 +338,7 @@ ls -la ~/.codex/config.toml
 
 ```toml
 # ~/.codex/config.toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 approval_policy = "on-request"
 web_search = "cached"
 
@@ -380,7 +380,7 @@ codex -c web_search='"live"'
 
 ```toml
 # ~/.codex/quick.config.toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 sandbox_mode = "read-only"
 approval_policy = "untrusted"
 ```

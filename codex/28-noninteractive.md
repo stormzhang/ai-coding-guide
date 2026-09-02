@@ -2,7 +2,7 @@
 seoTitle: "codex exec 非交互模式：脚本与 CI 用法"
 description: "codex exec 的输入输出、常用参数、结构化结果、恢复会话和退出码，说明如何把 Codex 稳定接入脚本和 CI，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/noninteractive
@@ -82,7 +82,7 @@ codex e "解释这个项目是干什么的"
 
 ```bash
 # 换个模型跑这一次（模型名以你本地实际为准，别照抄）
-codex exec -m gpt-5.5 "审查当前改动，列出潜在 bug"
+codex exec -m gpt-5.6-terra "审查当前改动，列出潜在 bug"
 ```
 
 ```bash
@@ -170,7 +170,7 @@ codex exec --sandbox danger-full-access "<在隔离 runner 里的任务>"
 
 几个一定要单独点清楚的坑：
 
-**坑一：`--full-auto` 别再用了。** 老脚本里你可能见过 `codex exec --full-auto`，它现在是**已弃用的兼容标志**，用了 Codex 会打一条警告。官方明说：新脚本里直接用 `--sandbox workspace-write` 替代它，意图更明确。
+**坑一：`--full-auto` 别再用了。** 老脚本里你可能见过 `codex exec --full-auto`——这个标志在 0.147.0 已经**彻底删除**，不是弃用警告，是直接没了。老脚本升级后记得把 `--full-auto` 换成 `--sandbox workspace-write`，意图更明确。
 
 **坑二：`danger-full-access` 只在隔离环境用。** 这档几乎等于「随便动」，官方原话是「**只在受控环境**（比如隔离的 CI runner 或容器）里用」。在你自己日常的开发机上对着重要项目甩这一档，跟把万能钥匙交出去没区别。
 
@@ -178,7 +178,7 @@ codex exec --sandbox danger-full-access "<在隔离 runner 里的任务>"
 
 我去年配一个 CI 任务时就吃过「权限想当然」的亏：以为 `codex exec` 跟我交互时用的是同一套配置（我本地常开着写权限），结果它在 CI 里跑了半天啥也没改——一脸懵。翻文档才明白，**非交互模式默认就是只读，跟我交互时的环境是两码事**。补上 `--sandbox workspace-write` 之后它才真动手。**这个默认值，新手十有八九会踩。**
 
-> 💡 一句话总结：`codex exec` **默认只读沙箱**（像只给上门师傅进客厅的权限），要改文件得显式 `--sandbox workspace-write`、几乎不设限的 `danger-full-access` 只在隔离环境用；老的 `--full-auto` 已弃用别再写，受控自动化还能用 `--ignore-user-config` / `--ignore-rules` 干净启动。
+> 💡 一句话总结：`codex exec` **默认只读沙箱**（像只给上门师傅进客厅的权限），要改文件得显式 `--sandbox workspace-write`、几乎不设限的 `danger-full-access` 只在隔离环境用；老的 `--full-auto` 已彻底删除别再写，受控自动化还能用 `--ignore-user-config` / `--ignore-rules` 干净启动。
 
 ---
 

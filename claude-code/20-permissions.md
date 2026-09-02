@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 权限配置：模式、规则与审批"
 description: "Claude Code 的权限模式、allow 与 deny 规则、工具审批和作用域配置，帮助你在效率与安全之间选择合适的开放程度，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/permissions
@@ -62,18 +62,20 @@ related:
 
 权限模式（permission mode）控制的是一件事：**Claude 在动手前暂停问你的「频率」**。从「每一步都停下来等你点头」，到「啥都不问直接干」，是一条连续的光谱。
 
-**类比：还是那个实习生，模式就是你给他的「自主权等级」。** 新来第一天，每件事都要请示（`default`）；熟了之后，改代码不用问、但删库还是得喊你（`acceptEdits`）；你出差了完全信任他，让他自己看着办（`bypassPermissions`）。
+**类比：还是那个实习生，模式就是你给他的「自主权等级」。** 新来第一天，每件事都要请示（Manual 手动模式）；熟了之后，改代码不用问、但删库还是得喊你（`acceptEdits`）；你出差了完全信任他，让他自己看着办（`bypassPermissions`）。
 
 官方一共给了六种模式。把它们的「会不会先问你」和「适用场景」整理成一张表——**这是本篇最该记住的一张**：
 
 | 模式 | 无需询问就能干的事 | 会不会先问你 | 最适合的场景 |
 |------|------------------|------------|------------|
-| `default` | 仅只读 | 改文件、跑命令**都问** | 入门、敏感工作 |
+| `default`（界面叫 **Manual**，手动模式） | 仅只读 | 改文件、跑命令**都问** | 入门、敏感工作 |
 | `acceptEdits` | 只读 + 文件编辑 + 常见文件系统命令（`mkdir`、`mv`、`cp` 等） | 文件编辑和上述文件系统命令**不问**，其他 Bash 命令仍问 | 迭代你正在审查的代码 |
-| `plan` | 仅只读（只研究、只出方案，**不碰你的源码**） | 跟 `default` 一样的提示规则 | 动手改之前先探索、出计划 |
+| `plan` | 仅只读（只研究、只出方案，**不碰你的源码**） | 跟 Manual 一样的提示规则 | 动手改之前先探索、出计划 |
 | `auto` | 所有操作，带后台分类器安全检查 | **基本不问**，越界的由分类器拦 | 长任务、减少打断（研究预览版） |
 | `dontAsk` | 仅预先批准的工具 | 不问也不停，没批准的**直接拒** | 锁死的 CI、脚本 |
 | `bypassPermissions` | 所有操作，**跳过一切检查** | **完全不问** | 仅隔离容器 / VM |
+
+> ℹ️ 一个更名要知道：v2.1.200 起，「步步问」这一档在 CLI、`--help`、VS Code / JetBrains 扩展和桌面应用里统一改叫 **Manual**；配置值仍是 `default`（hooks 和 SDK 用这个值），CLI 同时也接受 `manual` 作为别名——`claude --permission-mode manual` 和 `"defaultMode": "manual"` 都合法。状态栏里它显示为灰色徽章 `⏸ manual mode on`。
 
 几个新手最容易搞混的点，挑出来说清楚：
 
@@ -87,11 +89,11 @@ related:
 
 所以想「省心又有底线」，优先 `auto`，别一上来就 `bypassPermissions`。
 
-> 💡 一句话总结：`default` 步步问、`acceptEdits` 改码免问、`plan` 只看不动、`auto` 有分类器兜底、`bypassPermissions` 完全裸奔——**记住这条从严到松的光谱，对号入座就行**。
+> 💡 一句话总结：Manual（`default`）步步问、`acceptEdits` 改码免问、`plan` 只看不动、`auto` 有分类器兜底、`bypassPermissions` 完全裸奔——**记住这条从严到松的光谱，对号入座就行**。
 
 ![权限模式松紧光谱：从步步问到全裸奔](assets/20-permission-spectrum@2x.png)
 
-这张图把六种模式排成一条「从最严到最松」的光谱：左边绿区是 `plan` / `default`（只读、步步问，最安全），往右经过 `acceptEdits`（改码免问）、`auto`（分类器兜底），一直到右边红区的 `bypassPermissions`（完全裸奔）——颜色越往右越红，提醒你「越松越要看清自己在哪用」。
+这张图把六种模式排成一条「从最严到最松」的光谱：左边绿区是 `plan` / Manual（只读、步步问，最安全），往右经过 `acceptEdits`（改码免问）、`auto`（分类器兜底），一直到右边红区的 `bypassPermissions`（完全裸奔）——颜色越往右越红，提醒你「越松越要看清自己在哪用」。
 
 ---
 
@@ -102,12 +104,12 @@ related:
 在会话里随手按 `Shift+Tab`，会在三种模式间循环：
 
 ```text
-default → acceptEdits → plan → （再按回到 default）
+default（Manual） → acceptEdits → plan → （再按回到 default）
 ```
 
-当前是哪个模式，**看状态栏**就知道。比如切到 `acceptEdits` 时，状态栏会显示 `⏵⏵ accept edits on`。
+当前是哪个模式，**看状态栏**就知道。比如切到 `acceptEdits` 时，状态栏会显示 `⏵⏵ accept edits on`；停在 Manual 时则显示灰色徽章 `⏸ manual mode on`。
 
-注意一个官方细节，免得你按半天找不到某个模式：**默认循环里只有 `default` / `acceptEdits` / `plan` 这三个**。其余三个进入方式各不同：`auto` 在账户满足条件后会自动出现在循环中；`bypassPermissions` 要用 `--permission-mode bypassPermissions` 等标志启动才进入循环；`dontAsk` 永远不出现在循环里，只能用 `--permission-mode dontAsk` 启动参数设置（下面讲）。
+注意一个官方细节，免得你按半天找不到某个模式：**默认循环里只有 `default`（Manual）/ `acceptEdits` / `plan` 这三个**。其余三个进入方式各不同：`auto` 在账户满足条件后会自动出现在循环中；`bypassPermissions` 要用 `--permission-mode bypassPermissions` 等标志启动才进入循环；`dontAsk` 永远不出现在循环里，只能用 `--permission-mode dontAsk` 启动参数设置（下面讲）。
 
 **类比：手机的「响铃 / 震动 / 静音」三段切换。** 你按音量键边上那个拨杆，就在这三档之间转。`Shift+Tab` 就是 Claude Code 的那个拨杆，转一圈是「步步问 / 改码免问 / 只看不动」。
 
@@ -258,7 +260,7 @@ claude --permission-mode plan
 
 两个官方设计的「保险」让你稍微安心：一是即便在这个模式下，**`rm -rf /` 和 `rm -rf ~` 这种删根目录 / 主目录的操作仍会提示**，当作防手滑的断路器；二是在 Linux / macOS 上**以 root 或 `sudo` 身份是直接拒绝启动**这个模式的。但别指望保险——**核心还是「只在删了也不心疼的隔离环境里开」**。
 
-> 💡 一句话总结：玩具项目 `acceptEdits` 提速、生产项目 `default` 把关，两套模板复制即用；`--dangerously-skip-permissions` **只在隔离容器里开，本机和生产机一律免谈**。
+> 💡 一句话总结：玩具项目 `acceptEdits` 提速、生产项目 Manual（`default`）把关，两套模板复制即用；`--dangerously-skip-permissions` **只在隔离容器里开，本机和生产机一律免谈**。
 
 ---
 
@@ -344,8 +346,8 @@ claude
 
 | 你要做的事 | 用什么 | 关键点 |
 |-----------|--------|--------|
-| 调整「问你的频率」 | 六种权限模式 | 从 `default`（步步问）到 `bypassPermissions`（裸奔）一条光谱 |
-| 会话里快速切模式 | `Shift+Tab` | 在 `default` / `acceptEdits` / `plan` 三档循环 |
+| 调整「问你的频率」 | 六种权限模式 | 从 Manual（`default`，步步问）到 `bypassPermissions`（裸奔）一条光谱 |
+| 会话里快速切模式 | `Shift+Tab` | 在 Manual / `acceptEdits` / `plan` 三档循环 |
 | 钉死默认模式 | `defaultMode` | 写进 `settings.json`；`auto` 得放用户级 |
 | 精确控制单条操作 | `allow` / `ask` / `deny` | 优先级 `deny → ask → allow`，deny 最大 |
 | 锁死敏感文件 | `deny` + 沙箱 | 光 `deny` 防不住脚本绕道 |

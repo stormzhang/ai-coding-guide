@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 术语表：小白也能看懂的概念解释"
 description: "解释 Agent、Context、Token、MCP、Hook、Skill、Subagent、Checkpoint 等高频术语，并给出它们在 Claude Code 中的实际作用"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/glossary
@@ -248,7 +248,7 @@ Claude 能动手了、还能接外部了，**「它会不会乱来」就成了�
 
 ### Permission mode（权限模式）
 
-**一句话：** 一次会话里 Claude 动手的「基线态度」——官方共六档，包括每步都问你（`default`）、自动接受改动（`acceptEdits`）、只研究不动手（`plan`）、别问直接干（`bypassPermissions`）、自动审查（`auto`）、静默通过（`dontAsk`）；完整说明见第 35 篇。
+**一句话：** 一次会话里 Claude 动手的「基线态度」——官方共六档，包括每步都问你（Manual，配置值 `default`）、自动接受改动（`acceptEdits`）、只研究不动手（`plan`）、别问直接干（`bypassPermissions`）、自动审查（`auto`）、静默通过（`dontAsk`）；完整说明见第 35 篇。
 
 **类比：实习生动手前问不问你，是你给他定的自主权等级。** 同一个实习生，你可以让他「每件事都先问」，也可以放权「这类小事自己看着办」。模式就是你给他设的这个等级，在 CLI 里按 `Shift+Tab` 循环切换。（详见第 35 篇）
 

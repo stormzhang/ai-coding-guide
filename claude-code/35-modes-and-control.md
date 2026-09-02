@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 控制模式：权限、模型与会话选项"
 description: "启动和会话中的权限模式、模型、思考强度、自动模式与控制选项，帮助你根据任务风险和复杂度调好执行方式，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/permission-modes
@@ -40,7 +40,7 @@ related:
 
 落到 Claude Code，这三类是：
 
-- **管「它的自主权」**——也就是权限模式：`Shift+Tab` 一键循环 `default` / `acceptEdits` / `plan`，决定它动手前问不问你（[第 20 篇](20-permissions.md)主讲）。
+- **管「它的自主权」**——也就是权限模式：`Shift+Tab` 一键循环 Manual / `acceptEdits` / `plan`，决定它动手前问不问你（[第 20 篇](20-permissions.md)主讲）。
 - **管「它跑的过程」**——中断与重定向：`Esc` 踩刹车、`Esc Esc` 倒车回退、`Ctrl+C` 中断或清输入、`Ctrl+B` 把任务丢后台。
 - **管「它怎么响应」**——模型与速度：`Option+P` 换模型、`Option+T` 开关扩展思考、`/fast` 开关快速模式。
 
@@ -119,15 +119,15 @@ related:
 
 ## 03 管自主权：Shift+Tab 循环模式的完整版
 
-权限模式那张「从严到松」的光谱，[第 20 篇](20-permissions.md)已经讲透了——`default` 步步问、`acceptEdits` 改码免问、`plan` 只看不动、`auto` 有分类器兜底、`bypassPermissions` 完全裸奔、`dontAsk` 只认预批准。**这一节不重讲它们各是啥（忘了回去翻[第 20 篇](20-permissions.md)），只补一件那篇没细抠的事：`Shift+Tab` 这个循环，到底怎么转。**
+权限模式那张「从严到松」的光谱，[第 20 篇](20-permissions.md)已经讲透了——Manual（配置值 `default`，界面叫手动模式）步步问、`acceptEdits` 改码免问、`plan` 只看不动、`auto` 有分类器兜底、`bypassPermissions` 完全裸奔、`dontAsk` 只认预批准。**这一节不重讲它们各是啥（忘了回去翻[第 20 篇](20-permissions.md)），只补一件那篇没细抠的事：`Shift+Tab` 这个循环，到底怎么转。**
 
 先把基本盘立住：**会话里随手按 `Shift+Tab`，在三种模式间转圈**：
 
 ```text
-default → acceptEdits → plan → （再按回到 default）
+Manual → acceptEdits → plan → （再按回到 Manual）
 ```
 
-当前是哪档，看状态栏。比如切到 `acceptEdits`，状态栏会亮 `⏵⏵ accept edits on`。这是默认循环，**只有这三档**。
+当前是哪档，看状态栏。比如切到 `acceptEdits`，状态栏会亮 `⏵⏵ accept edits on`；停在 Manual 则显示灰色徽章 `⏸ manual mode on`。这是默认循环，**只有这三档**。
 
 那 `auto`、`bypassPermissions`、`dontAsk` 去哪了？**它们不在默认循环里，得满足条件或带参数才会被「插」进来。** 官方把规则写得很细，我给你翻译成人话：
 
@@ -142,14 +142,14 @@ default → acceptEdits → plan → （再按回到 default）
 把这句翻成你按键时的实际体验：假设你两个都启用了，那一圈 `Shift+Tab` 转下来是这样的——
 
 ```text
-default → acceptEdits → plan → bypassPermissions → auto → （回到 default）
+Manual → acceptEdits → plan → bypassPermissions → auto → （回到 Manual）
 ```
 
 `auto` 永远排在最后一个，`bypassPermissions` 在它前面。**记住这个顺序，你就知道再按几下能到你要的那档**，不用瞎转。
 
-推荐的实操习惯，跟[第 20 篇](20-permissions.md)说的一致——**绝大多数时候只在默认三档里 `Shift+Tab` 手动切**：接陌生项目先切 `plan` 让它通读出方案，信得过方向了切 `acceptEdits` 放它改，改完想严一点再切回 `default`。`bypassPermissions` 只在隔离容器里用启动参数开，别挂进日常循环——这道红线[第 20 篇](20-permissions.md)画过，不重复了。
+推荐的实操习惯，跟[第 20 篇](20-permissions.md)说的一致——**绝大多数时候只在默认三档里 `Shift+Tab` 手动切**：接陌生项目先切 `plan` 让它通读出方案，信得过方向了切 `acceptEdits` 放它改，改完想严一点再切回 Manual。`bypassPermissions` 只在隔离容器里用启动参数开，别挂进日常循环——这道红线[第 20 篇](20-permissions.md)画过，不重复了。
 
-> 💡 一句话总结：`Shift+Tab` 默认只在 **`default` / `acceptEdits` / `plan`** 三档转；`auto` / `bypassPermissions` 要满足条件或带启动参数才入列，顺序是 **「`plan` 之后，`bypassPermissions` 在前、`auto` 垫底」**——记住这个排位，按几下心里就有数。
+> 💡 一句话总结：`Shift+Tab` 默认只在 **Manual / `acceptEdits` / `plan`** 三档转；`auto` / `bypassPermissions` 要满足条件或带启动参数才入列，顺序是 **「`plan` 之后，`bypassPermissions` 在前、`auto` 垫底」**——记住这个排位，按几下心里就有数。
 
 ---
 
@@ -182,7 +182,7 @@ default → acceptEdits → plan → bypassPermissions → auto → （回到 de
 
 - **批准并在 auto mode 中启动**——你完全信方向，放它自动干到底。
 - **批准并接受编辑**——切到 `acceptEdits`，改码免问，但危险命令还会停。
-- **批准并手动审查每个编辑**——回到 `default` 那种步步确认。
+- **批准并手动审查每个编辑**——回到 Manual 那种步步确认。
 - **继续规划并给反馈**——方案还不够好，你提意见让它再改方案。
 
 **看明白没有？批准计划这一下，等于「同时选定了接下来用哪种权限模式」。** 它退出 Plan Mode，直接把会话切到你选的那档，然后开始动手。这就是为什么说 Plan Mode 不是孤立一档，而是串起整条「探索 → 出方案 → 选自主权 → 动手」流程的枢纽。
@@ -210,7 +210,7 @@ default → acceptEdits → plan → bypassPermissions → auto → （回到 de
 
 > 快速模式不是一个不同的模型。它使用 Claude Opus，但采用不同的 API 配置，优先考虑速度而不是成本效率。您获得相同的质量和功能，只是响应速度更快。
 
-具体快多少、贵多少？官方给的数字：**最多快 2.5 倍**，代价是每个 token 更贵。它只在 Opus 4.8 / 4.7 / 4.6 上支持，Sonnet、Haiku 用不了（⚠️ Opus 4.6 的快速模式已弃用，建议用 4.7 或 4.8）。
+具体快多少、贵多少？官方给的数字：**最多快 2.5 倍**，代价是每个 token 更贵。它目前只在 Opus 5 和 Opus 4.8 上支持，Sonnet、Haiku 用不了（⚠️ Opus 4.6 的快速模式早已弃用，Opus 4.7 的也已于 2026 年 7 月 24 日移除，老配置请迁到 Opus 5 / 4.8）。
 
 ### 怎么开
 

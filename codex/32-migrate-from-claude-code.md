@@ -2,7 +2,7 @@
 seoTitle: "从 Claude Code 迁移到 Codex 完整指南"
 description: "把 CLAUDE.md、Skill、MCP、Hook、权限和日常工作流迁移到 Codex 的对应方式，指出可以复用与必须重写的部分，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/migrate
@@ -74,13 +74,13 @@ related:
 | 技能 Skills | 技能 Skills | 对应 | 两边都有，本地目录组织略有差异 |
 | 斜杠命令（`/model`、`/compact`…） | 斜杠命令（`/model`、`/compact`…） | 大半同名 | 命令名基本一致，个别有出入（见 06） |
 | 自动记忆 memory（默认开） | Memories / Chronicle | 对应但脾气不同 | Codex 记忆**默认关**、有地区限制、异步生成 |
-| 模型 Opus / Sonnet / Haiku | GPT-5.x 系列 | 换型号 | 旗舰 `gpt-5.5`、轻量 `gpt-5.4-mini` 等 |
+| 模型 Opus / Sonnet / Haiku | GPT-5.6 系列 | 换型号 | 旗舰 `gpt-5.6-sol`、日常 `gpt-5.6-terra`、轻量 `gpt-5.6-luna` |
 
 这张表你不用背，**记住一个总规律就行**：
 
 **凡是「概念」层面的东西（项目说明书、权限、记忆、子代理、技能、MCP），两边都有，迁移就是「换名 + 调写法」；真正会让你栽跟头的，是那几个「名字像、脾气不同」的——项目说明书、配置文件、权限模型。** 下面三节专治这三个。
 
-至于模型对照，一句话带过：你在 Claude Code 那边按「Opus 啃硬活、Sonnet 跑日常、Haiku 跑杂活」选型号，到 Codex 这边换成「`gpt-5.5` 啃硬活、`gpt-5.4-mini` 跑杂活」，选型逻辑（拿任务难度匹配算力）一模一样，详见〔[30 怎么选模型](30-models.md) 〕。注意别把 `gpt-5.4` 当旗舰——旗舰是 `gpt-5.5`，`gpt-5.4-mini` 是它的轻量款。
+至于模型对照，一句话带过：你在 Claude Code 那边按「Opus 啃硬活、Sonnet 跑日常、Haiku 跑杂活」选型号，到 Codex 这边换成「`gpt-5.6-sol` 啃硬活、`gpt-5.6-terra` 跑日常、`gpt-5.6-luna` 跑杂活」，选型逻辑（拿任务难度匹配算力）一模一样，详见〔[30 怎么选模型](30-models.md) 〕。注意别在老教程里抄到 `gpt-5.4` / `gpt-5.4-mini` ——这两个已于 2026 年 8 月 31 日退役，接班的就是 Terra 和 Luna。
 
 > 💡 一句话总结：概念层面两边几乎一一对应，迁移多是「换名 + 调写法」；**真正的坑集中在项目说明书、配置文件、权限模型这三处「名字像但脾气不同」的地方**，下面逐个拆。
 
@@ -129,7 +129,7 @@ related:
 
 | 你想配的事 | Claude Code（`settings.json`，JSON） | Codex（`config.toml`，TOML） |
 |---|---|---|
-| 默认模型 | `"model": "claude-..."` | `model = "gpt-5.5"` |
+| 默认模型 | `"model": "claude-..."` | `model = "gpt-5.6"` |
 | 权限 / 安全 | `"permissions": { "deny": [...] }` | `sandbox_mode = "..."` + `approval_policy = "..."` |
 | 嵌套结构 | 大括号 `{ }` + 逗号 | 节表头 `[section]` + 等号 |
 | 字符串引号 | 双引号必带 | 双引号 |
@@ -138,7 +138,7 @@ related:
 
 ```json
 {
-  "model": "claude-sonnet-4"
+  "model": "claude-sonnet-5"
 }
 ```
 
@@ -146,7 +146,7 @@ Codex 里设默认模型 + 推理强度（TOML）：
 
 ```toml
 # ~/.codex/config.toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "medium"
 ```
 

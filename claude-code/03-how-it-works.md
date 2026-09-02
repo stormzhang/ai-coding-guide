@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 工作原理：代理循环与内置工具"
 description: "Claude Code 的代理循环、上下文窗口、内置工具和权限确认机制，解释它如何从理解任务走到修改文件与验证结果，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/how-claude-code-works
@@ -163,10 +163,12 @@ related:
 
 | 权限模式 | 状态栏显示 | Claude 的行为|
 |---|---|---|
-| **默认** | （不显示提示） | 改文件、跑命令前都会询问你 |
+| **Manual（手动模式）** | `⏸ manual mode on` | 改文件、跑命令前都会询问你 |
 | **自动接受编辑** | `⏵⏵ accept edits on` | 改文件和常见文件命令（如 `mkdir`、`mv`）不问，其他命令仍问 |
 | **Plan Mode（计划模式）** | `⏸ plan mode on` | 可读文件和运行探索性命令，但不编辑源代码；先给你一份计划，你批准了才动手 |
 | **自动模式** | `⏵⏵ auto mode on` | 用后台安全检查评估所有操作（**实验性，目前是研究预览，可能变化**）|
+
+> ℹ️ 第一档以前叫「默认」（配置值 `default`），v2.1.200 起在 CLI 和编辑器扩展里统一改叫 **Manual**；配置里写 `default` 或新别名 `manual` 都可以。
 
 最值得养成的习惯是用 **Plan Mode**：复杂任务先按两下 `Shift+Tab` 进去，让它「只分析、出方案、别动手」，方案过一遍、改改，确认了再放它执行。**这能躲过好几次「方向错了改一半」的返工**——先看图纸再施工，比边干边改省事太多。
 

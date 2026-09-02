@@ -2,7 +2,7 @@
 seoTitle: "Claude Code GitHub Actions 集成教程"
 description: "在 GitHub Actions 和 PR 中调用 Claude Code 的安装、认证、工作流配置、触发方式与安全注意事项，适合仓库自动化场景"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/github-actions
@@ -190,7 +190,7 @@ jobs:
   with:
     anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
     prompt: "Your instructions here"          # 可选：给它的指令
-    claude_args: "--max-turns 5 --model claude-sonnet-4-6"  # 可选：CLI 参数
+    claude_args: "--max-turns 5 --model claude-sonnet-5"  # 可选：CLI 参数
 ```
 
 常用的几个 `claude_args`，官方列了这些：
@@ -203,7 +203,7 @@ jobs:
 | `--mcp-config` | MCP 配置文件路径（第 22 篇那套） | — |
 | `--debug` | 开调试输出，排错时用 | 关 |
 
-补一个官方明确写在文档里的事实：**Claude Code GitHub Actions 默认用 Sonnet**；想用 Opus 4.8，得在 `claude_args` 里加 `--model claude-opus-4-8` 显式指定。日常 review、改小 bug，Sonnet 完全够；真碰到要它啃大改动、做复杂推理，再换 Opus（模型怎么挑，第 30 篇那套「派活挑人」的逻辑在这儿照样成立）。
+补一个官方明确写在文档里的事实：**Claude Code GitHub Actions 默认用 Sonnet**；想用 Opus，得在 `claude_args` 里加 `--model claude-opus-4-8` 显式指定。日常 review、改小 bug，Sonnet 完全够；真碰到要它啃大改动、做复杂推理，再换 Opus（模型怎么挑，第 30 篇那套「派活挑人」的逻辑在这儿照样成立）。
 
 > 💡 一句话总结：workflow 就是给 Claude 排的**值班表**——`on` 定**何时上班**、`steps` 里 `claude-code-action@v1` 定**干什么**；v1 会**自动检测模式**（给 `prompt` 就自动跑、不给就等 `@claude`）；CLI 参数统一从 **`claude_args`** 塞进去。
 

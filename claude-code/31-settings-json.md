@@ -165,7 +165,7 @@ related:
 ```json
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "model": "claude-sonnet-4-6",
+  "model": "claude-sonnet-5",
   "permissions": {
     "allow": ["Bash(npm run test *)"],
     "deny": ["Bash(curl *)", "Read(./.env)"]
@@ -184,7 +184,7 @@ related:
 
 ### model：默认用哪个模型
 
-`model` 决定这一层默认跑哪个模型。值填模型 ID（像 `"claude-sonnet-4-6"`）。
+`model` 决定这一层默认跑哪个模型。值填模型 ID（像 `"claude-sonnet-5"`）。
 
 - **放哪层**：看你的需求。「我个人就爱用某个模型」→ 用户级；「这个项目大家统一用 Sonnet 省额度」→ 项目级。
 - **一个要注意的点**：`model` 跟大多数字段不同，它**在会话启动时只读一次**，改了要么重启、要么会话里用 `/model` 现切。`--model` 启动参数和 `ANTHROPIC_MODEL` 环境变量都能临时盖过它（模型相关详见第 5 篇）。

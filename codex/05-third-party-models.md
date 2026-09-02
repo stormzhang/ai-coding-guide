@@ -2,7 +2,7 @@
 seoTitle: "Codex 接入 DeepSeek 等第三方模型"
 description: "通过 OpenAI 兼容接口为 Codex CLI 配置第三方模型的基本方法、配置字段、验证步骤和能力差异，避免误解官方支持范围，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/config-advanced
@@ -40,7 +40,7 @@ related:
 
 我们一步步拆。
 
-你装的 Codex，本质也是个跑在终端里的客户端——它读代码、调工具、管上下文，但**它自己不思考**，每一步都要把请求发给一个大模型。默认这个模型是 OpenAI 的 GPT（当前推荐 `gpt-5.5`，来源：Codex 官方《Models》文档）。
+你装的 Codex，本质也是个跑在终端里的客户端——它读代码、调工具、管上下文，但**它自己不思考**，每一步都要把请求发给一个大模型。默认这个模型是 OpenAI 的 GPT（当前推荐 `gpt-5.6`，即旗舰 Sol，来源：Codex 官方《Models》文档）。
 
 所谓「接第三方」，就是把这个发请求的目标，从 OpenAI 改到别人家。Codex 官方确实留了这个口子——文档原话是：
 

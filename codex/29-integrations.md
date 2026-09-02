@@ -2,7 +2,7 @@
 seoTitle: "Codex Slack、Linear 与 SDK 集成指南"
 description: "在 Slack 和 Linear 中委派 Codex 任务，以及通过 SDK 把本地代理嵌入产品的入口、流程、认证与适用场景，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/sdk
@@ -281,14 +281,14 @@ from openai_codex import Codex, Sandbox
 
 with Codex() as codex:
     thread = codex.thread_start(
-        model="gpt-5.4",
+        model="gpt-5.6-terra",
         sandbox=Sandbox.workspace_write,
     )
     result = thread.run("Make a plan to diagnose and fix the CI failures")
     print(result.final_response)
 ```
 
-> 上面 `model="gpt-5.4"` 只是官方示例里的写法，**具体模型名随版本变，以官方为准**，别照抄写死。
+> 上面 `model="gpt-5.6-terra"` 只是官方示例里的写法，**具体模型名随版本变，以官方为准**，别照抄写死。
 
 应用本身已经是异步的，就用 `AsyncCodex` ：
 
@@ -298,7 +298,7 @@ from openai_codex import AsyncCodex
 
 async def main() -> None:
     async with AsyncCodex() as codex:
-        thread = await codex.thread_start(model="gpt-5.4")
+        thread = await codex.thread_start(model="gpt-5.6-terra")
         result = await thread.run("Implement the plan")
         print(result.final_response)
 

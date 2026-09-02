@@ -2,7 +2,7 @@
 seoTitle: "Codex 子代理教程：配置与并行协作"
 description: "Codex 子代理的创建、角色说明、模型和工具配置、调用方式与上下文隔离，帮助你把复杂任务拆成专项工作，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/subagents
@@ -31,7 +31,7 @@ related:
 - 怎么给不同 agent 选不同模型和「思考强度」，让侦察兵用快模型、审查员用强模型
 - 手把手实战：写一个只读侦察 agent，派它跑、验证它只回摘要、不越权
 
-> ⚠️ 下文凡涉及具体命令、配置键、默认值，都以 Codex [官方文档](https://developers.openai.com/codex/subagents) 为准；模型名（`gpt-5.5` 之类）这种随版本变的东西，看到时以你本地实际显示为准，本篇尽量不写死。
+> ⚠️ 下文凡涉及具体命令、配置键、默认值，都以 Codex [官方文档](https://developers.openai.com/codex/subagents) 为准；模型名（`gpt-5.6-sol` 之类）这种随版本变的东西，看到时以你本地实际显示为准，本篇尽量不写死。
 
 ---
 
@@ -224,7 +224,7 @@ Prioritize correctness, security, behavior regressions, and missing test coverag
 
 这是自定义 agent 最香的地方——**让每路 agent 用最匹配的脑子**。两个旋钮：
 
-- **`model`**：用哪个模型。官方思路是「侦察用快的、审查用强的」——偏读、扫大文件、跑并行 worker 这种活，用更快更省的（官方点名 `gpt-5.4-mini` 这档）；要审查、要啃多步复杂逻辑的，用更强的（官方列了 `gpt-5.4` / `gpt-5.5` 两档，`gpt-5.5` 是 demanding agents 的起点，reviewer 示例用的是 `gpt-5.4`）。**具体模型名随版本变，以官方为准**，记住这个「侦察用快、攻坚用强」的分配思路就够了。
+- **`model`**：用哪个模型。官方思路是「侦察用快的、审查用强的」——偏读、扫大文件、跑并行 worker 这种活，用更快更省的 `gpt-5.6-terra`；清晰、可重复、量大的活可以降到 `gpt-5.6-luna`；要审查、要啃多步复杂逻辑的 demanding agents，从 `gpt-5.6`（Sol）起步。**具体模型名随版本变，以官方为准**，记住这个「侦察用快、攻坚用强」的分配思路就够了。
 - **`model_reasoning_effort`**：思考强度，三档。
 
 | 思考强度 | 用在 | 代价 |
@@ -235,13 +235,13 @@ Prioritize correctness, security, behavior regressions, and missing test coverag
 
 把它俩落到文件里，给侦察兵配快模型、低思考，给审查员配强模型、高思考：
 
-注意模型名：官方示例的侦察兵用 `gpt-5.3-codex-spark`（需 ChatGPT Pro，研究预览），这里改用 `gpt-5.4-mini`，Pro 用户可换回 `gpt-5.3-codex-spark`。
+注意模型名：官方示例的侦察兵用 `gpt-5.3-codex-spark`（需 ChatGPT Pro，研究预览），这里改用 `gpt-5.6-terra`——官方现在给探索、扫大文件这类 agent 推荐的正是它；Pro 用户可换回 `gpt-5.3-codex-spark`。
 
 ```toml
 # .codex/agents/explorer.toml —— 只读侦察兵：快、省、不动手
 name = "pr_explorer"
 description = "Read-only codebase explorer for gathering evidence before changes."
-model = "gpt-5.4-mini"
+model = "gpt-5.6-terra"
 model_reasoning_effort = "medium"
 sandbox_mode = "read-only"
 developer_instructions = """

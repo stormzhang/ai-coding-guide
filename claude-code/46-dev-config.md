@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 开发环境配置指南"
 description: "终端、Shell、开发容器、网络代理和项目初始化等环境配置，帮助你减少命令执行差异并让 Claude 在稳定环境里工作，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/devcontainer
@@ -354,7 +354,7 @@ export ANTHROPIC_MODEL=sonnet
 
 挑完模型，其实还有一层旋钮叫**努力级别（effort level）**——它控制模型「思考多深」。同一个 Opus，你可以让它「快速过一遍」，也可以让它「往死里想」，对应的就是 token 花得少还是多。
 
-**类比：还是那位大厨，今天是随手颠两下勺，还是慢工细炖。** 同一个人，火候和用心程度可以不一样——简单的家常菜随手就出，硬菜才慢慢吊汤。努力级别就是给模型调这个「用心程度」，官方列了五档：`low` 省钱快出、`medium` 轻量平衡、`high`（Opus 4.8/4.6 和 Sonnet 4.6 的默认）平衡推理与成本、`xhigh` 更深推理（Opus 4.7 的默认）、`max` 「不计成本往深里想」。
+**类比：还是那位大厨，今天是随手颠两下勺，还是慢工细炖。** 同一个人，火候和用心程度可以不一样——简单的家常菜随手就出，硬菜才慢慢吊汤。努力级别就是给模型调这个「用心程度」，官方列了这几档：`low` 省钱快出、`medium` 轻量平衡、`high`（Opus 5 / Sonnet 5 / Fable 5 / Opus 4.8 的默认）平衡推理与成本、`xhigh` 更深推理（Opus 4.7 的默认）、`max`「不计成本往深里想」，v2.1.203 起还有一档 `ultracode` 供极限场景。
 
 最实用的两个用法：
 

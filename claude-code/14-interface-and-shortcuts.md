@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 交互界面与快捷键速查"
 description: "交互界面的状态区、输入模式、历史记录、快捷键和 Shell 模式，帮助你减少鼠标操作并准确判断当前会话处于什么状态，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/interactive-mode
@@ -236,7 +236,7 @@ claude
 
 按一下 `Shift+Tab`，再按一下，再按一下。
 
-**预期**：状态行里的模式提示在 `default` / `acceptEdits` / `plan` 之间循环变化（你启用了哪些模式就在哪些之间转）。**看到那行字在变，就说明你切对了**。多按几下转回 `default`。
+**预期**：状态行里的模式提示在 Manual（`⏸ manual mode on`）/ `⏵⏵ accept edits on` / `⏸ plan mode on` 之间循环变化（你启用了哪些模式就在哪些之间转）。**看到那行字在变，就说明你切对了**。多按几下转回 Manual。
 
 **第五步：试多行输入**
 

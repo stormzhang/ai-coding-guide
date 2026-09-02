@@ -2,7 +2,7 @@
 seoTitle: "Claude Code API 配置：订阅登录与 API Key 怎么选"
 description: "Claude 订阅登录、Anthropic API Key 与云厂商认证的差异、费用归属和切换方式，帮助你选对最合适的接入路径，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/authentication
@@ -171,28 +171,29 @@ unset ANTHROPIC_API_KEY
 
 身份配好了，还有一件事要拍板：**让它用哪个模型干活。**
 
-**类比：派活儿挑人。** Opus 是组里**最强的资深工程师**——脑子好、推理深，但慢、贵；Sonnet 是**主力干将**——日常编程又快又稳，性价比高；Haiku 是**跑腿小弟**——简单活儿秒回、最省。难题派 Opus，日常派 Sonnet，杂活派 Haiku。
+**类比：派活儿挑人。** Fable 是**外聘的顶级专家顾问**——能力天花板最高，适合最困难、耗时最长的任务，但它不进排班表，得你点名才出马；Opus 是组里**最强的资深工程师**——脑子好、推理深，但慢、贵；Sonnet 是**主力干将**——日常编程又快又稳，性价比高；Haiku 是**跑腿小弟**——简单活儿秒回、最省。最难的活派 Fable，难题派 Opus，日常派 Sonnet，杂活派 Haiku。
 
 Claude Code 用**模型别名**让你不用记一长串版本号。常用这几个：
 
 | 别名 | 用途 |
 |------|------|
 | `default` | 特殊值：清掉手动覆盖，回到你账户层级推荐的模型 |
+| `fable` | Fable 5，最困难、耗时最长的任务（需主动选择，不会默认启用） |
 | `opus` | 最新 Opus，复杂推理 / 架构决策 |
 | `sonnet` | 最新 Sonnet，日常编程 |
 | `haiku` | 快速高效，处理简单任务 |
-| `best` | 当前等同于 `opus`，使用最强大的可用模型 |
+| `best` | 组织有权限时用 Fable 5，否则用最新 Opus |
 | `opusplan` | 混合模式：Plan Mode 用 Opus 想，执行时切 Sonnet 干 |
 | `opus[1m]` / `sonnet[1m]` | 带 100 万 token 上下文窗口，啃大代码库 / 长会话 |
 
-注意：**别名指向「你的层级推荐的版本」，会随时间更新**。具体解析成哪个版本，官方文档以它为准——比如在 Anthropic API 上 `opus` 当前解析为 Opus 4.8、`sonnet` 解析为 Sonnet 4.6，但不同提供商（Bedrock / Vertex 等）解析的版本不同（以官方文档为准，可能变化）。
+注意：**别名指向「你的层级推荐的版本」，会随时间更新**。具体解析成哪个版本，官方文档以它为准——比如在 Anthropic API 上 `opus` 当前解析为 Opus 4.8、`sonnet` 解析为 Sonnet 5，但不同提供商（Bedrock / Vertex 等）解析的版本不同（以官方文档为准，可能变化）。
 
 **你订阅的层级，决定了默认给你哪个模型：**
 
 | 账户类型 | `default` 解析为 |
 |------|------|
 | Max / Team Premium / Enterprise 按量 / Anthropic API | Opus 4.8 |
-| Pro / Team Standard / Enterprise 订阅席位 | Sonnet 4.6 |
+| Pro / Team Standard / Enterprise 订阅席位 | Sonnet 5 |
 
 也就是说，**Pro 用户默认是 Sonnet，Max 用户默认能上 Opus**——这也是推荐重度用户上 Max 的原因之一。另外，达到 Opus 用量阈值时，Claude Code 可能会**自动回退到 Sonnet**，这是正常行为，不是 bug。
 

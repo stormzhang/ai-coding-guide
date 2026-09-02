@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 插件指南：安装、组合与分发能力"
 description: "Claude Code 插件如何组合命令、Agent、Skill、Hook 和 MCP，覆盖插件安装、启用、目录结构与团队分发的基本流程，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/plugins
@@ -157,7 +157,7 @@ related:
 | 组件 | 装进来后怎么用 |
 |------|--------------|
 | **Skills / Commands** | 变成 `/插件名:skill名` 这种命名空间命令，你手动敲、或 Claude 自动调 |
-| **Subagents** | 出现在 `/agents` 列表里，Claude 按任务自动派、你也能手动点 |
+| **Subagents** | 注册进子代理体系，Claude 按任务自动派、你也能 `@` 点名 |
 | **Hooks** | 在对应事件（如改文件后）自动触发，不用你管 |
 | **MCP server** | 自动启动，它的工具混进 Claude 的工具箱里直接能用 |
 | **LSP server** | 给 Claude 实时代码智能（跳转定义、查引用、即时报错），需另装语言服务器二进制 |

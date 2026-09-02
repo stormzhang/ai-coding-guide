@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 常见问题排查完整指南"
 description: "安装、登录、网络、权限、MCP、IDE、模型和性能等常见故障的定位顺序与解决方法，适合遇到问题时按现象快速查找，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/troubleshooting
@@ -160,7 +160,7 @@ claude
 | `/context` | 当前会话里上下文都被谁占了（系统提示、内存文件、skills、MCP 工具、消息） |
 | `/memory` | 加载了哪些 `CLAUDE.md` 和规则文件 |
 | `/skills` | 来自项目 / 用户 / 插件的可用 skills |
-| `/agents` | 配置的子代理及其设置 |
+| `/agents` | v2.1.198 起只打印提示（让你口述给 Claude 或直接编辑 `.claude/agents/`）；查子代理配置直接翻那个目录 |
 | `/hooks` | 当前会话注册了哪些 hook |
 | `/mcp` | 连上的 MCP server 及其状态 |
 | `/permissions` | 当前生效的允许 / 拒绝规则 |

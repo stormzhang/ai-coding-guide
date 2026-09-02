@@ -2,7 +2,7 @@
 seoTitle: "Claude Code CLI 命令与参数完整参考"
 description: "Claude Code 命令行入口、常用参数、会话恢复、模型选择、权限设置和非交互用法，适合需要快速查询准确命令的读者，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/cli-reference
@@ -167,7 +167,7 @@ claude -p "这个项目的 auth 模块是干啥的"
 ```bash
 claude --model sonnet
 claude --model opus
-claude --model claude-sonnet-4-6   # 也可以写完整名字
+claude --model claude-sonnet-5   # 也可以写完整名字
 ```
 
 可以用别名（`sonnet`、`opus` 指向各自最新款），也可以写完整模型名。模型怎么选、各档什么定位，第 05 篇讲过，这里只管「怎么在命令行临时切」。
@@ -182,7 +182,7 @@ claude --permission-mode plan
 
 官方给的可选值有这几个：
 
-> 接受 `default`、`acceptEdits`、`plan`、`auto`、`dontAsk` 或 `bypassPermissions`。覆盖设置文件中的 `defaultMode`。
+> 接受 `manual`（旧名 `default`，两者都认）、`acceptEdits`、`plan`、`auto`、`dontAsk` 或 `bypassPermissions`。覆盖设置文件中的 `defaultMode`。
 
 简单说：`plan`（只规划不动手）、`acceptEdits`（自动批准改文件）、`bypassPermissions`（全放行、慎用）这几个最常用。**这些模式各自啥脾气，下一篇（第 35 篇）专门拆**，这里你只要知道「用这个标志能在启动时一步到位选好模式」。
 
@@ -399,7 +399,7 @@ claude auth status || { echo "未登录，终止"; exit 1; }
 |------|------|
 | `--model` | 这趟用哪个模型（别名 `sonnet`/`opus` 或完整名），覆盖默认 |
 | `--fallback-model` | 默认模型过载 / 不可用时自动回退到指定模型（`-p` 和后台会话生效，交互被忽略） |
-| `--permission-mode` | 从哪种权限模式开（`default`/`acceptEdits`/`plan`/`auto`/`dontAsk`/`bypassPermissions`） |
+| `--permission-mode` | 从哪种权限模式开（`manual`（旧名 `default`）/`acceptEdits`/`plan`/`auto`/`dontAsk`/`bypassPermissions`） |
 | `--allowedTools` | 无需提示直接放行的工具 |
 | `--disallowedTools` | 拒绝规则 |
 | `--dangerously-skip-permissions` | 跳过所有权限提示（等同 `--permission-mode bypassPermissions`，慎用） |

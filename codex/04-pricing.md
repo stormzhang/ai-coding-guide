@@ -2,7 +2,7 @@
 seoTitle: "Codex 订阅与计费：套餐、额度和 API 成本"
 description: "ChatGPT 套餐中的 Codex 权益、使用额度、API 计费和不同入口的成本差异，帮助你按使用强度选择合适方案，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/pricing
@@ -238,10 +238,10 @@ codex
 /model
 ```
 
-按提示选个更小的模型（如 GPT-5.4-mini 这类）跑日常活儿，**限额能撑更久**。也可以在启动时直接指定，比如：
+按提示选个更小的模型（如 `gpt-5.6-luna` 这类）跑日常活儿，**限额能撑更久**。也可以在启动时直接指定，比如：
 
 ```bash
-codex --model gpt-5.5
+codex --model gpt-5.6-terra
 ```
 
 （`--model` 后跟哪些模型名**以你账号当前可用的为准**，`/status` 里能看到当前用的是哪个。）

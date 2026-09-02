@@ -2,7 +2,7 @@
 seoTitle: "Codex 命令与 config.toml 配置速查表"
 description: "汇总 Codex CLI 参数、斜杠命令、权限模式、config.toml 字段和常用文件路径，适合日常使用时快速定位准确写法，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/cli/reference
@@ -78,7 +78,7 @@ related:
 
 | 标志 | 作用 | 取值 / 备注 |
 | --- | --- | --- |
-| `--model` / `-m` | 临时换模型 | 如 `-m gpt-5.5` |
+| `--model` / `-m` | 临时换模型 | 如 `-m gpt-5.6-terra` |
 | `--image` / `-i` | 附带图片给首条提示 | 多张用逗号分隔或重复 `-i` |
 | `--cd` / `-C` | 指定工作目录后再开干 | 接一个路径 |
 | `--sandbox` / `-s` | 选沙箱档位 | `read-only` / `workspace-write` / `danger-full-access` |
@@ -101,7 +101,7 @@ related:
 | `--output-schema` | 给个 JSON Schema，强制最终输出符合该结构 |
 | `--skip-git-repo-check` | 允许在非 Git 目录里跑 |
 | `--ephemeral` | 不在磁盘留会话记录 |
-| `--full-auto` | **已弃用**的兼容标志，会打警告；新脚本改用 `--sandbox workspace-write` |
+| `--full-auto` | **已删除**（0.147.0 起彻底移除，不再兼容）；新脚本改用 `--sandbox workspace-write` |
 | `codex exec resume --last` | 接着最近一次 exec 会话继续 |
 
 > 💡 一句话总结：`-m` 换模型、`-s` 调沙箱、`-a` 调审批、`-o`/`--json` 收结果——把这四件事记牢，命令行八成场景就齐了。
@@ -145,7 +145,7 @@ related:
 
 | 配置键 | 作用 | 取值示例 |
 | --- | --- | --- |
-| `model` | 默认模型 | `"gpt-5.5"` |
+| `model` | 默认模型 | `"gpt-5.6"` |
 | `model_reasoning_effort` | 推理强度（可选值随模型变化） | 常见：`none` / `minimal` / `low` / `medium` / `high` / `xhigh` |
 | `model_reasoning_summary` | 推理摘要详细度 | `auto` / `concise` / `detailed` / `none` |
 | `service_tier` | 服务层级 | `flex` / `fast`（提速相关，搭配 `/fast`） |
@@ -160,7 +160,7 @@ related:
 一个最小可用的 `config.toml` 长这样，复制进去改改就能用：
 
 ```toml
-model = "gpt-5.5"
+model = "gpt-5.6"
 model_reasoning_effort = "medium"
 sandbox_mode = "workspace-write"
 approval_policy = "on-request"
@@ -195,7 +195,7 @@ network_access = false
 codex --sandbox workspace-write --ask-for-approval on-request
 ```
 
-补充两个我踩过的点：想给 Codex 多开一个可写目录，**别图省事直接上 `danger-full-access`，用 `--add-dir` 精准放行那一个目录**就够；`--full-auto` 是老的兼容写法，已弃用，新脚本一律改成 `--sandbox workspace-write`。
+补充两个我踩过的点：想给 Codex 多开一个可写目录，**别图省事直接上 `danger-full-access`，用 `--add-dir` 精准放行那一个目录**就够；`--full-auto` 这个老标志已在 0.147.0 彻底删除，老脚本一律改成 `--sandbox workspace-write`。
 
 > 💡 一句话总结：本地默认「`workspace-write` + `on-request`」，CI 用「指定沙箱 + `never`」，要放权先想能不能用 `--add-dir` 替代全开。
 
@@ -207,11 +207,12 @@ codex --sandbox workspace-write --ask-for-approval on-request
 
 | 模型 | 定位 | 什么时候用 |
 | --- | --- | --- |
-| `gpt-5.5` | 旗舰，最强 | 复杂编程、重构、研究类硬活 |
-| `gpt-5.4-mini` | 轻量、快、省 | 杂活、批量任务、子代理 |
+| `gpt-5.6-sol` | 旗舰、默认，最强 | 复杂编程、重构、研究类硬活 |
+| `gpt-5.6-terra` | 日常主力 | 日常开发，性能追平上代旗舰、更省 |
+| `gpt-5.6-luna` | 轻量、快、省 | 杂活、批量任务、子代理 |
 | `gpt-5.3-codex-spark` | 即时型研究预览（仅 ChatGPT Pro） | 求近乎秒回的实时迭代 |
 
-`gpt-5.2` 和 `gpt-5.3-codex` 已弃用，别再写进配置或 `--model` 里。
+`gpt-5.2` 和 `gpt-5.3-codex` 已弃用，`gpt-5.4` 和 `gpt-5.4-mini` 也已于 2026 年 8 月 31 日退役（ChatGPT 登录），都别再写进配置或 `--model` 里。
 
 推理强度由 `model_reasoning_effort` 控制，**可选档位随模型变化**（哪几档能用，以 `/model` 面板和当前模型文档为准），常见档位：
 
@@ -224,7 +225,7 @@ codex --sandbox workspace-write --ask-for-approval on-request
 | `high` | 深思熟虑 | 多文件改动、设计权衡 |
 | `xhigh` | 顶格（模型相关） | 真·硬骨头，确定值得等 |
 
-我自己的默认就是「`gpt-5.5` + `medium`」打天下，只在确定要啃硬骨头时手动提到 `high`。前面第 30 篇说过我犯的蠢——长期锁死 `xhigh` 改个 typo 等一分钟，**那种「最强焦虑」省下来的，比你以为的多得多。**
+我自己的默认就是「`gpt-5.6` + `medium`」打天下，只在确定要啃硬骨头时手动提到 `high`。前面第 30 篇说过我犯的蠢——长期锁死 `xhigh` 改个 typo 等一分钟，**那种「最强焦虑」省下来的，比你以为的多得多。**
 
 > 💡 一句话总结：日常「旗舰 + `medium`」，体力活降到 `minimal`/`low`，硬骨头才提 `high`/`xhigh`，弃用模型一个别碰。
 
@@ -289,7 +290,7 @@ codex exec --help
 - **斜杠命令**：会话内 `/model`、`/status`、`/compact`、`/diff` 先练成肌肉记忆。
 - **`config.toml`**：`model`、`model_reasoning_effort`、`sandbox_mode`、`approval_policy` 定好默认人格。
 - **权限沙箱**：本地「`workspace-write` + `on-request`」，CI「指定沙箱 + `never`」，放权优先 `--add-dir`。
-- **模型与强度**：旗舰 `gpt-5.5` + `medium` 打天下，弃用模型别碰。
+- **模型与强度**：旗舰 `gpt-5.6-sol` + `medium` 打天下，退役模型别碰。
 - **进阶入口**：MCP 走 `codex mcp`、子代理靠 `[agents]`、Skills 用 `/skills`。
 
 **你现在应该能**：丢掉那个歪歪扭扭的备忘 txt，要哪条命令、哪个配置键、哪个档位，扫一眼这页就走，拿不准时一句 `--help` 兜底，不用再开浏览器现翻文档。

@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 插件参考：目录、清单与发布"
 description: "插件目录结构、manifest、组件路径、版本与 marketplace 分发方式，适合需要制作、检查或发布 Claude Code 插件的读者"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/plugins-reference
@@ -152,7 +152,7 @@ my-plugin/
 |------|------|-----------|---------|
 | **Skills** | `skills/<名字>/SKILL.md` | 可调用的专项能力（第 26 篇） | 你 `/插件名:skill名`，或 Claude 自动调 |
 | **Commands** | `commands/*.md` | skill 的扁平老写法，新插件用 skills | 同上 |
-| **Agents** | `agents/*.md` | 专项 subagent（第 23 篇） | 出现在 `/agents`，Claude 派或你点 |
+| **Agents** | `agents/*.md` | 专项 subagent（第 23 篇） | Claude 按任务自动派，或你 `@` 点名 |
 | **Hooks** | `hooks/hooks.json` | 事件触发的自动动作（第 33 篇） | 生命周期事件自动触发 |
 | **MCP servers** | `.mcp.json` | 连外部服务（第 22 篇） | 启用即自动起，工具混进工具箱 |
 | **LSP servers** | `.lsp.json` | 实时代码智能（跳定义、查引用） | 处理代码时自动用，需另装语言服务器 |

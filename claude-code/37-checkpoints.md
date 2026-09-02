@@ -2,7 +2,7 @@
 seoTitle: "Claude Code Checkpoints 检查点与回滚指南"
 description: "检查点如何保存文件修改、查看历史和恢复到安全状态，说明它能回滚什么、不能替代什么，以及和 Git 的正确配合方式，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/checkpointing
@@ -323,7 +323,7 @@ claude
 把 note.txt 的内容改成三行：apple、banana、cherry，用编辑工具改
 ```
 
-**预期**：Claude 用编辑工具把 `note.txt` 改成三行水果（default 模式下它会先给 diff 等你批准，批准它）。**特意强调「用编辑工具」，是为了让这次改动落进检查点的跟踪范围**——这正是 `/rewind` 能救的那一类。
+**预期**：Claude 用编辑工具把 `note.txt` 改成三行水果（Manual 模式下它会先给 diff 等你批准，批准它）。**特意强调「用编辑工具」，是为了让这次改动落进检查点的跟踪范围**——这正是 `/rewind` 能救的那一类。
 
 **第三步：再发一条，把它改得更「面目全非」**
 

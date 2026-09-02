@@ -2,7 +2,7 @@
 seoTitle: "Codex 企业管理与治理完整指南"
 description: "企业部署 Codex 时的管理员设置、身份、权限、托管配置、数据治理和审计要求，说明个人使用与组织治理的关键差异，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-01"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/enterprise/governance
@@ -238,7 +238,7 @@ Codex 的成本观测，主要还是靠上一节那个 **Analytics 仪表盘 / A
 
 **第一，从策略层面省**。前面下发 `requirements.toml` 时，顺手就能把「贵的用法」收一收——比如限制沙箱模式、禁掉某些重型实验功能，本身就是在控成本。
 
-**第二，从模型 / 推理强度层面省**。第 30 篇讲过，**推理强度拉满最烧钱**。你可以在 `managed_config.toml` 里给全团队定个保守的默认值（比如 `model_reasoning_effort = "medium"`），让大家从合适档位起步，而不是人人开局 `xhigh`。轻量子任务用 `gpt-5.4-mini` 这类小模型，也能显著压成本。
+**第二，从模型 / 推理强度层面省**。第 30 篇讲过，**推理强度拉满最烧钱**。你可以在 `managed_config.toml` 里给全团队定个保守的默认值（比如 `model_reasoning_effort = "medium"`），让大家从合适档位起步，而不是人人开局 `xhigh`。轻量子任务用 `gpt-5.6-luna` 这类小模型，也能显著压成本。
 
 **第三，从额度 / 服务层级层面管**。`service_tier` 这类配置（`fast` 速度提升 1.5x 但积分消耗更高；`flex` 为另一内置值，具体差异以你的合同和后台为准）也能在托管默认里统一定调，把「默认走省钱档」变成团队习惯。
 
