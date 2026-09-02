@@ -2,7 +2,7 @@
 seoTitle: "Claude Code Agent Teams 教程：多会话团队协作"
 description: "Agent Teams 的负责人、队友、共享任务和消息机制，覆盖启用方式、任务拆分、成本风险和适合并行协作的真实场景，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-09-02"
+lastVerified: "2026-09-03"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/agent-teams
@@ -200,7 +200,7 @@ teammate on UX, one on technical architecture, one playing devil's advocate.
 
 > ⚠️ 官方反复强调：**清理一定走 leader，别让队友去清理**——队友的团队上下文可能解析不对，会把资源弄成不一致状态。而且清理前得先把还在跑的队友关掉，不然 leader 检测到有活跃队友会清理失败。
 
-**跨会话发消息：`SendMessage` / `ListAgents`（v2.1.224 起）。** 团队里的「信箱」再往大走一步，就是跨会话消息：v2.1.224 起，你多台机器上的 Claude Code 会话可以**互相发消息**——Claude 用 `SendMessage` 工具发、用 `ListAgents` 工具发现「现在有哪些会话和队友能联系上」；你自己想看名单，就用第 36 篇那条 `/list-agents`（别名 `/peers`）。首发支持 macOS 和 Linux，Windows 从 v2.1.239 起也加上了。两个配套设置值得知道：**`crossSessionInbound` 和 `dialogExpiry`**（同为 v2.1.224）——发给「以跳过权限模式运行」的会话的消息会先被扣下、等你批准才送达，发给其他会话的则自动送达。另外，跨会话 `SendMessage` **不需要开启 agent teams** 就能用，只有团队协议类的结构化消息（比如关停请求、计划批准回复）才依赖 teams 开关。
+**跨会话发消息：`SendMessage` / `ListAgents`（v2.1.224 起）。** 团队里的「信箱」再往大走一步，就是跨会话消息：v2.1.224 起，你多台机器上的 Claude Code 会话可以**互相发消息**——Claude 用 `SendMessage` 工具发、用 `ListAgents` 工具发现「现在有哪些会话和队友能联系上」；你自己想看名单，就用第 36 篇那条 `/list-agents`（别名 `/peers`）。首发支持 macOS 和 Linux，Windows 从 v2.1.239 起也加上了。两个配套设置值得知道：**`crossSessionInbound` 和 `dialogExpiry`**（同为 v2.1.224）——发给「以跳过权限模式运行」的会话的消息会先被扣下、等你批准才送达，发给其他会话的则自动送达。另外，跨会话 `SendMessage` **不需要开启 agent teams** 就能用，只有团队协议类的结构化消息（比如关停请求、计划批准回复）才依赖 teams 开关。两个后续增强也顺带记下：v2.1.236 给 `SendMessage` 加了 **`notify_when_idle` 参数**——让本机上另一个会话下次空闲时回你一条通知，一次性、不轮询（macOS 和 Linux）；v2.1.247 起，收到的 peer 消息默认**折叠成一行 `Message from @发送方: 首行` 预览**，想看全文按 `Ctrl+O` 展开。
 
 > 💡 一句话总结：起团队、分活、切队友（`Shift+Down`）、要计划批准、收摊清理，全用大白话指挥 leader；**记牢三条——队友模型要单独指定、背景要在指令里给全、清理只走 leader**。
 

@@ -2,7 +2,7 @@
 seoTitle: "Codex Slack、Linear 与 SDK 集成指南"
 description: "在 Slack 和 Linear 中委派 Codex 任务，以及通过 SDK 把本地代理嵌入产品的入口、流程、认证与适用场景，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-09-01"
+lastVerified: "2026-09-03"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/sdk
@@ -384,6 +384,8 @@ codex app-server
 **给绝大多数人的结论：你大概率用不到 App Server，SDK 就够了。** 它是给「做产品级深度集成」的团队准备的（比如你要做一个自己的 Codex 图形客户端）。**别一上来就奔着 App Server 去**，那是在给自己上没必要的复杂度；先用 SDK 把想法跑通，真到了「SDK 满足不了、必须自己掌控每一个事件」那一步，再考虑它。
 
 它的实现是**开源**的（在 Codex 的 [GitHub 仓库](https://github.com/openai/codex/tree/main/codex-rs/app-server) ），真要深挖可以去翻源码——但那是另一个量级的活了，这篇点到为止。
+
+顺带补一个跟 App Server 挨着、0.143.0 新增的**实验性**子命令：**`codex remote-control`**。它管的不是「你自己写协议客户端」，而是另一件事——**把本地 app-server 以「可被远程控制」的方式跑成守护进程**：`codex remote-control` 在前台跑、`start` 起守护进程、`stop` 停掉；守护进程跑起来之后，`codex remote-control pair` 生成一个**短时手动配对码**给远程客户端配对用（加 `--json` 输出机器可读结果，含 `pairingCode`、`expiresAt` 等字段）。官方在命令清单里把它标成 experimental，还特意划了条线：**它是给托管的远程控制客户端和 SSH 远程工作流用的，不是 `codex app-server --listen` 的替代品**——你要自己写本地协议客户端，还是老老实实 `--listen`。新手知道有这东西就行，别急着用。
 
 > 💡 一句话总结：App Server 是 Codex 驱动富客户端（如 VS Code 扩展）的**底层 JSON-RPC 接口**，给「做产品级深度集成」用；**官方明确说自动化/CI 用 SDK 而不是它**，绝大多数人用不到——先用 SDK 跑通，别一上来碰这个。
 

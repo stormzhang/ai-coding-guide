@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 常见问题排查完整指南"
 description: "安装、登录、网络、权限、MCP、IDE、模型和性能等常见故障的定位顺序与解决方法，适合遇到问题时按现象快速查找，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-09-02"
+lastVerified: "2026-09-03"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/troubleshooting
@@ -82,7 +82,7 @@ related:
 
 v2.1.247 起还有个新变化：会话里出了问题时，**Claude 自己也能用 `SendFeedback` 工具替你起草一份反馈报告**——它起草完不会直接发，而是进 `/feedback` 的**草稿队列**，你在里面逐条审阅、改完再发（也可以丢弃）。不想让 Claude 起草，用 `feedbackDrafts` 设置关掉就行。
 
-> 你可能在别处听过 `/bug` 这个说法——它就是「上报问题」这件事的旧叫法。现在官方统一用 **`/feedback`**：在会话里把记录和描述发给 Anthropic，或顺带开一个预填的 GitHub issue。记 `/feedback` 这一个就够。
+> 你可能在别处听过 `/bug` 这个说法——它不是被 `/feedback` 取代了，而是从 v2.1.212 起两者**拆成了并列命令**（`/bug` 还有个别名 `/share`）：同一个上报对话框、同一套发送规则，都能把记录发给 Anthropic 或顺带开一个预填的 GitHub issue。区别只在入口：**`/feedback` 不带参数时会先开上面说的草稿队列**（队列里也能选「写新报告」直接进对话框），`/bug` 则永远直接开对话框。记 `/feedback` 这一个就够用。
 
 这里给你整理一张「先敲啥」对照表：
 

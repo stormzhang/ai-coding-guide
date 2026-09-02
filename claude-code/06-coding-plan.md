@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 订阅套餐与计费完整说明"
 description: "Claude 各订阅套餐、API 计费与 Claude Code 使用额度的关系，并说明不同使用强度下怎么选方案、怎么看成本和避免意外消耗，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-03"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/costs
@@ -119,7 +119,7 @@ Total code changes:    0 lines added, 0 lines removed
 
 > Session 块里的美元数字是**从 token 数本地估算的**，可能和实际账单不同。**权威计费看 [Claude Console](https://platform.claude.com/usage) 的使用页面。**（来源：官方 costs 文档）
 
-如果你用**官方 Pro / Max / Team / Enterprise 订阅**，`/usage` 还会多一块**额度用量明细**——把最近消耗按 skills、subagents、plugins、各 MCP server 拆开显示占比，按 `d` / `w` 切换「过去 24 小时 / 7 天」。注意这是**从本机会话历史算出的近似值**，不含其他设备或 claude.ai 的用量。（来源：官方 costs 文档）
+如果你用**官方 Pro / Max / Team / Enterprise 订阅**，`/usage` 还会多一块**额度用量明细**——把最近消耗按 skills、subagents、plugins、各 MCP server 拆开显示占比，按 `d` / `w` 切换「过去 24 小时 / 7 天」。注意这是**从本机会话历史算出的近似值**，不含其他设备或 claude.ai 的用量。（来源：官方 costs 文档）另外 v2.1.243 起还多了 **Loops 细分**——每个 `/loop` 任务的运行次数、总 token、单次 token 和最近运行时间，哪个循环任务失控烧钱一眼能逮（和第 36 篇的命令表说的是同一条）。
 
 ### `/usage-credits`：给自己设个月度上限（防超支神器）
 
