@@ -2,7 +2,7 @@
 seoTitle: "Codex 命令与 config.toml 配置速查表"
 description: "汇总 Codex CLI 参数、斜杠命令、权限模式、config.toml 字段和常用文件路径，适合日常使用时快速定位准确写法，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-09-01"
+lastVerified: "2026-09-02"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/cli/reference
@@ -69,6 +69,11 @@ related:
 | `codex exec` | 非交互跑一次，跑完即退；短写 `codex e` | 稳定 |
 | `codex resume` | 接着上一次的交互会话继续聊 | 稳定 |
 | `codex fork` | 把某次会话「分叉」成新线程，原记录不动 | 稳定 |
+| `codex archive` / `codex unarchive` | 归档 / 恢复某个存过的会话——只清出 resume 列表，不删记录 | 0.140.0 新增 |
+| `codex delete` | **永久删除**某个会话（有确认 safeguard；`--force` 仅限按 UUID 删） | 0.140.0 新增 |
+| `codex agents` | 打开 agent 会话仪表盘：搜索 / 打开 / 重命名 / 停止本地各任务 | 0.149.0 新增 |
+| `codex queue` | 给某个已在跑的会话排队发一条消息 | 0.149.0 新增 |
+| `codex remote-control pair` | 给运行中的远程控制守护进程生成一个短时手动配对码 | 实验性，0.143.0 新增 |
 | `codex apply` | 把云端任务生成的 diff 应用到本地；短写 `codex a` | 稳定 |
 | `codex mcp` | 管理 MCP 服务器（list / add / remove / login） | 实验性 |
 | `codex features` | 列出功能开关并持久启用/禁用 | 稳定 |
@@ -83,6 +88,7 @@ related:
 | `--cd` / `-C` | 指定工作目录后再开干 | 接一个路径 |
 | `--sandbox` / `-s` | 选沙箱档位 | `read-only` / `workspace-write` / `danger-full-access` |
 | `--ask-for-approval` / `-a` | 选审批时机 | `untrusted` / `on-request` / `never` |
+| `--approve-for-me` | 审批请求改交自动审查代理（不扩沙箱边界） | 0.147.0 新增，详见第 15 篇 |
 | `--search` | 开实时联网搜索 | 把 `web_search` 切到 `live`（默认是 `cached`） |
 | `--add-dir` | 额外给某目录写权限 | 可重复，比直接放开全盘安全 |
 | `--profile` / `-p` | 套用某个配置 profile | 叠在基础配置之上 |
@@ -103,6 +109,7 @@ related:
 | `--ephemeral` | 不在磁盘留会话记录 |
 | `--full-auto` | **已删除**（0.147.0 起彻底移除，不再兼容）；新脚本改用 `--sandbox workspace-write` |
 | `codex exec resume --last` | 接着最近一次 exec 会话继续 |
+| `codex exec fork` | 从某次会话分叉出新会话，原记录不动（0.148.0 新增） |
 
 > 💡 一句话总结：`-m` 换模型、`-s` 调沙箱、`-a` 调审批、`-o`/`--json` 收结果——把这四件事记牢，命令行八成场景就齐了。
 
@@ -125,10 +132,17 @@ related:
 | `/init` | 在当前目录生成 `AGENTS.md` 脚手架 |
 | `/mcp` | 列出当前会话能调的 MCP 工具（加 `verbose` 看详情） |
 | `/skills` | 浏览并选用本地 skill |
+| `/plugins` | 打开插件浏览器：装 / 卸插件、按空格切启用（详见第 23 篇） |
+| `/hooks` | 查看 / 信任 / 禁用生命周期钩子（详见第 24 篇） |
 | `/agent` | 在已派生的子代理线程之间切换 |
 | `/fast` | 开/关当前模型的 Fast 服务层（`/fast on`/`off`/`status`） |
-| `/new` | 同一 CLI 会话里开一段全新对话 |
-| `/clear` | 清屏并开新对话 |
+| `/new` | 同一 CLI 会话里开一段全新对话（0.146.0 起可顺带命名，如 `/new bug bash`） |
+| `/clear` | 清屏并开新对话（同样可顺带命名） |
+| `/import` | 从 Claude Code / Cursor 导入设置与最近对话（0.140.0 新增，0.145.0 起支持 Cursor） |
+| `/export` | 把当前对话导出成 Markdown，到剪贴板或新文件（0.148.0 新增） |
+| `/usage` | 看账号 token 用量（`daily` / `weekly` / `cumulative`），可兑换限额重置（0.140.0 新增） |
+| `/delete` | 永久删除当前会话并退出（0.140.0 新增） |
+| `/cd` `/pwd` `/cwd` | 查看 / 切换会话的工作目录（0.149.0 新增） |
 | `/quit` 或 `/exit` | 退出 CLI |
 
 提醒一句：`/fast` 是「模型目录（catalog）驱动」的——当前模型如果不提供 Fast 层，菜单里压根不出现 `/fast` ，别以为是 bug 。
@@ -153,7 +167,7 @@ related:
 | `sandbox_workspace_write.network_access` | 工作区写模式下是否放开联网 | `true` / `false` |
 | `sandbox_workspace_write.writable_roots` | 额外可写目录 | `["/path/a", "/path/b"]` |
 | `approval_policy` | 审批策略 | `untrusted` / `on-request` / `never` |
-| `web_search` | 联网搜索模式 | `disabled` / `cached` / `live`（默认 `cached`） |
+| `web_search` | 联网搜索模式 | `disabled` / `cached` / `indexed` / `live`（默认 `cached`） |
 | `review_model` | `/review` 用的模型 | 不填则用当前会话模型 |
 | `model_instructions_file` | 用某文件替代内置指令 | 一个路径 |
 
@@ -240,7 +254,7 @@ codex --sandbox workspace-write --ask-for-approval on-request
 | MCP（外接工具，像 USB 接口） | `codex mcp list` / `codex mcp add <name> ...` | 命令行管服务器；会话里 `/mcp` 看可用工具（实验性） |
 | MCP（HTTP 服务器登录） | `codex mcp login <name>` | 仅支持 OAuth 的 streamable HTTP 服务器 |
 | 配置 MCP 服务器 | `config.toml` 里 `[mcp_servers.<id>]` | `command`/`args`/`url` 等键定义一台服务器 |
-| 子代理（并行干活） | `config.toml` 里 `[agents]` / `agents.<name>.*` | `max_threads` 默认 `6`；会话里 `/agent` 切线程 |
+| 子代理（并行干活） | `config.toml` 里 `[agents]` / `agents.<name>.*` | 并发上限键为 `agents.max_concurrent_threads_per_session`（旧名 `max_threads` 保留兼容）；会话里 `/agent` 切线程 |
 | Skills（任务专用技能） | 会话里 `/skills` | 浏览并选用；`config.toml` 里用 `[[skills.config]]`（带 `path`/`enabled`）做启用覆盖 |
 
 注意 `codex mcp` 整组目前标的是「实验性」，子命令和行为可能随版本变，用前以 `codex mcp --help` 为准。

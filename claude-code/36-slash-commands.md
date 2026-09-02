@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 斜杠命令完整指南"
 description: "内置斜杠命令的分类、常用参数和使用时机，覆盖会话管理、上下文、配置、诊断与扩展命令的快速调用方式，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-09-01"
+lastVerified: "2026-09-02"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/interactive-mode
@@ -81,8 +81,9 @@ related:
 | `/init` | 给项目生成一份起步的 `CLAUDE.md` | 第一次在某个仓库里开工（详见第 12 篇） |
 | `/memory` | 编辑 `CLAUDE.md` 记忆文件、管自动记忆 | `/init` 之后想细调那份说明（详见第 25 篇） |
 | `/mcp` | 管 MCP server 连接和授权 | 要接外部服务时（详见第 22 篇） |
-| `/agents` | 打开子代理面板：Running 看实时子代理，Library 建 / 改自定义子代理 | 要配专项小弟时（详见第 23 篇） |
-| `/permissions` | 管「允许 / 询问 / 拒绝」的权限规则 | 想定好它动手前问不问你（详见第 20 篇） |
+| `/agents` | v2.1.198 起只打印一条提示：让 Claude 帮你建、或直接编辑 `.claude/agents/` 目录（老的 Running / Library 交互式向导已移除） | 要配专项小弟时（详见第 23 篇） |
+| `/auto-mode-setup` | 根据你的项目和近期会话，草拟 auto mode 的 `autoMode.environment` 环境规则，审完存进用户设置（v2.1.228 起，Pro / Max / Team） | 想把 auto mode 的分类器规则一次性配起来时 |
+| `/permissions` | 管「允许 / 询问 / 拒绝」的权限规则；v2.1.246 起多了 **Auto mode 标签页**，能直接查看和编辑 auto mode 的分类器规则 | 想定好它动手前问不问你（详见第 20 篇） |
 
 这一组进新项目时基本是**固定套路**：先 `/init` 让它读一遍代码、吐一份 `CLAUDE.md` 草稿，再 `/memory` 进去把它瞎猜错的几条改对。**省得从零手写那份说明**——这套流程头一回用的时候，是真有点惊喜。
 
@@ -95,6 +96,7 @@ related:
 | `/compact` | 把当前对话压缩成摘要，腾出上下文接着聊 | 对话太长、工作台快塞满（详见第 19 篇） |
 | `/context` | 把当前上下文占用画成一张彩色网格 | 想看「我的工作台都被谁占了」 |
 | `/plan` | 直接进 plan 模式 | 大改动前先让它出方案不动手 |
+| `/cd` | 把当前会话挪到另一个工作目录（对话保留）；v2.1.206 起输入部分路径会弹目录建议、按 `Tab` 补全，且挪完后新目录的项目设置、hooks、Skill 等**立即生效**（v2.1.246 起） | 干到一半要换项目目录 |
 
 `/clear` 和 `/compact` 这俩**最容易混**，开头那段栽的坑就是没分清「清空」和「压缩」。一句话切：**换个不相干的新活儿用 `/clear`（台面全擦掉重开），同一个任务但聊太长了用 `/compact`（把草稿纸整理成一页要点接着干）**。第 19 篇专门拆过这对，这里你记住「换任务 clear、续任务 compact」就够。
 
@@ -117,6 +119,12 @@ related:
 | `/resume` | 按 ID 或名字恢复一段旧对话，或开选择器 |
 | `/skills` | 列出当前可用的全部 Skill |
 | `/rewind` | 把对话和 / 或代码回退到某个检查点（下一篇主角） |
+| `/list-agents` | 列出当前能跨会话发消息的子代理、agent team 队友和其他会话（别名 `/peers`，v2.1.224 起） |
+| `/dataviz` | 图表 / 仪表盘设计指导的捆绑 Skill，自带调色板校验脚本（v2.1.198 起） |
+| `/artifacts` | 列出你的 artifacts，挑一个附加到会话、在浏览器打开或复制链接（v2.1.208 起） |
+| `/claude-api` | Claude API 开发的捆绑 Skill；近期新增 `prompt-audit`（v2.1.221）、`upgrade`（v2.1.239）、`cost-optimize`（v2.1.247）三个子命令 |
+| `/usage` | 看用量面板（详见第 06 篇）；v2.1.243 起多了 **Loops 细分**——每个 `/loop` 任务的运行次数、总 token、单次 token 和最近运行时间，失控的循环任务一眼能逮 |
+| `/usage-credits` | 配置使用额度，或向管理员申请提额（v2.1.248 起，主要面向 Enterprise 组织） |
 
 > **注意：不是每个命令对每个人都显示。** 官方说得明白——「可用性取决于你的平台、套餐和环境」。比如 `/desktop` 只在 macOS 和 Windows 上、且用 Claude 订阅登录时才出现，`/upgrade` 只在 Pro 和 Max 套餐上才有。**你打 `/` 看到的那张菜单，就是你这台机器、这个账号此刻真正能用的全集**——以它为准，别拿别人截图里的命令较真。
 

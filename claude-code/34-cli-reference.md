@@ -2,7 +2,7 @@
 seoTitle: "Claude Code CLI 命令与参数完整参考"
 description: "Claude Code 命令行入口、常用参数、会话恢复、模型选择、权限设置和非交互用法，适合需要快速查询准确命令的读者，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-09-01"
+lastVerified: "2026-09-02"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/cli-reference
@@ -134,15 +134,54 @@ claude auth login
 
 # 查登录状态（已登录退出码 0，未登录退出码 1）
 claude auth status
+
+# 从命令行直接完成 MCP 服务器的 OAuth 登录，不用开交互式 /mcp 面板（v2.1.186 起）
+claude mcp login sentry
+
+# 清除某个 MCP 服务器存下的 OAuth 凭据（v2.1.186 起）
+claude mcp logout sentry
 ```
 
 `claude install` 那个能跟版本号的细节，关键时刻很救命：官方说它**接受 `2.1.118` 这种具体版本号，也接受 `stable`、`latest`**。设想这样一种情况——某个新版本更新后某个行为变了不合用，用 `claude install 2.1.x` **回退钉死在上一个稳定版**，等问题修了再放开，比干等着舒服多了。
 
 `claude auth status` 那句「**已登录退出码 0、未登录退出码 1**」先记着，第 05 节讲退出码时还会回来用它——这是脚本里判断「当前到底登没登录」的标准招。
 
-> 这几条都需要联网。国内访问 Anthropic 账户体系（登录、更新拉包）如果不通，先开「魔法上网」再敲。
+`claude mcp login` 那两条还有个贴心设计：**在 SSH 这种打不开浏览器的环境里，加 `--no-browser`**，它会打印授权 URL 让你手动走流程，再把重定向 URL 粘回来完成登录（官方 CLI 参考页原话，v2.1.186 起）。
 
-> 💡 一句话总结：命令分三组记——**启动会话（`claude` / `claude "提示"` / `claude -p`）、接着上次聊（`-c` 认最近、`-r` 点名恢复）、维护账户（`update` / `install` / `auth`）**；`-c` 和 `-r` 是治「会话失忆」的两味药。
+### 第四组：后台会话与进阶管理（用得少，但得知道有）
+
+这组日常基本敲不到，先混个脸熟，用到时回来查：
+
+```bash
+# 在这个终端里接管一个正在跑的后台会话
+claude attach 7c5dcf5d
+
+# 查看后台会话最近的输出
+claude logs 7c5dcf5d
+
+# 停止 / 重启 / 从列表移除一个后台会话
+claude stop 7c5dcf5d
+claude respawn 7c5dcf5d
+claude rm 7c5dcf5d
+```
+
+这五个是「后台会话」的 shell 管理口，**v2.1.251 起被正式列入 `claude --help`**。后台会话本身（`--bg` 启动、`claude agents` 总控台）第 41 篇专门讲，这里只认命令。注意 `claude rm` 只是把会话从列表里删掉，**对话记录还留在本机**，随时能 `claude --resume` 找回来；`claude respawn` 加 `--all` 能重启所有运行中的会话（比如升级二进制后批量焕新）。
+
+```bash
+# 查看 / 重置 auto mode 的分类器规则配置
+claude auto-mode defaults   # 打印内置规则（JSON），v2.1.208 起
+claude auto-mode config     # 看应用了你的设置后的有效配置
+claude auto-mode reset      # 恢复默认配置（有确认提示，--yes 跳过），v2.1.212 起
+
+# 把自己的机器变成云端会话的运行环境（v2.1.224 起，Team / Enterprise 套餐）
+claude self-hosted-runner
+```
+
+`auto-mode` 这三条是「自动模式分类器规则」的命令行入口（auto mode 本身下一篇讲）；`claude self-hosted-runner` 是把你自己的机器或容器挂成 Claude Code 网页版 / 手机端 / 桌面版会话的运行后端，属团队与企业级玩法，个人玩家知道有这回事就行。
+
+> 「维护账户」那几条都需要联网。国内访问 Anthropic 账户体系（登录、更新拉包）如果不通，先开「魔法上网」再敲。
+
+> 💡 一句话总结：命令分四组记——**启动会话（`claude` / `claude "提示"` / `claude -p`）、接着上次聊（`-c` 认最近、`-r` 点名恢复）、维护账户（`update` / `install` / `auth` / `mcp login`）、后台与进阶（`attach` / `logs` / `stop` / `respawn` / `rm`、`auto-mode`、`self-hosted-runner`）**；`-c` 和 `-r` 是治「会话失忆」的两味药。
 
 ---
 
@@ -403,6 +442,7 @@ claude auth status || { echo "未登录，终止"; exit 1; }
 | `--allowedTools` | 无需提示直接放行的工具 |
 | `--disallowedTools` | 拒绝规则 |
 | `--dangerously-skip-permissions` | 跳过所有权限提示（等同 `--permission-mode bypassPermissions`，慎用） |
+| `--restricted` | 锁定模式：移除跑命令 / 代码的内置工具和 `WebFetch`，文件工具限在工作目录内，拒绝 `bypassPermissions`，忽略 user / project / local 设置（v2.1.248 起；也可设 `CLAUDE_CODE_RESTRICTED=1`） |
 
 **目录与配置**
 
@@ -423,6 +463,7 @@ claude auth status || { echo "未登录，终止"; exit 1; }
 | `--max-turns` | 限制最多几轮，超了报错退出（默认无限制） |
 | `--max-budget-usd` | API 花费超过这个美元数就停 |
 | `--verbose` | 详细日志，显示完整逐轮输出 |
+| `--forward-subagent-text` | `stream-json` 输出里带上子代理的文本和思考（v2.1.211 起；也可设 `CLAUDE_CODE_FORWARD_SUBAGENT_TEXT`） |
 | `--append-system-prompt` | 在默认系统提示末尾追加自定义文本 |
 | `--system-prompt` | 用自定义文本替换整个默认系统提示 |
 
@@ -432,6 +473,7 @@ claude auth status || { echo "未登录，终止"; exit 1; }
 |------|------|------|
 | `--version` | `-v` | 输出版本号 |
 | `--ide` | — | 启动时若恰好有一个可用 IDE 就自动连接 |
+| `--ax-screen-reader` | — | 屏幕阅读器模式：纯文本渲染、无装饰边框和动画（v2.1.208 起；也可设 `CLAUDE_AX_SCREEN_READER=1` 或 `axScreenReader` 设置） |
 | `--debug` | — | 开调试模式，可按类别过滤（如 `"api,mcp"`） |
 
 这张表覆盖了你前期会用到的绝大多数标志。**真要查全集（还有几十个偏门的，比如后台会话、agent team、remote control 相关），去翻官方 CLI 参考页**——它才是那本「全集说明书」，本节是「常用速查」。

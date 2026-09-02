@@ -2,7 +2,7 @@
 seoTitle: "Claude Code settings.json 配置详解"
 description: "用户级、项目级和本地 settings.json 的路径、优先级与常用字段，说明权限、环境变量、Hook 和插件配置如何安全落盘，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-02"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/settings
@@ -238,6 +238,16 @@ related:
 | `env` | 注入环境变量 | 项目专属→项目级；全局→用户级 |
 | `hooks` | 事件触发自动动作 | 团队卡点→项目级；个人习惯→用户级 |
 | `statusLine` | 自定义状态栏 | 个人视觉→**用户级** |
+
+### v2.1.243 新补的几个键：模型清单、定价、缓存寿命
+
+这几个日常不太会动，但特定场景很关键，认个脸熟（来源：官方 CHANGELOG v2.1.243）：
+
+| 配置键 | 干嘛的 | 谁会用到 |
+|--------|--------|---------|
+| `modelPicker` | 自定义 `/model` 选择器里的模型清单——有序、可带标签，可追加在内置列表后或整个替换 | 想精简 / 固定团队可选模型的人 |
+| `modelPricing` | 让 `/cost`、状态栏和遥测里的金额按**组织的合同价和折扣系数**算，而不是官方刊例价 | Enterprise 管理员（managed 设置） |
+| `promptCacheTtl` / `subagentPromptCacheTtl` | 分开调主对话和子代理的提示缓存寿命——比如主对话保持 1 小时缓存、子代理保持 5 分钟 | 走 API key / 云厂商、在意缓存成本的人 |
 
 ### 一个容易踩的混淆：不是所有配置都住在 settings.json 里
 

@@ -2,7 +2,7 @@
 seoTitle: "Codex Rules 与 Hooks：命令规则和生命周期自动化"
 description: "Rules 如何控制沙箱外命令，Hooks 如何在生命周期节点运行确定性脚本，并说明两者的配置、边界和组合方式，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-02"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/hooks
@@ -174,7 +174,7 @@ codex execpolicy check --pretty \
 
 这张图把「想 → 做 → 看」摊开了：一进会话是 `SessionStart`，你说话是 `UserPromptSubmit`，然后进入「要不要用工具」的循环——每次动工具，前面有 `PreToolUse`、后面有 `PostToolUse`，这一轮答完就是 `Stop`。**你想让动作在哪一步发生，就挂对应的那个事件。**
 
-Codex 支持的事件不止这几个（还有压缩前后的 `PreCompact`/`PostCompact`、子代理起停的 `SubagentStart`/`SubagentStop`、审批请求时的 `PermissionRequest` 等），但**对小白来说，先把下面这四个吃透，能覆盖九成场景**：
+Codex 支持的事件不止这几个（还有压缩前后的 `PreCompact`/`PostCompact`、子代理起停的 `SubagentStart`/`SubagentStop`、审批请求时的 `PermissionRequest`、0.150.0 新增的 `Interrupt`——顶层这一轮被打断时触发，能跑命令或 MCP 处理器等），但**对小白来说，先把下面这四个吃透，能覆盖九成场景**：
 
 | 事件 | 什么时候触发 | 最典型的用法 |
 |---|---|---|
@@ -251,7 +251,8 @@ Codex 找钩子的地方有两种形态：**独立的 `hooks.json`**，或 **`co
 这里有几个 Codex 特有的、**最容易想当然写错的默认值**，挑出来钉死：
 
 - **`timeout` 的单位是「秒」，不是毫秒**；省略不写时，默认是 **600 秒**。
-- **目前只有 `type: "command"` 的处理器真会跑**；`prompt` 和 `agent` 类型「能被解析但会被跳过」；`async: true` 的也会被跳过（异步钩子还没支持）。
+- **处理器类型目前真会跑的有两种**：`type: "command"`（跑 shell 命令）和 0.148.0 新增的 `type: "mcp_tool"`（直接调一个已连接 MCP 服务器上的工具，写法见本节末尾）；`prompt` 和 `agent` 类型仍「能被解析但会被跳过」。
+- **`async: true` 从 0.148.0 起正式支持**——钩子放后台跑、Codex 不等它（早期版本会跳过异步钩子，旧笔记里的「不支持」说法已过时）。细节同样见本节末尾。
 - **同一事件上有多个匹配钩子时，它们是并发启动的**——你的拦截钩子不会阻止另一个同事件匹配钩子同时跑。这是 Codex 和 Claude Code 的又一差异点：写 `PreToolUse` 拦截逻辑时，别以为它能「先跑完再决定其他钩子跑不跑」。
 - **命令的工作目录是会话的 `cwd`**。所以仓库内的钩子，官方建议**别用 `.codex/hooks/...` 这种相对路径**，因为 Codex 可能从子目录启动——用 `$(git rev-parse --show-toplevel)` 从 git 根算绝对路径才稳（上面例子就是这么写的）。
 - **Windows 想用不同命令**，加一个可选的 `command_windows`（TOML 里也可写 `commandWindows`）字段覆盖。
@@ -293,7 +294,44 @@ Codex 的 `matcher` 和 Claude Code 有个关键区别：**它是一个正则表
 - **不是所有事件都认 `matcher`**。`UserPromptSubmit` 和 `Stop` 这俩**无视 `matcher`**，你写了也被忽略，因为它们没有「工具名」这种东西可筛，总是每次都触发。`SubagentStop` 则不同，它的 `matcher` 作用于 `agent_type`，是支持的——别把 `SubagentStop` 和 `Stop` 混在一起理解。`SessionStart` 的 `matcher` 匹配的不是工具名，而是「会话怎么起来的」（`startup`/`resume`/`clear`/`compact`）。
 - **`PreToolUse` 拦不住所有命令**。官方说得很直白：它是「护栏，不是密不透风的强制边界」——目前只拦得住简单的 shell 调用、`apply_patch` 和 MCP 工具，更复杂的 shell（走 `unified_exec` 的）、`WebSearch` 这类它拦不到。所以**别拿 `PreToolUse` 当唯一的安全防线**，它是「多一道闸」，不是「万能墙」。
 
-> 💡 一句话总结：钩子写进 `~/.codex/` 或项目 `.codex/` 的 `hooks.json` / `config.toml`，配置就三层——**事件、matcher、动作**；记死 Codex 特有的几条：`timeout` 单位是**秒**（默认 600）、改文件工具名是 **`apply_patch`**、`matcher` 是**正则**、用 git 根拼路径。
+### 0.148.0 新增：钩子可以放后台跑、还能直接调 MCP 工具
+
+0.148.0 给钩子体系加了两个实打实的能力，都从「只能同步跑 shell」解放出来。
+
+**一是后台钩子（`async`）。** 默认情况下 Codex 会**等钩子跑完**才继续触发它的那个操作；给 command 处理器加 `"async": true`（TOML 里写 `async = true`），钩子就转到后台跑，Codex 照常往下干：
+
+```json
+{
+  "type": "command",
+  "command": "python3 ~/.codex/hooks/slow_scan.py",
+  "async": true,
+  "timeout": 120
+}
+```
+
+适合「格式化之外还想跑个慢扫描、记个日志」这种不该卡住主流程的活。两个行为要点：后台钩子的输出**不打断当前流程**，会在「下一个安全点」送达——这轮还在跑就等当前模型请求和工具调用结束后交给下一个模型请求，没在跑就等你下一轮发言（**它自己不会新开一轮**）；另外 `SessionEnd` 钩子**永远同步跑**，写了 `async` 也忽略。除此之外，输入、`matcher`、信任审阅、`timeout`（还是秒，默认 600）都和同步钩子一样。
+
+**二是 MCP 工具钩子（`mcp_tool`）。** 钩子不一定要跑脚本了，可以直接调一个**已连接**的 MCP 服务器上的工具——比如每次改完文件，让 `scanner` 这个 MCP 服务器扫一遍补丁：
+
+```json
+{
+  "matcher": "Write|Edit",
+  "hooks": [
+    {
+      "type": "mcp_tool",
+      "server": "scanner",
+      "tool": "scan_patch",
+      "input": { "patch": "${tool_input.command}" },
+      "timeout": 30,
+      "statusMessage": "Scanning edited files"
+    }
+  ]
+}
+```
+
+`input` 里能用 `${字段.嵌套}` 从事件数据里抠值（比如 `${tool_input.file_path}`）。记死三条边界：**它复用现有 MCP 连接，不会替你启动或重连服务器**；**它是同步跑的**，不弹工具审批、也不会再触发别的钩子；**`SessionEnd` 不支持 `mcp_tool`**。工具返回「阻止」决定时它能拦住操作，但服务器没连上、工具不存在这类错误不会阻塞主流程。
+
+> 💡 一句话总结：钩子写进 `~/.codex/` 或项目 `.codex/` 的 `hooks.json` / `config.toml`，配置就三层——**事件、matcher、动作**；记死 Codex 特有的几条：`timeout` 单位是**秒**（默认 600）、改文件工具名是 **`apply_patch`**、`matcher` 是**正则**、用 git 根拼路径；0.148.0 起钩子还能 `async` 后台跑、或用 `mcp_tool` 直接调 MCP 工具。
 
 ---
 

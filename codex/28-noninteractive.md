@@ -2,7 +2,7 @@
 seoTitle: "codex exec 非交互模式：脚本与 CI 用法"
 description: "codex exec 的输入输出、常用参数、结构化结果、恢复会话和退出码，说明如何把 Codex 稳定接入脚本和 CI，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-09-01"
+lastVerified: "2026-09-02"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/noninteractive
@@ -316,7 +316,9 @@ codex exec resume <SESSION_ID> "继续上次的任务"
 
 > 注意：第 02 节说过 `--ephemeral` 不把会话落盘，那种「阅后即焚」的跑法自然就**没法 resume**（都没存，接什么）。要用两阶段流水线，就别加 `--ephemeral`。
 
-> 💡 一句话总结：`codex exec resume --last` 接着当前目录最近一次会话往下跑（像接力赛交接棒，不用从起点重来），也能用会话 ID 精确接某次；但加了 `--ephemeral` 不落盘的跑法没法 resume。
+0.148.0 还给 `exec` 添了个兄弟命令 **`codex exec fork`**：resume 是「接着原会话往下跑」，fork 是「从某次会话**分叉**出一条新会话」——原记录不动，新会话带着当时的上下文另起一摊。适合「同一份分析结果，想让两条不同思路分别试一遍」的场景。
+
+> 💡 一句话总结：`codex exec resume --last` 接着当前目录最近一次会话往下跑（像接力赛交接棒，不用从起点重来），也能用会话 ID 精确接某次；想分叉出新摊用 0.148.0 新增的 `codex exec fork`；但加了 `--ephemeral` 不落盘的跑法没法 resume。
 
 ---
 

@@ -2,7 +2,7 @@
 seoTitle: "Codex config.toml 配置详解"
 description: "config.toml 的文件位置、优先级、模型、推理、沙箱、审批、MCP 和界面等常用字段，并提供可复制的配置思路，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-09-01"
+lastVerified: "2026-09-02"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/config-reference
@@ -163,6 +163,7 @@ sandbox_mode = "workspace-write"
 |--------|--------|---------------------|---------|
 | `model` | 默认用哪个模型 | 跟随 Codex 内置默认 | `model = "gpt-5.6"` |
 | `approval_policy` | 啥时候停下来问你 | `on-request` | `approval_policy = "on-request"` |
+| `approvals_reviewer` | 「出圈」请求由谁来审 | `user`（弹给你本人） | `approvals_reviewer = "auto_review"` |
 | `sandbox_mode` | 能动多大（文件 / 网络） | `workspace-write`（git 仓库，见下注） | `sandbox_mode = "workspace-write"` |
 | `model_reasoning_effort` | 推理使多大劲 | 跟随模型 / 预设 | `model_reasoning_effort = "high"` |
 | `web_search` | 联网搜索模式 | `cached`（缓存） | `web_search = "live"` |
@@ -179,6 +180,8 @@ sandbox_mode = "workspace-write"
 
 `model_reasoning_effort` 是推理强度，官方给的档位是 `minimal | low | medium | high | xhigh`（`xhigh` 看模型支不支持）。简单活儿调低省时间省额度，硬骨头调 `high`。
 
+顺带把新加进上表的 `approvals_reviewer` 说透一句：它决定**本该弹给你的审批请求由谁审**——默认 `user`（你自己）；设成 `auto_review` 就改道给一个审查代理先过（0.147.0 起也能用启动参数 `--approve-for-me` 一键开，不用改配置）。注意它**只换审查人、不扩权限**，沙箱边界原样不动；安全口径和判断逻辑见 [15 · 权限沙箱审批](15-permissions.md) 和 [16 · 安全与风险边界](16-security.md)。想给审查代理自定策略，官方还留了 `[auto_review].policy` 这个本地策略键（企业托管策略优先于它）。
+
 ### web_search：联网搜索，注意默认是「缓存」不是「实时」
 
 这个键有个**反直觉的默认**，我第一次就栽了。Codex 默认开着联网搜索，但用的是 `cached`（缓存）模式——查的是 OpenAI 维护的一个网页索引，**返回的是预先收录好的结果，不是当场去抓实时网页**。官方解释这么设计是为了降低提示注入（prompt injection）风险：缓存内容比任意实时页面安全些。
@@ -188,8 +191,11 @@ sandbox_mode = "workspace-write"
 ```toml
 web_search = "live"   # 实时抓取，等价于命令行 --search
 # web_search = "cached"   # 默认：走缓存索引
+# web_search = "indexed"  # 折中档：允许联网，但外部访问一律经搜索索引把关（0.142.0 新增）
 # web_search = "disabled" # 彻底关掉搜索工具
 ```
+
+`indexed` 是 0.142.0 新加的折中档，卡在 `cached` 和 `live` 之间：允许实时搜索，但直接打开页面只放行搜索索引审过的地址——比 `cached` 新、比 `live` 收敛，想查新东西又想把提示注入面压小，用它。
 
 有个例外要知道：**如果你用了 `--yolo` 或别的完全访问沙箱，`web_search` 会自动变成 `live`**。
 

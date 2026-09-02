@@ -2,7 +2,7 @@
 seoTitle: "Codex 权限、沙箱与审批配置指南"
 description: "Codex 文件系统和网络沙箱、审批策略、权限模式与命令规则，帮助你根据任务风险选择正确的执行边界，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-02"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/agent-approvals-security
@@ -126,7 +126,14 @@ Workspace directories:
 
 至于「谁来审批」，默认是弹给你本人（`approvals_reviewer = "user"`）。官方还提供了一个 `auto_review`（自动审查）选项——让一个审查 agent 替你先过一遍那些需要审批的请求。这个属于偏进阶、还在演进的能力，**16 · 安全与风险边界**会展开讲它的判断逻辑和风险，这里你只要知道有这么个开关，日常 `user` 够用。
 
-> 💡 一句话总结：审批三档里 `on-request` 是日常默认；`untrusted` 更碎更谨慎（读随便读、动真格才拦）；`never` 是「不问」不是「放权」，能跟任意沙箱模式搭，CI 只读分析就常用 `read-only` + `never`。
+这套自动审批在 0.147.0 又补了一个命令行入口：**`--approve-for-me`**。启动时带上它，等价于把「出圈才问」的审批请求改道给审查代理（官方描述：在 `workspace-write` 沙箱下走自动审查），不用去改配置文件。两条安全口径必须钉死：
+
+- **它是「换个人审」，不是「放权」。** 官方反复强调：自动审查不扩大文件可写范围、不开网络、不弱化任何沙箱边界——主 agent 还关在原来的圈里，只是圈边上的审批从「问你」变成「问审查代理」。审查代理拒了的操作，会带着理由打回，让主 agent 换一条明显更安全的路，或者停下来问你。
+- **它只在「本来就会问」的策略下才有活干。** 比如你本来就 `approval_policy = "never"`（不弹审批），那就没有可审的请求，开了也白开；反过来说，想让它有用，得保持 `on-request` 这类会弹审批的策略。
+
+另外 0.144.0 还给 **App 工具**（插件、连接器带进来的那些外部工具，不是 shell 命令）的审批加了一档 `writes`：声明为「只读」的动作直接放行，**只有写操作才停下来问**。它配在 `apps` 相关的键上（比如 `apps.<id>.default_tools_approval_mode = "writes"`），跟本节讲的 shell 审批三档是两套体系，别往 `approval_policy` 里塞。新手日常接触不到的话，知道有这回事就行。
+
+> 💡 一句话总结：审批三档里 `on-request` 是日常默认；`untrusted` 更碎更谨慎（读随便读、动真格才拦）；`never` 是「不问」不是「放权」，能跟任意沙箱模式搭，CI 只读分析就常用 `read-only` + `never`。进阶两档记个名：`--approve-for-me`（0.147.0）把审批交给审查代理但**不扩权限**，App 工具的 `writes` 档（0.144.0）只拦写操作。
 
 ---
 

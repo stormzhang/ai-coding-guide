@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 环境变量完整参考"
 description: "Claude Code 常用环境变量的作用、配置位置、优先级与排错方式，覆盖认证、模型、网络、日志和运行行为等关键开关，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-02"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/env-vars
@@ -187,6 +187,8 @@ ANTHROPIC_MODEL        # 默认用哪个模型
 - **`ANTHROPIC_BASE_URL`**——把 API 请求**改道**到你的代理或网关。接国产模型、走自建中转，核心就是它（第 05 篇那套配置，主角就是这个变量）。
 
 - **`ANTHROPIC_MODEL`**——指定默认模型。注意它的优先级：**`--model` 标志和会话里的 `/model` 命令会盖过它**（下一节细讲）。
+
+- **`ANTHROPIC_DEFAULT_MODEL`**（v2.1.236 起）——设定**新会话**的起步模型。和 `ANTHROPIC_MODEL` 的关键差别在「`/model` 切完保不保留」：用它做默认时，你 `/model` 选的模型会盖过它、**并且跨重启保留**；用 `ANTHROPIC_MODEL` 则是每次新会话都回到这个硬默认。想「给个起步档位、又允许随手换了就保持住」用前者，想「钉死」用后者。
 
 ### 二组：超时（嫌它太快放弃就调这个）
 

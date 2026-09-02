@@ -2,7 +2,7 @@
 seoTitle: "Claude Code 控制模式：权限、模型与会话选项"
 description: "启动和会话中的权限模式、模型、思考强度、自动模式与控制选项，帮助你根据任务风险和复杂度调好执行方式，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-09-01"
+lastVerified: "2026-09-02"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/permission-modes
@@ -147,6 +147,8 @@ Manual → acceptEdits → plan → bypassPermissions → auto → （回到 Man
 
 `auto` 永远排在最后一个，`bypassPermissions` 在它前面。**记住这个顺序，你就知道再按几下能到你要的那档**，不用瞎转。
 
+auto mode 还有两个新配件值得知道：**`autoMode.classifyAllShell` 设置（v2.1.193 起）**——设成 `true` 后，所有 Bash / PowerShell 命令都先过 auto mode 的分类器，而不是只查「任意代码执行」那一类模式，你的 allow 规则会被暂时挂起、等分类器裁决；**`/auto-mode-setup`（v2.1.228 起，Pro / Max / Team）**——让 Claude 根据你的项目和近期会话，帮你草拟 `autoMode.environment` 环境规则，你审一遍后存进用户设置。命令行侧还有 `claude auto-mode defaults / config / reset` 三个查看与重置入口（见[第 34 篇](34-cli-reference.md)）。
+
 推荐的实操习惯，跟[第 20 篇](20-permissions.md)说的一致——**绝大多数时候只在默认三档里 `Shift+Tab` 手动切**：接陌生项目先切 `plan` 让它通读出方案，信得过方向了切 `acceptEdits` 放它改，改完想严一点再切回 Manual。`bypassPermissions` 只在隔离容器里用启动参数开，别挂进日常循环——这道红线[第 20 篇](20-permissions.md)画过，不重复了。
 
 > 💡 一句话总结：`Shift+Tab` 默认只在 **Manual / `acceptEdits` / `plan`** 三档转；`auto` / `bypassPermissions` 要满足条件或带启动参数才入列，顺序是 **「`plan` 之后，`bypassPermissions` 在前、`auto` 垫底」**——记住这个排位，按几下心里就有数。
@@ -289,9 +291,13 @@ Claude Code 的输入框默认是普通文本框（随便打字、方向键移�
 
 有个 Vim 老手会喜欢的细节：**在 NORMAL 模式下，如果光标已经在输入的最顶或最底、没法再往上/往下移了，这时按 `j`/`k` 或方向键，会去翻命令历史。** 等于「移动」和「翻历史」无缝接上了。
 
+Vim 党还有个新玩具：**`vimInsertModeRemaps` 设置（v2.1.208 起）**，可以把 INSERT 模式里的两键序列映射成 `Esc`——经典玩法是连按 `jj` 秒退 NORMAL 模式，配置写法是 `"vimInsertModeRemaps": { "jj": "<Esc>" }`。官方特意强调了它的读取范围：只从用户级设置、`--settings` 标志和 managed 设置读取，**仓库里检入的项目设置改不动你的按键映射**——防止共享仓库替你「重新定义」手感。
+
 说句实话，**这个模式纯属「锦上添花」**。Vim 重度用户开了它编辑长提示确实爽；但对不少小白来说压根没必要碰——普通文本框配上第 02 节那几个快捷键（`Ctrl+U` 删到行首、`Ctrl+W` 删词）已经够用了。**所以：是 Vim 党就开，不是就别折腾，这不是必修课。**
 
-> 💡 一句话总结：Vim 模式给输入框装上 NORMAL/INSERT 两态和全套 Vim 手势，`/config` → 编辑器模式开启；**Vim 老手开了顺手，纯新手完全可以跳过**，不影响任何功能。
+顺带三个输入框相关的新设置，都用 `/config` 或 settings.json 调：**`keybindingFlavor`（v2.1.238 起）**设成 `"readline"` 后，提示框里的 `Ctrl+W` 会像 Bash 那样「删到上一个空白处」，默认的 `"classic"` 行为不变；**`spellcheck`（v2.1.235 起）**开启后，你打字时拼错的单词会被划线标出（用的是你机器上已安装的 `aspell` / `hunspell` / `ispell`）；**`emojiCompletionEnabled`（v2.1.217 起）**管 emoji 短码补全——默认开着，输 `:heart:` 直接插入 ❤️，嫌它碍事就设成 `false`。
+
+> 💡 一句话总结：Vim 模式给输入框装上 NORMAL/INSERT 两态和全套 Vim 手势，`/config` → 编辑器模式开启；**Vim 老手开了顺手，还能用 `vimInsertModeRemaps` 把 `jj` 映射成 `Esc`（v2.1.208 起），纯新手完全可以跳过**，不影响任何功能。
 
 ---
 

@@ -2,7 +2,7 @@
 seoTitle: "Claude Code Hooks 教程：事件、配置与自动化"
 description: "Hook 的生命周期事件、匹配器、命令配置、输入输出和错误处理，帮助你在固定节点自动执行格式化、检查与安全卡点，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-06-20"
+lastVerified: "2026-09-02"
 author: stormzhang
 officialSources:
   - https://code.claude.com/docs/zh-CN/hooks-guide
@@ -87,6 +87,8 @@ Hook 不是随便什么时候都能挂，它得挂在 Claude 干活流程里**�
 | **`SessionStart`** | 会话开始或恢复时 | 往上下文里注入项目状态（如最近的提交） |
 
 记这张表有个窍门：**看名字里的 `Pre` 和 `Post`**——`Pre` 是「之前」，所以只有它能在动作发生前**拦住**；`Post` 是「之后」，工具都跑完了，它只能「事后补一刀」（格式化、记日志），拦不了。这个差别下一节细说。
+
+近期版本还在往里加新事件，认个脸熟就行：**v2.1.251 加了 `PreModelSwitch` / `PostModelSwitch`**——模型切换前后各触发一次，`Pre` 那个能在切换生效前拦下它；**v2.1.219 加了 `DirectoryAdded`**——会话中途用 `/add-dir` 加进来一个新工作目录时触发，适合「目录一加就自动注入点项目状态」这类玩法。
 
 > 💡 一句话总结：Hook 挂在 Claude 生命周期的**特定事件**上，按频率分三档（每会话 / 每轮 / 每次工具调用）；新手先吃透 `PreToolUse`（前，能拦）、`PostToolUse`（后，补刀）、`Stop`（答完）、`SessionStart`（开场）这四个就够用。
 
@@ -360,6 +362,8 @@ Claude 干到一半要你批准、或者答完等你下一句时，你可能早�
 | **Windows** | 用 PowerShell 的 `MessageBox`（官方文档有完整片段） |
 
 macOS 上如果通知没弹出来，多半是 Script Editor 没拿到通知权限——去「系统设置 → 通知」里找到 Script Editor 把开关打开。第一次配很容易死活没声响，折腾半天才发现是这个权限没给。
+
+v2.1.198 起，`Notification` 事件还多了两种匹配类型：**`agent_needs_input`**（后台会话开始等你输入）和 **`agent_completed`**（后台会话跑完或失败）——在 `claude agents` 总控屏（第 29 篇）盯多个后台会话时，把 `matcher` 填成这两个类型，就能实现「那边干完了喊我」。注意这两种类型**只在 agent view 于终端中打开时触发**。
 
 > 💡 一句话总结：三个钩子按风险递增——**格式化（`PostToolUse`，零风险，建议人人配）、拦命令（`PreToolUse`+脚本，记得 `chmod +x` 和 `exit 2`）、发通知（`Notification`，平台命令不同）**；脚本路径用 `$CLAUDE_PROJECT_DIR` 拼最稳。
 

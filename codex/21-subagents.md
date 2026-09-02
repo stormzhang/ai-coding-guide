@@ -2,7 +2,7 @@
 seoTitle: "Codex 子代理教程：配置与并行协作"
 description: "Codex 子代理的创建、角色说明、模型和工具配置、调用方式与上下文隔离，帮助你把复杂任务拆成专项工作，并给出适合中文开发者直接照做的操作思路、检查方法与风险边界。"
 published: "2026-06-12"
-lastVerified: "2026-09-01"
+lastVerified: "2026-09-02"
 author: stormzhang
 officialSources:
   - https://developers.openai.com/codex/subagents
@@ -125,7 +125,7 @@ related:
 
 讲完「该不该用」，来真的拆一次。好消息是：**Codex 自带三种内置 agent，开箱即用，你一行配置都不用写。**
 
-> ⚠️ 这里说「三种」不是「三个」，差别很关键：`default` / `worker` / `explorer` 是**三种类型（角色）**，不是「同时只能开三个」。实际派活时，你可以同时 spawn 多个**同类型**的实例——比如让三个 `worker` 各干一块、两个 `explorer` 同时探不同模块——总并发上限由第 05 节那个 `agents.max_threads`（默认 6）管，跟「内置类型有几个」没关系。
+> ⚠️ 这里说「三种」不是「三个」，差别很关键：`default` / `worker` / `explorer` 是**三种类型（角色）**，不是「同时只能开三个」。实际派活时，你可以同时 spawn 多个**同类型**的实例——比如让三个 `worker` 各干一块、两个 `explorer` 同时探不同模块——总并发上限由第 05 节那个 `agents.max_concurrent_threads_per_session`（旧名 `agents.max_threads`）管，跟「内置类型有几个」没关系。
 
 官方给的三种内置 agent：
 
@@ -172,6 +172,8 @@ related:
 ```
 
 **注意这跟你印象里别的工具可能不一样**——它不是「运行某个 agent」的命令，而是「进去看 / 切线程」的命令。派生靠你说话，查看才靠 `/agent`。
+
+终端里还有一个 0.149.0 新增的总控台：**`codex agents`**（注意这里是复数，是终端子命令，不是会话里的斜杠命令）。它打开一个交互式仪表盘，能搜索、打开、重命名、停掉本地 app-server 上的各个 agent 会话，快捷键还能自己配。会话多了想找个「总管视图」，用它；只想在当前会话里切线程，还是用 `/agent`。
 
 ### 抓手二：直接喊话指挥
 
@@ -254,15 +256,20 @@ Trace the real execution path, cite files and symbols, and avoid proposing fixes
 
 > ⚠️ 一个权限上的优先级坑：你在会话里**临时**改的运行时设置（比如 `/permissions` 调整、`--yolo`），会被重新套用到派生出的子代理身上——**哪怕那个 agent 文件里写了不一样的默认值**。也就是说你会话里的实时选择，盖过 agent 文件里的静态默认。
 
-还有一类**全局** `[agents]` 配置，管的是所有子代理的「总闸」，写在你的 `config.toml` 里（不是单个 agent 文件）：
+还有一类**全局** `[agents]` 配置，管的是所有子代理的「总闸」，写在你的 `config.toml` 里（不是单个 agent 文件）。0.145.0 把多代理的设置统一收进了 `[agents]` 这张表（multi-agent V2 转正），当前官方列出的全局键是这些：
 
 | 全局键 | 干嘛的 | 默认值 |
 |--------|--------|--------|
-| `agents.max_threads` | 同时能开几条 agent 线程的上限 | 不设时默认 **6** |
-| `agents.max_depth` | agent 嵌套深度（根会话从 0 算） | 默认 **1**：允许直接子代理、但禁止再往下套 |
+| `agents.enabled` | 多代理工具总开关 | `true`（设 `false` 整个关掉） |
+| `agents.max_concurrent_threads_per_session` | 同一会话里同时开着的派生 agent 线程上限（不含主线程） | 不设时由 Codex 决定；旧键 `agents.max_threads` 现在只是它的**兼容别名** |
+| `agents.default_subagent_model` | 派生 agent 的默认模型 | 不设时继承父会话；显式指名优先 |
+| `agents.default_subagent_reasoning_effort` | 派生 agent 的默认思考强度 | 同上 |
+| `agents.interrupt_message` | agent 被打断时，是否往它的上下文里记一条「你被打断了」的消息 | `true` |
 | `agents.job_max_runtime_seconds` | CSV 批处理任务里每个 worker 的默认超时 | 不设时回退到每个 worker **1800 秒** |
 
-官方对 `max_depth` 有句很实在的提醒：**保持默认 1 就好，除非你真需要递归委派。** 调大它会把「广泛委派」的指令变成层层 fan-out，token、延迟、本机资源消耗全往上窜——`max_threads` 能卡住并发线程数，但卡不住深层递归带来的成本和不可预测性。
+另外 `[agents]` 表还能直接声明**自定义角色**：`agents.<名字>.description`（给 Codex 看的选用指引）和 `agents.<名字>.config_file`（指向这个角色专属的 TOML 配置层，相对路径从声明它的配置文件算起）——相当于不写单独 agent 文件、直接在 `config.toml` 里注册角色的入口。注意**标量设置名是保留字**，不能拿 `enabled`、`max_threads` 这类名字当角色名。
+
+`agents.default_subagent_model` 和 `agents.default_subagent_reasoning_effort` 这对默认值，解决了「不想每个 agent 文件都写一遍模型」的场景：在这里统一定个默认，个别 agent 文件里写了 `model` 的以文件为准，派生时你显式指名的又盖过一切。
 
 > 💡 一句话总结：自定义 agent 就是 `~/.codex/agents/` 或 `.codex/agents/` 下的一个 TOML，**必填 `name` / `description` / `developer_instructions`**；可选字段不写就继承父会话，靠 `model` + `model_reasoning_effort` 给侦察兵配快脑、给审查员配强脑，还能 `sandbox_mode` 单独锁权限。
 
