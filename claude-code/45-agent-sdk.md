@@ -100,6 +100,14 @@ related:
 
 > 💡 一句话总结：CLI 和 SDK **同一个内核、两个入口**——人坐着边看边调用 CLI、程序自动起批量跑用 SDK；**两者常常一起用，你在 CLI 攒的经验搬到 SDK 完全通用**。
 
+⚠️ **一个实测出来的坑：内核共享，但两个入口送到模型面前的工具集不一样。**
+
+用本地代理录下两边实际发出的请求，同一个模型、同一天（2026-09-02，`claude-fable-5-1`）：交互式 CLI 声明了 35 个工具、系统提示词 26,131 字符；`-p` / Agent SDK 声明 29 个、20,806 字符。开头那句身份也从 `You are Claude Code, Anthropic's official CLI for Claude` 变成 `You are a Claude agent, built on Anthropic's Claude Agent SDK`。入口写在请求头的 `cc_entrypoint` 字段里（`cli` / `sdk-cli`）。
+
+「经验通用」这句没问题——用法、心智模型都搬得过去。但**别把交互态的工具面当成 SDK 侧的工具面**：照着 CLI 里见过的工具去写脚本，可能会假设六个它根本看不到的工具存在，表现出来就是「同一句话在终端里好好的，放进流水线就不干活」。写脚本前先把实际声明的工具列一遍更稳。
+
+> 数据来源：<https://github.com/Continuum-AI-Corp/OrcaPromptVault/tree/main/Claude-Code>，两种入口的提示词与工具 schema 都在，带日期，复现命令见该库 `docs/CAPTURES.md`。
+
 ---
 
 ## 03 别搞混：Agent SDK 不是「原始 API」，差在「谁来跑工具循环」
